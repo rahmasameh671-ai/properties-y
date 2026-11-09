@@ -818,32 +818,40 @@ button, input, select {
 .project-logo-heading-wrap {
   display: flex;
   align-items: center;
-  margin-bottom: 14px;
+  margin-top: 4px;
+  margin-bottom: 22px;
 }
 
 .project-hero-logo {
-  height: clamp(65px, 8vw, 85px);
+  height: clamp(82px, 8.5vw, 105px);
   width: auto;
-  max-width: min(100%, 280px);
+  max-width: min(100%, 300px);
   object-fit: contain;
   object-position: left center;
   display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.04));
+  transition: transform 0.25s ease;
+}
+
+.project-hero-logo:hover {
+  transform: scale(1.02);
 }
 
 .project-hero-logo.logo-mv-1-1 {
-  height: clamp(65px, 8vw, 85px);
+  height: clamp(82px, 8.5vw, 105px);
 }
 
 .project-hero-logo.logo-mv-icity {
-  height: clamp(65px, 8vw, 85px);
+  height: clamp(82px, 8.5vw, 105px);
 }
 
 .project-hero-logo.logo-mv-official {
-  height: clamp(60px, 7.5vw, 80px);
+  height: clamp(78px, 8vw, 100px);
 }
 
 .project-hero-logo.logo-aliva {
-  height: clamp(50px, 6vw, 68px);
+  height: clamp(56px, 6vw, 76px);
+  max-width: 220px;
 }
 
 .project-index-number {
@@ -1530,25 +1538,33 @@ button, input, select {
     margin-bottom: 8px !important;
   }
 
+  .project-logo-heading-wrap {
+    margin-top: 4px !important;
+    margin-bottom: 16px !important;
+  }
+
   .project-hero-logo {
-    height: 44px !important;
-    max-width: 180px !important;
-    margin: 8px 0 4px !important;
+    height: 68px !important;
+    max-width: 230px !important;
+    margin: 6px 0 2px !important;
+    object-position: left center !important;
+  }
+
+  .project-hero-logo.logo-mv-1-1 {
+    height: 68px !important;
+  }
+
+  .project-hero-logo.logo-mv-icity {
+    height: 68px !important;
+  }
+
+  .project-hero-logo.logo-mv-official {
+    height: 65px !important;
   }
 
   .project-hero-logo.logo-aliva {
-    height: 36px !important;
-    max-width: 140px !important;
-  }
-
-  .project-title-editorial {
-    font-size: 1.25rem !important;
-    margin-bottom: 3px !important;
-  }
-
-  .project-subtitle-editorial {
-    font-size: 0.82rem !important;
-    margin-bottom: 12px !important;
+    height: 48px !important;
+    max-width: 175px !important;
   }
 
   /* Terms Matrix: 2-Column on Mobile (Ultra Clean & Compact) */

@@ -389,7 +389,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">01 / 05</span>
-                <span className="project-location-badge">New Cairo</span>
+                <span className="project-location-badge">MV 1.1 • New Cairo</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -401,9 +401,6 @@ export default function MountainViewLandingPage() {
                   loading="lazy" 
                 />
               </div>
-
-              <h3 className="project-title-editorial">Mountain View 1.1</h3>
-              <p className="project-subtitle-editorial">Fully Finished Ready-To-Move Residences in New Cairo</p>
 
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
@@ -464,7 +461,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">02 / 05</span>
-                <span className="project-location-badge">New Cairo</span>
+                <span className="project-location-badge">iCity • New Cairo</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -476,9 +473,6 @@ export default function MountainViewLandingPage() {
                   loading="lazy" 
                 />
               </div>
-
-              <h3 className="project-title-editorial">Mountain View iCity</h3>
-              <p className="project-subtitle-editorial">Integrated Smart City Living in New Cairo</p>
 
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
@@ -539,7 +533,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">03 / 05</span>
-                <span className="project-location-badge">New Cairo (200-Acre Masterpiece)</span>
+                <span className="project-location-badge">Hyde Park • New Cairo</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -551,9 +545,6 @@ export default function MountainViewLandingPage() {
                   loading="lazy" 
                 />
               </div>
-
-              <h3 className="project-title-editorial">Mountain View Hyde Park</h3>
-              <p className="project-subtitle-editorial">Signature i-Villas in a 200-Acre Masterpiece</p>
 
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
@@ -614,7 +605,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">04 / 05</span>
-                <span className="project-location-badge">Mostakbal City</span>
+                <span className="project-location-badge">ALIVA • Mostakbal City</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -626,9 +617,6 @@ export default function MountainViewLandingPage() {
                   loading="lazy" 
                 />
               </div>
-
-              <h3 className="project-title-editorial">ALIVA</h3>
-              <p className="project-subtitle-editorial">Experience-Based Metropolis in Mostakbal City</p>
 
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
@@ -689,7 +677,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">05 / 05</span>
-                <span className="project-location-badge">South 90th / New Cairo</span>
+                <span className="project-location-badge">Grand Valleys • New Cairo</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -701,9 +689,6 @@ export default function MountainViewLandingPage() {
                   loading="lazy" 
                 />
               </div>
-
-              <h3 className="project-title-editorial">Mountain View Grand Valleys</h3>
-              <p className="project-subtitle-editorial">Private Natural Valleys Sanctuary</p>
 
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
