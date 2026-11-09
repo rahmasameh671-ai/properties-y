@@ -445,6 +445,21 @@ p {
   position: relative;
 }
 
+.form-brand-signature {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-charcoal);
+  margin-bottom: 14px;
+  padding: 5px 12px;
+  background-color: var(--bg-stone-grey);
+  border: 1px solid var(--border-fine);
+  border-radius: var(--radius-full);
+}
+
 .form-header {
   margin-bottom: 26px;
   padding-bottom: 20px;

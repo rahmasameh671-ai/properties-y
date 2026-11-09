@@ -9,7 +9,14 @@
     {
       "source": "/terms-conditions",
       "destination": "/terms-conditions.html"
+    },
+    {
+      "source": "/mountain-view",
+      "destination": "/mountain-view/index.html"
+    },
+    {
+      "source": "/mountain-view/",
+      "destination": "/mountain-view/index.html"
     }
   ]
 }
-

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125180547"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18125180547');
+
+    function gtag_report_conversion(url) {
+      var navigated = false;
+      var callback = function () {
+        if (!navigated && typeof(url) != 'undefined' && url) {
+          navigated = true;
+          window.location = url;
+        }
+      };
+      setTimeout(callback, 500);
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+          'event_callback': callback
+        });
+      } else {
+        callback();
+      }
+      return false;
+    }
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mountain View Exclusive Portfolio – By ir-properties | Independent Real Estate Consultancy</title>
+  <meta name="description" content="Discover premium residences across New Cairo and Mostakbal City by Mountain View: Mountain View 1.1, Mountain View iCity, Mountain View Hyde Park, ALIVA, and Mountain View Grand Valleys. Curated by ir-properties, Independent Real Estate Consultancy.">
+  <meta name="keywords" content="Mountain View Egypt, Mountain View 1.1, Mountain View iCity, Mountain View Hyde Park, ALIVA Mostakbal City, Mountain View Grand Valleys, ir-properties, New Cairo real estate, Independent Real Estate Consultancy">
+  <meta name="theme-color" content="#0E131F">
+
+  <!-- Canonical & Open Graph -->
+  <link rel="canonical" href="https://ir-properties.com/mountain-view">
+  <meta property="og:title" content="Mountain View Exclusive Portfolio – By ir-properties">
+  <meta property="og:description" content="Discover premium residences across New Cairo and Mostakbal City. Starting from 12M EGP | 5% Down Payment | Installments Up to 12 Years.">
+  <meta property="og:url" content="https://ir-properties.com/mountain-view">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/mountain-view/hero-bg.webp">
+
+  <link rel="icon" type="image/png" href="/images/mountain-view/logo-mv-official-black.png">
+
+  <!-- Core Calm Luxury Stylesheet (Zero Gold Policy) -->
+  <link rel="stylesheet" href="./mountain-view.css">
+</head>
+<body>
+
+  <div class="mountain-view-page-wrap">
+
+    <!-- =========================================================================
+         1. HERO SECTION (STARTS DIRECTLY AT TOP: 0 – NO TOP FIXED NAVBAR)
+         ========================================================================= -->
+    <header class="mv-hero-section" id="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-editorial-grid">
+
+        <!-- Hero Left Column: Editorial Narrative & Highlights -->
+        <div class="hero-content-column">
+
+          <div class="hero-brand-signature-bar">
+            <img 
+              src="/images/mountain-view/logo-mv-official-black.png" 
+              alt="Mountain View Official Crest" 
+              class="hero-brand-logo-img"
+              width="160"
+              height="auto"
+            />
+            <div class="hero-signature-label">
+              <span class="signature-by">By ir-properties</span>
+              <span class="signature-role">Independent Real Estate Consultancy</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <span class="chic-badge chic-badge-dark">Exclusive Portfolio</span>
+          </div>
+
+          <h1 class="hero-main-headline">
+            Mountain View Exclusive Portfolio
+            <span>Discover premium residences across New Cairo and Mostakbal City.</span>
+          </h1>
+
+          <p class="hero-lead-text">
+            Impartial private advisory and direct priority allocations across Mountain View's flagship master developments. Benefit from transparent market intelligence, bespoke payment arrangements, and dedicated advisor guidance.
+          </p>
+
+          <!-- Terms Highlights Bar -->
+          <div class="hero-terms-highlights">
+            <div class="term-highlight-card">
+              <span class="term-stat-number">5%</span>
+              <span class="term-stat-label">Starting Down Payment</span>
+            </div>
+            <div class="term-highlight-card">
+              <span class="term-stat-number">12 YRS</span>
+              <span class="term-stat-label">Flexible Installments</span>
+            </div>
+            <div class="term-highlight-card">
+              <span class="term-stat-number">12M EGP</span>
+              <span class="term-stat-label">Starting Rates</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Right Column: Frosted Glass Lead Capture Form -->
+        <div class="hero-form-column">
+          <div class="frosted-lead-card">
+
+            <div class="form-header-block">
+              <span class="form-eyebrow">BY IR-PROPERTIES</span>
+              <h2 class="form-headline">REGISTER YOUR INTEREST</h2>
+              <p class="form-subtext">Direct allocation access, official brochures, and tailored payment plans.</p>
+            </div>
+
+            <form id="leadCaptureForm" noValidate>
+
+              <!-- Full Name: Clean blank input, NO placeholder examples -->
+              <div class="lead-form-group">
+                <label for="leadFullName" class="lead-form-label">Full Name</label>
+                <input 
+                  type="text" 
+                  id="leadFullName" 
+                  name="fullName" 
+                  class="lead-input-text" 
+                  required 
+                  autocomplete="name"
+                >
+              </div>
+
+              <!-- Phone Number: Split Input Layout (UTF-8 Flags Dropdown + Blank Input) -->
+              <div class="lead-form-group">
+                <label for="leadPhoneInput" class="lead-form-label">Phone Number</label>
+                
+                <div class="phone-split-container">
+                  <input type="hidden" id="selectedDialInput" name="countryDial" value="+20">
+
+                  <!-- Trigger Button -->
+                  <button 
+                    type="button" 
+                    id="countryCodeTrigger" 
+                    class="country-dropdown-trigger" 
+                    aria-haspopup="true" 
+                    aria-expanded="false" 
+                    title="Select Country Dial Code">
+                    <span class="trigger-flag" id="triggerFlag">🇪🇬</span>
+                    <span class="trigger-dial" id="triggerDial">+20</span>
+                    <svg class="trigger-chevron" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+
+                  <!-- Popover Dropdown -->
+                  <div class="country-dropdown-popover" id="countryDropdownPopover" style="display: none;">
+                    <div class="country-search-wrap">
+                      <input 
+                        type="text" 
+                        id="countrySearchInput" 
+                        class="country-search-input" 
+                        placeholder="Search country or code..."
+                      >
+                    </div>
+                    <div class="country-options-scroll" id="countryOptionsContainer">
+                      <!-- Populated dynamically via JS -->
+                    </div>
+                  </div>
+
+                  <!-- Blank Phone Input (NO placeholder text) -->
+                  <input 
+                    type="tel" 
+                    id="leadPhoneInput" 
+                    name="phoneNumber" 
+                    class="phone-number-field" 
+                    required 
+                    autocomplete="tel-national"
+                  >
+                </div>
+              </div>
+
+              <!-- Solid Charcoal Submit Button -->
+              <button type="submit" id="leadSubmitBtn" class="btn-charcoal-solid">
+                REGISTER INTEREST
+              </button>
+            </form>
+
+            <!-- Form Legal Disclaimer -->
+            <p class="form-legal-disclaimer">
+              By submitting, you agree to receive communications from <strong>ir-properties</strong> regarding real estate projects. This landing page is operated by <strong>ir-properties</strong>, an Independent Real Estate Consultancy, and is not the official website of the developer. Prices and availability are subject to change.
+            </p>
+
+            <div class="form-legal-links">
+              <a href="/privacy-policy">Privacy Policy</a>
+              <span>•</span>
+              <a href="/terms-conditions">Terms & Conditions</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         2. DEDICATED PROJECT SECTIONS (ONE COMPOUND PER SECTION)
+         ========================================================================= -->
+    <main class="portfolio-curation-section">
+      <div class="container">
+
+        <div class="section-editorial-intro">
+          <span class="editorial-kicker">CURATED MASTER DEVELOPMENTS</span>
+          <h2 class="editorial-section-title">The Mountain View Living Portfolio</h2>
+          <p class="editorial-section-desc">
+            Explore five distinctive residential sanctuaries across East Cairo, engineered with innovative master planning, lush park systems, and market-defining payment arrangements.
+          </p>
+        </div>
+
+        <!-- SECTION 1: MOUNTAIN VIEW 1.1 -->
+        <article class="editorial-project-row" id="mountain-view-1-1">
+          <div class="project-visual-column">
+            <div class="project-image-frame">
+              <img 
+                src="/images/mountain-view/mv-1-1.webp" 
+                alt="Mountain View 1.1 New Cairo" 
+                loading="lazy" 
+              />
+              <div class="floating-payment-tag">
+                <span class="tag-accent">7 YEARS PLAN</span>
+                <span class="tag-plan">10% Down Payment • 7 Years Installments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-column">
+            <div class="project-meta-header">
+              <span class="project-index-number">01 / 05</span>
+              <span class="project-location-badge">New Cairo</span>
+            </div>
+
+            <!-- Official Project Logo as Prominent Section Heading -->
+            <div class="project-logo-heading-wrap">
+              <img 
+                src="/images/mountain-view/logo-mv-1-1.png" 
+                alt="Mountain View 1.1 Official Logo" 
+                class="project-hero-logo logo-mv-1-1"
+                loading="lazy" 
+              />
+            </div>
+
+            <h3 class="project-title-editorial">Mountain View 1.1</h3>
+            <p class="project-subtitle-editorial">Fully Finished Ready-To-Move Residences in New Cairo</p>
+
+            <div class="project-terms-matrix">
+              <div class="terms-matrix-grid">
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Starting Price</span>
+                  <span class="matrix-cell-value">14,500,000 EGP</span>
+                  <span class="matrix-cell-sub">Starting Rate</span>
+                </div>
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Down Payment</span>
+                  <span class="matrix-cell-value">10%</span>
+                  <span class="matrix-cell-sub">Immediate Reservation</span>
+                </div>
+                <div class="matrix-cell cell-full">
+                  <span class="matrix-cell-label">Payment Plan</span>
+                  <span class="matrix-cell-value">7 Years</span>
+                  <span class="matrix-cell-sub">10% Down Payment | 7 Years Installments</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-highlights-box">
+              <span class="highlights-label">Key Highlights</span>
+              <p class="highlights-text">Fully finished units, ready to move in.</p>
+            </div>
+
+            <div class="project-actions-block">
+              <a 
+                href="https://wa.me/201277752731?text=Hello%2C%20I%20am%20inquiring%20about%20Mountain%20View%201.1" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-whatsapp-solid">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+                </svg>
+                <span>INQUIRE ON WHATSAPP</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SECTION 2: MOUNTAIN VIEW ICITY -->
+        <article class="editorial-project-row row-inverted" id="mountain-view-icity">
+          <div class="project-visual-column">
+            <div class="project-image-frame">
+              <img 
+                src="/images/mountain-view/mv-icity.webp" 
+                alt="Mountain View iCity New Cairo" 
+                loading="lazy" 
+              />
+              <div class="floating-payment-tag">
+                <span class="tag-accent">8 YEARS PLAN</span>
+                <span class="tag-plan">5% Down Payment • 8 Years Installments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-column">
+            <div class="project-meta-header">
+              <span class="project-index-number">02 / 05</span>
+              <span class="project-location-badge">New Cairo</span>
+            </div>
+
+            <!-- Official Project Logo as Prominent Section Heading -->
+            <div class="project-logo-heading-wrap">
+              <img 
+                src="/images/mountain-view/logo-mv-icity.png" 
+                alt="Mountain View iCity Official Logo" 
+                class="project-hero-logo logo-mv-icity"
+                loading="lazy" 
+              />
+            </div>
+
+            <h3 class="project-title-editorial">Mountain View iCity</h3>
+            <p class="project-subtitle-editorial">Integrated Smart City Living in New Cairo</p>
+
+            <div class="project-terms-matrix">
+              <div class="terms-matrix-grid">
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Starting Price</span>
+                  <span class="matrix-cell-value">15,000,000 EGP</span>
+                  <span class="matrix-cell-sub">Starting Rate</span>
+                </div>
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Down Payment</span>
+                  <span class="matrix-cell-value">5%</span>
+                  <span class="matrix-cell-sub">Immediate Reservation</span>
+                </div>
+                <div class="matrix-cell cell-full">
+                  <span class="matrix-cell-label">Payment Plan</span>
+                  <span class="matrix-cell-value">8 Years</span>
+                  <span class="matrix-cell-sub">5% Down Payment | 8 Years Installments</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-highlights-box">
+              <span class="highlights-label">Key Highlights</span>
+              <p class="highlights-text">Integrated city living, central green parks, and premium entertainment facilities.</p>
+            </div>
+
+            <div class="project-actions-block">
+              <a 
+                href="https://wa.me/201277752731?text=Hello%2C%20I%20am%20inquiring%20about%20Mountain%20View%20iCity" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-whatsapp-solid">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+                </svg>
+                <span>INQUIRE ON WHATSAPP</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SECTION 3: MOUNTAIN VIEW HYDE PARK -->
+        <article class="editorial-project-row" id="mountain-view-hyde-park">
+          <div class="project-visual-column">
+            <div class="project-image-frame">
+              <img 
+                src="/images/mountain-view/mv-hydepark.webp" 
+                alt="Mountain View Hyde Park New Cairo" 
+                loading="lazy" 
+              />
+              <div class="floating-payment-tag">
+                <span class="tag-accent">7 YEARS PLAN</span>
+                <span class="tag-plan">15% Down Payment • 7 Years Installments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-column">
+            <div class="project-meta-header">
+              <span class="project-index-number">03 / 05</span>
+              <span class="project-location-badge">New Cairo (200-Acre Masterpiece)</span>
+            </div>
+
+            <!-- Official Project Logo as Prominent Section Heading -->
+            <div class="project-logo-heading-wrap">
+              <img 
+                src="/images/mountain-view/logo-mv-official-black.png" 
+                alt="Mountain View Hyde Park Official Crest" 
+                class="project-hero-logo logo-mv-official"
+                loading="lazy" 
+              />
+            </div>
+
+            <h3 class="project-title-editorial">Mountain View Hyde Park</h3>
+            <p class="project-subtitle-editorial">Signature i-Villas in a 200-Acre Masterpiece</p>
+
+            <div class="project-terms-matrix">
+              <div class="terms-matrix-grid">
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Starting Price</span>
+                  <span class="matrix-cell-value">28,000,000 EGP</span>
+                  <span class="matrix-cell-sub">Starting Rate</span>
+                </div>
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Down Payment</span>
+                  <span class="matrix-cell-value">15%</span>
+                  <span class="matrix-cell-sub">Immediate Reservation</span>
+                </div>
+                <div class="matrix-cell cell-full">
+                  <span class="matrix-cell-label">Payment Plan</span>
+                  <span class="matrix-cell-value">7 Years</span>
+                  <span class="matrix-cell-sub">15% Down Payment | 7 Years Installments</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-highlights-box">
+              <span class="highlights-label">Key Highlights</span>
+              <p class="highlights-text">Expansive masterplan featuring signature i-Villas.</p>
+            </div>
+
+            <div class="project-actions-block">
+              <a 
+                href="https://wa.me/201277752731?text=Hello%2C%20I%20am%20inquiring%20about%20Mountain%20View%20Hyde%20Park" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-whatsapp-solid">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+                </svg>
+                <span>INQUIRE ON WHATSAPP</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SECTION 4: ALIVA (MOSTAKBAL CITY) -->
+        <article class="editorial-project-row row-inverted" id="aliva">
+          <div class="project-visual-column">
+            <div class="project-image-frame">
+              <img 
+                src="/images/mountain-view/mv-aliva.webp" 
+                alt="ALIVA Mostakbal City by Mountain View" 
+                loading="lazy" 
+              />
+              <div class="floating-payment-tag">
+                <span class="tag-accent">12 YEARS PLAN</span>
+                <span class="tag-plan">5% Down Payment • 12 Years Installments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-column">
+            <div class="project-meta-header">
+              <span class="project-index-number">04 / 05</span>
+              <span class="project-location-badge">Mostakbal City</span>
+            </div>
+
+            <!-- Official Project Logo as Prominent Section Heading -->
+            <div class="project-logo-heading-wrap">
+              <img 
+                src="/images/mountain-view/logo-mv-aliva.png" 
+                alt="ALIVA Official Logo" 
+                class="project-hero-logo logo-aliva"
+                loading="lazy" 
+              />
+            </div>
+
+            <h3 class="project-title-editorial">ALIVA</h3>
+            <p class="project-subtitle-editorial">Experience-Based Metropolis in Mostakbal City</p>
+
+            <div class="project-terms-matrix">
+              <div class="terms-matrix-grid">
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Starting Price</span>
+                  <span class="matrix-cell-value">12,000,000 EGP</span>
+                  <span class="matrix-cell-sub">Starting Rate</span>
+                </div>
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Down Payment</span>
+                  <span class="matrix-cell-value">5%</span>
+                  <span class="matrix-cell-sub">Immediate Reservation</span>
+                </div>
+                <div class="matrix-cell cell-full">
+                  <span class="matrix-cell-label">Payment Plan</span>
+                  <span class="matrix-cell-value">12 Years</span>
+                  <span class="matrix-cell-sub">5% Down Payment | 12 Years Installments</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-highlights-box">
+              <span class="highlights-label">Key Highlights</span>
+              <p class="highlights-text">Integrated living zones interconnected by lush green corridors.</p>
+            </div>
+
+            <div class="project-actions-block">
+              <a 
+                href="https://wa.me/201277752731?text=Hello%2C%20I%20am%20inquiring%20about%20ALIVA%20by%20Mountain%20View" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-whatsapp-solid">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+                </svg>
+                <span>INQUIRE ON WHATSAPP</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SECTION 5: MOUNTAIN VIEW GRAND VALLEYS -->
+        <article class="editorial-project-row" id="mountain-view-grand-valleys">
+          <div class="project-visual-column">
+            <div class="project-image-frame">
+              <img 
+                src="/images/mountain-view/mv-grand-valleys.webp" 
+                alt="Mountain View Grand Valleys" 
+                loading="lazy" 
+              />
+              <div class="floating-payment-tag">
+                <span class="tag-accent">10 YEARS PLAN</span>
+                <span class="tag-plan">5% Down Payment • 10 Years Installments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-column">
+            <div class="project-meta-header">
+              <span class="project-index-number">05 / 05</span>
+              <span class="project-location-badge">South 90th / New Cairo</span>
+            </div>
+
+            <!-- Official Project Logo as Prominent Section Heading -->
+            <div class="project-logo-heading-wrap">
+              <img 
+                src="/images/mountain-view/logo-mv-official-black.png" 
+                alt="Mountain View Grand Valleys Official Crest" 
+                class="project-hero-logo logo-mv-official"
+                loading="lazy" 
+              />
+            </div>
+
+            <h3 class="project-title-editorial">Mountain View Grand Valleys</h3>
+            <p class="project-subtitle-editorial">Private Natural Valleys Sanctuary</p>
+
+            <div class="project-terms-matrix">
+              <div class="terms-matrix-grid">
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Starting Price</span>
+                  <span class="matrix-cell-value">30,400,000 EGP</span>
+                  <span class="matrix-cell-sub">Starting Rate</span>
+                </div>
+                <div class="matrix-cell">
+                  <span class="matrix-cell-label">Down Payment</span>
+                  <span class="matrix-cell-value">5%</span>
+                  <span class="matrix-cell-sub">Immediate Reservation</span>
+                </div>
+                <div class="matrix-cell cell-full">
+                  <span class="matrix-cell-label">Payment Plan</span>
+                  <span class="matrix-cell-value">10 Years</span>
+                  <span class="matrix-cell-sub">5% Down Payment | 10 Years Installments</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-highlights-box">
+              <span class="highlights-label">Key Highlights</span>
+              <p class="highlights-text">Highly private, spacious residential units surrounded by breathtaking natural landscapes.</p>
+            </div>
+
+            <div class="project-actions-block">
+              <a 
+                href="https://wa.me/201277752731?text=Hello%2C%20I%20am%20inquiring%20about%20Mountain%20View%20Grand%20Valleys" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-whatsapp-solid">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+                </svg>
+                <span>INQUIRE ON WHATSAPP</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- =========================================================================
+         3. WHY IR-PROPERTIES CONSULTANCY (INDEPENDENT ADVISORY PILLARS)
+         ========================================================================= -->
+    <section class="why-consultancy-section">
+      <div class="container">
+        
+        <div class="section-editorial-intro">
+          <span class="editorial-kicker">STRATEGIC ADVANTAGE</span>
+          <h2 class="editorial-section-title">Why Consult ir-properties</h2>
+          <p class="editorial-section-desc">
+            We deliver fiduciary real estate consultancy designed exclusively around your capital objectives, risk preferences, and portfolio returns.
+          </p>
+        </div>
+
+        <div class="why-pillars-grid">
+          <div class="why-pillar-card">
+            <div class="pillar-numeric-index">01</div>
+            <h3 class="pillar-headline">Impartial Developer Evaluation</h3>
+            <p class="pillar-body-text">
+              We provide unbiased financial and architectural analysis of master developments across Egypt. Our advisors assess construction velocity, delivery track records, and capital appreciation potential before recommending any allocation.
+            </p>
+          </div>
+
+          <div class="why-pillar-card">
+            <div class="pillar-numeric-index">02</div>
+            <h3 class="pillar-headline">Custom Financial Structuring</h3>
+            <p class="pillar-body-text">
+              Our senior advisors negotiate directly for prime corner exposures, preferred view corridors, and payment structures tailored to your capital distribution timeline.
+            </p>
+          </div>
+
+          <div class="why-pillar-card">
+            <div class="pillar-numeric-index">03</div>
+            <h3 class="pillar-headline">Zero Buyer Advisory Fees</h3>
+            <p class="pillar-body-text">
+              Experience world-class real estate consultancy without paying agency or intermediary fees. Our consultancy services are 100% complimentary to discerning private buyers.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-cta-center">
+          <a 
+            href="https://wa.me/201277752731?text=Hello%2C%20I%20would%20like%20to%20talk%20to%20an%20independent%20expert%20about%20Mountain%20View%20projects" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-whatsapp-solid">
+            <svg viewBox="0 0 24 24">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+            </svg>
+            <span>TALK TO AN INDEPENDENT ADVISOR</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. TECHNICAL FOOTER & COMPLIANCE
+         ========================================================================= -->
+    <footer class="site-editorial-footer">
+      <div class="container footer-inner-content">
+
+        <img 
+          src="/images/mountain-view/logo-mv-official-black.png" 
+          alt="Mountain View Official Crest" 
+          class="footer-brand-logo-xl"
+        />
+
+        <div class="footer-signature-bar">
+          By ir-properties
+        </div>
+
+        <div class="footer-consultancy-positioning">
+          Independent Real Estate Consultancy
+        </div>
+
+        <p class="footer-compliance-text">
+          This landing page is presented by <strong>ir-properties</strong>, an Independent Real Estate Consultancy. It is not an official direct web property of Mountain View. All trademarks, project designations, and architectural visualizations belong to their respective developers. Displayed prices, terms, and inventory availability are subject to official developer verification and market change without notice.
+        </p>
+
+        <div class="footer-legal-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span>•</span>
+          <a href="/terms-conditions">Terms & Conditions</a>
+        </div>
+
+        <div class="footer-copyright">
+          © 2026 ir-properties – Independent Real Estate Consultancy. All Rights Reserved.
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- =========================================================================
+         5. FLOATING WHATSAPP BUTTON (ROUND GREEN ICON ONLY #25D366)
+         ========================================================================= -->
+    <a 
+      href="https://wa.me/201277752731?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20the%20Mountain%20View%20Portfolio" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="floating-whatsapp-trigger" 
+      aria-label="Direct WhatsApp Consultation">
+      <div class="whatsapp-pulse-ring"></div>
+      <svg viewBox="0 0 24 24">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+      </svg>
+    </a>
+
+    <!-- =========================================================================
+         6. SUCCESS CONFIRMATION MODAL UI (EXACT REQUIREMENTS)
+         ========================================================================= -->
+    <div class="success-modal-overlay" id="successModalOverlay" role="dialog" aria-modal="true">
+      <div class="success-modal-window">
+        <div class="modal-icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+
+        <h3 class="modal-title-editorial">Interest Confirmed</h3>
+
+        <p class="modal-body-editorial" id="modalConfirmationText">
+          Thank you <span id="modalClientName"></span>! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability.
+        </p>
+
+        <div class="modal-actions-stack">
+          <a 
+            href="https://wa.me/201277752731?text=Hello%20I%20have%20just%20submitted%20my%20inquiry%20for%20Mountain%20View" 
+            id="modalWhatsappAction" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-whatsapp-solid">
+            <svg viewBox="0 0 24 24">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+            </svg>
+            <span>CHAT ON WHATSAPP</span>
+          </a>
+          <button type="button" id="modalCloseButton" class="modal-close-quiet">
+            Close Window
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script src="./mountain-view.js"></script>
+</body>
+</html>
