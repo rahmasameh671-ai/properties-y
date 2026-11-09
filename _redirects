@@ -1,7 +1,6 @@
-# Static redirects & rewrites for properties-y.com
-/privacy-policy     /privacy-policy.html     200
-/terms-conditions   /terms-conditions.html   200
-
-# Mountain View Exclusive Portfolio Route (Exact slug: /mountain-view)
-/mountain-view      /mountain-view/index.html 200
-/mountain-view/     /mountain-view/index.html 200
+# Canonical 301 redirects to clean URLs (No circular rewrites)
+/mountain-view/     /mountain-view     301
+/mountainview       /mountain-view     301
+/mountainview/      /mountain-view     301
+/privacy-policy/    /privacy-policy    301
+/terms-conditions/  /terms-conditions  301
