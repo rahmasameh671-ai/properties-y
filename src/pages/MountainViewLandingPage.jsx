@@ -193,11 +193,11 @@ export default function MountainViewLandingPage() {
               </div>
               <div className="term-highlight-card">
                 <span className="term-stat-number">Ready to Move</span>
-                <span className="term-stat-label">Immediate Delivery (استلام فوري)</span>
+                <span className="term-stat-label">Immediate Delivery</span>
               </div>
               <div className="term-highlight-card">
                 <span className="term-stat-number">Fully Finished</span>
-                <span className="term-stat-label">Turnkey Units (متشطب)</span>
+                <span className="term-stat-label">Turnkey Residences</span>
               </div>
               <div className="term-highlight-card">
                 <span className="term-stat-number">7 Years</span>
