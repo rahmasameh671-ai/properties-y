@@ -188,7 +188,7 @@ export default function MountainViewLandingPage() {
             {/* Simplified & Refined Offer Terms (4 Core Highlights) */}
             <div className="hero-terms-highlights">
               <div className="term-highlight-card">
-                <span className="term-stat-number">14.5M EGP</span>
+                <span className="term-stat-number">15.9M EGP</span>
                 <span className="term-stat-label">Starting Price</span>
               </div>
               <div className="term-highlight-card">
@@ -406,7 +406,7 @@ export default function MountainViewLandingPage() {
                 <div className="terms-matrix-grid">
                   <div className="matrix-cell">
                     <span className="matrix-cell-label">Starting Price</span>
-                    <span className="matrix-cell-value">14,500,000 EGP</span>
+                    <span className="matrix-cell-value">15,900,000 EGP</span>
                     <span className="matrix-cell-sub">Starting Rate</span>
                   </div>
                   <div className="matrix-cell">
@@ -478,7 +478,7 @@ export default function MountainViewLandingPage() {
                 <div className="terms-matrix-grid">
                   <div className="matrix-cell">
                     <span className="matrix-cell-label">Starting Price</span>
-                    <span className="matrix-cell-value">15,000,000 EGP</span>
+                    <span className="matrix-cell-value">10,500,000 EGP</span>
                     <span className="matrix-cell-sub">Starting Rate</span>
                   </div>
                   <div className="matrix-cell">
@@ -694,7 +694,7 @@ export default function MountainViewLandingPage() {
                 <div className="terms-matrix-grid">
                   <div className="matrix-cell">
                     <span className="matrix-cell-label">Starting Price</span>
-                    <span className="matrix-cell-value">30,400,000 EGP</span>
+                    <span className="matrix-cell-value">30,000,000 EGP</span>
                     <span className="matrix-cell-sub">Starting Rate</span>
                   </div>
                   <div className="matrix-cell">
