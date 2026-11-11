@@ -66,6 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
+      // Dispatch to Zapier Webhook (Lead Integration)
+      try {
+        fetch("https://hooks.zapier.com/hooks/catch/25429357/uclzmpn/", {
+          method: "POST",
+          body: JSON.stringify({
+            fullName: fullName,
+            phoneNumber: `${countryCode} ${phoneNumber}`.trim(),
+            landingPageUrl: window.location.href,
+            submissionDate: new Date().toISOString()
+          })
+        }).catch(err => console.warn("Zapier notice:", err));
+      } catch (err) {
+        console.warn("Zapier webhook transmission notice:", err);
+      }
+
       // Populate Success Modal Paragraph Text exactly as specified:
       // "Thank you {name}! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability."
       // (Ensure no brand names are in this specific text block)

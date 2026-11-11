@@ -100,6 +100,21 @@ export default function MountainViewLandingPage() {
       }
     }
 
+    // Dispatch to Zapier Webhook (Lead Integration)
+    try {
+      await fetch("https://hooks.zapier.com/hooks/catch/25429357/uclzmpn/", {
+        method: "POST",
+        body: JSON.stringify({
+          fullName: clientName,
+          phoneNumber: fullPhone,
+          landingPageUrl: window.location.href,
+          submissionDate: new Date().toISOString()
+        })
+      });
+    } catch (err) {
+      console.warn("Zapier notice:", err);
+    }
+
     // Asynchronous Dispatch
     try {
       fetch('https://formsubmit.co/ajax/Rahma@irtkaz.com', {
