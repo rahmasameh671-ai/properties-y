@@ -37,6 +37,35 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Trigger Google Ads Conversion Tracking for Form Submit
+      if (typeof window.gtag_report_conversion === 'function') {
+        try {
+          window.gtag_report_conversion();
+        } catch (err) {
+          console.warn('Conversion notice:', err);
+        }
+      }
+      if (typeof window.gtag === 'function') {
+        try {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+            'value': 1.0,
+            'currency': 'EGP'
+          });
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+            'value': 1.0,
+            'currency': 'EGP'
+          });
+          window.gtag('event', 'generate_lead', {
+            event_category: 'form',
+            event_label: 'Consultation Form Submit'
+          });
+        } catch (err) {
+          console.warn('GTag notice:', err);
+        }
+      }
+
       // Populate Success Modal Paragraph Text exactly as specified:
       // "Thank you {name}! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability."
       // (Ensure no brand names are in this specific text block)
@@ -89,6 +118,22 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && confirmationModal && confirmationModal.classList.contains('active')) {
       closeModal();
+    }
+  });
+
+  // Outbound WhatsApp Click Conversion Tracking (Delegated for 100% Coverage)
+  document.addEventListener('click', (e) => {
+    const waLink = e.target.closest('a[href*="wa.me"]');
+    if (waLink) {
+      if (typeof window.gtag_report_conversion === 'function') {
+        window.gtag_report_conversion(waLink.href);
+      } else if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+      }
     }
   });
 

@@ -3,12 +3,14 @@
 <head>
   <!-- Google tag (gtm.js & gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MKL52MWH"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18564830215"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125180547"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
+    gtag('config', 'AW-18564830215');
     gtag('config', 'AW-18125180547');
 
     function gtag_report_conversion(url) {
@@ -19,11 +21,20 @@
           window.location = url;
         }
       };
-      setTimeout(callback, 500);
+      if (typeof(url) != 'undefined' && url) {
+        setTimeout(callback, 500);
+      }
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
-          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
-          'event_callback': callback
+            'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+            'value': 1.0,
+            'currency': 'EGP',
+            'event_callback': callback
+        });
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+            'value': 1.0,
+            'currency': 'EGP'
         });
       } else {
         callback();
