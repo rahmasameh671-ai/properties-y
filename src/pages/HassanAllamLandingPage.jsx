@@ -4,7 +4,7 @@ import '../../hassan-allam.css';
 /**
  * Hassan Allam Properties Portfolio Landing Page Component
  * Route: /hassan-allam strictly under properties-y.com domain architecture
- * Final Live URL: https://properties-y.com/hassan-allam
+ * Final Live URL: https://properties-y.com/hassan-allam/
  * Branding: 'By properties-y' | Independent Real Estate Consultancy
  * Aesthetic: Avant-Garde Editorial Luxury (High-Fashion Magazine meets Real Estate)
  * Color Palette: Strictly Midnight & Porcelain (ZERO Gold, ZERO Bronze, ZERO Yellow)
@@ -60,7 +60,7 @@ export default function HassanAllamLandingPage() {
       c.code.toLowerCase().includes(searchQuery.toLowerCase().trim())
   );
 
-  // Form Submission
+  // Form Submission Handler
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
@@ -123,7 +123,7 @@ export default function HassanAllamLandingPage() {
           fullName: clientName,
           phoneNumber: fullPhone,
           portfolio: 'Hassan Allam Properties',
-          landingPageUrl: typeof window !== 'undefined' ? window.location.href : 'https://properties-y.com/hassan-allam',
+          landingPageUrl: typeof window !== 'undefined' ? window.location.href : 'https://properties-y.com/hassan-allam/',
           submissionDate: new Date().toISOString()
         })
       });
@@ -162,7 +162,7 @@ export default function HassanAllamLandingPage() {
       try {
         window.open(modalWhatsappLink, '_blank', 'noopener,noreferrer');
       } catch {
-        // Fallback provided via modal CTA
+        // Handled via modal CTA
       }
 
       setFullName('');
@@ -200,7 +200,8 @@ export default function HassanAllamLandingPage() {
             <a href="#the-valleys">02 The Valleys</a>
             <a href="#xchange">03 Xchange</a>
             <a href="#swanlake-residence">04 Swanlake Residence</a>
-            <a href="#encore-elgouna">05 Encore El Gouna</a>
+            <a href="#ampm">05 AM:PM</a>
+            <a href="#encore-elgouna">06 Encore El Gouna</a>
           </nav>
 
           <a
@@ -244,7 +245,7 @@ export default function HassanAllamLandingPage() {
             </h1>
 
             <p className="hero-lead-narrative">
-              An avant-garde exploration of Egypt’s premier residential and executive addresses. From Mostakbal City’s Park Central, The Valleys, and Xchange, to the crown of New Cairo at Swanlake Residence and coastal sanctuary at Encore El Gouna. Presented with absolute objectivity by properties-y, Independent Real Estate Consultancy.
+              An avant-garde exploration of Egypt’s premier residential and executive addresses. From Mostakbal City’s Park Central, The Valleys, and Xchange, to the crown of New Cairo at Swanlake Residence, corporate prestige at AM:PM, and coastal sanctuary at Encore El Gouna. Presented with absolute objectivity by properties-y, Independent Real Estate Consultancy.
             </p>
 
             <div className="hero-action-cluster">
@@ -406,7 +407,7 @@ export default function HassanAllamLandingPage() {
           </div>
           <div className="curator-fast-facts">
             <div className="fact-item">
-              <span className="fact-num">5</span>
+              <span className="fact-num">6</span>
               <span className="fact-label">Flagships</span>
             </div>
             <div className="fact-item">
@@ -430,13 +431,14 @@ export default function HassanAllamLandingPage() {
         <div className="container block-inner-relative">
           <div className="editorial-section-header">
             <div className="header-left-cluster">
-              <span className="section-editorial-num">COLLECTION 01 / 05</span>
+              <span className="section-editorial-num">COLLECTION 01 / 06</span>
               <h2 className="section-project-title">Park Central</h2>
-              <span className="section-location-tag">Mostakbal City • East Cairo Central Park Living</span>
+              <span className="section-location-tag">Mostakbal City • East Cairo Central Park Living • 4 Years Delivery</span>
             </div>
             <div className="header-badge-pills">
               <span className="editorial-badge badge-charcoal">FULLY FINISHED</span>
-              <span className="editorial-badge badge-outline">5 TO 10 YR PLANS</span>
+              <span className="editorial-badge badge-subtle">4 YRS DELIVERY</span>
+              <span className="editorial-badge badge-outline">10% OVER 5 YRS</span>
             </div>
           </div>
 
@@ -457,14 +459,14 @@ export default function HassanAllamLandingPage() {
               {/* Villas Card */}
               <div className="specs-editorial-card">
                 <div className="card-category-kicker">
-                  <span>Villas Collection</span>
+                  <span>Villas Collection • 4 Years Delivery</span>
                   <span className="finish-tag">Fully Finished</span>
                 </div>
                 <div className="unit-spec-rows">
                   <div className="unit-spec-row">
                     <div>
                       <div className="unit-type-name">Townhouses</div>
-                      <div className="unit-dimension-sub">195 – 200 sqm</div>
+                      <div className="unit-dimension-sub">195 – 200 sqm • Delivery in 4 years</div>
                     </div>
                     <div className="unit-price-metric">
                       <span className="price-main-number">20M – 22.5M</span>
@@ -475,7 +477,7 @@ export default function HassanAllamLandingPage() {
                   <div className="unit-spec-row">
                     <div>
                       <div className="unit-type-name">Twin Houses</div>
-                      <div className="unit-dimension-sub">210 sqm</div>
+                      <div className="unit-dimension-sub">210 sqm • Delivery in 4 years</div>
                     </div>
                     <div className="unit-price-metric">
                       <span className="price-main-number">from 25.2M</span>
@@ -486,7 +488,7 @@ export default function HassanAllamLandingPage() {
                   <div className="unit-spec-row">
                     <div>
                       <div className="unit-type-name">One-Story Villas</div>
-                      <div className="unit-dimension-sub">210 – 275 sqm</div>
+                      <div className="unit-dimension-sub">210 – 275 sqm • Delivery in 4 years</div>
                     </div>
                     <div className="unit-price-metric">
                       <span className="price-main-number">52M – 75M</span>
@@ -499,14 +501,14 @@ export default function HassanAllamLandingPage() {
               {/* Apartments Card */}
               <div className="specs-editorial-card">
                 <div className="card-category-kicker">
-                  <span>Apartments & Duplexes</span>
+                  <span>Apartments & Duplexes • 4 Years Delivery</span>
                   <span className="finish-tag">Fully Finished</span>
                 </div>
                 <div className="unit-spec-rows">
                   <div className="unit-spec-row">
                     <div>
                       <div className="unit-type-name">1 to 3 Bedrooms</div>
-                      <div className="unit-dimension-sub">81 – 150 sqm</div>
+                      <div className="unit-dimension-sub">81 – 150 sqm • Delivery in 4 years</div>
                     </div>
                     <div className="unit-price-metric">
                       <span className="price-main-number">6.2M – 11.3M</span>
@@ -517,7 +519,7 @@ export default function HassanAllamLandingPage() {
                   <div className="unit-spec-row">
                     <div>
                       <div className="unit-type-name">Duplex Residences</div>
-                      <div className="unit-dimension-sub">253 sqm</div>
+                      <div className="unit-dimension-sub">253 sqm • Delivery in 4 years</div>
                     </div>
                     <div className="unit-price-metric">
                       <span className="price-main-number">from 20M</span>
@@ -532,7 +534,7 @@ export default function HassanAllamLandingPage() {
                 <div className="plan-info-left">
                   <span className="plan-kicker">EXCLUSIVE PAYMENT ARCHITECTURE</span>
                   <span className="plan-highlight">10% Down Payment Over 5 Years</span>
-                  <span className="plan-note">Extended 10-Year Payment Plan Available for Villas</span>
+                  <span className="plan-note">Extended 10-Year Payment Plan Available for Villas • 4 Years Delivery</span>
                 </div>
               </div>
 
@@ -561,14 +563,14 @@ export default function HassanAllamLandingPage() {
         <div className="container block-inner-relative">
           <div className="editorial-section-header">
             <div className="header-left-cluster">
-              <span className="section-editorial-num">COLLECTION 02 / 05</span>
+              <span className="section-editorial-num">COLLECTION 02 / 06</span>
               <h2 className="section-project-title">The Valleys</h2>
-              <span className="section-location-tag">Mostakbal City • Pure Villas Enclave</span>
+              <span className="section-location-tag">Mostakbal City • Pure Villas Enclave • 2 Years Delivery</span>
             </div>
             <div className="header-badge-pills">
               <span className="editorial-badge badge-charcoal">VILLAS ONLY</span>
               <span className="editorial-badge badge-subtle">2 YEARS DELIVERY</span>
-              <span className="editorial-badge badge-outline">5% OVER 9 YEARS</span>
+              <span className="editorial-badge badge-outline">5% + 5% / 9 YRS</span>
             </div>
           </div>
 
@@ -627,7 +629,7 @@ export default function HassanAllamLandingPage() {
               <div className="payment-plan-editorial-box">
                 <div className="plan-info-left">
                   <span className="plan-kicker">FINANCIAL FRAMEWORK</span>
-                  <span className="plan-highlight">5% Down Payment Over 9 Years</span>
+                  <span className="plan-highlight">5% + 5% after 3 months over 9 years</span>
                   <span className="plan-note">Fully Finished Delivery within 2 Years</span>
                 </div>
               </div>
@@ -657,14 +659,14 @@ export default function HassanAllamLandingPage() {
         <div className="container block-inner-relative">
           <div className="editorial-section-header">
             <div className="header-left-cluster">
-              <span className="section-editorial-num">COLLECTION 03 / 05</span>
+              <span className="section-editorial-num">COLLECTION 03 / 06</span>
               <h2 className="section-project-title">Xchange</h2>
               <span className="section-location-tag">Mostakbal City • Executive Commercial & Office Destination</span>
             </div>
             <div className="header-badge-pills">
               <span className="editorial-badge badge-charcoal">COMMERCIAL ASSET</span>
               <span className="editorial-badge badge-subtle">CORE & SHELL</span>
-              <span className="editorial-badge badge-outline">5% OVER 9 YEARS</span>
+              <span className="editorial-badge badge-outline">5% + 5% / 9 YRS</span>
             </div>
           </div>
 
@@ -699,15 +701,15 @@ export default function HassanAllamLandingPage() {
                 <div className="xchange-metric-box">
                   <span className="metric-box-label">FINANCING TERM</span>
                   <span className="metric-box-value">9 Years</span>
-                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-body)', marginTop: '4px' }}>5% Down Payment</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-body)', marginTop: '4px' }}>5% + 5% after 3 mos</div>
                 </div>
               </div>
 
               <div className="payment-plan-editorial-box">
                 <div className="plan-info-left">
                   <span className="plan-kicker">COMMERCIAL PAYMENT SCHEME</span>
-                  <span className="plan-highlight">5% Down Payment • 9 Years Installments</span>
-                  <span className="plan-note">Exceptional capital appreciation & projected rental yields</span>
+                  <span className="plan-highlight">5% + 5% after 3 months over 9 years</span>
+                  <span className="plan-note">Core & Shell Delivery in 4 Years</span>
                 </div>
               </div>
 
@@ -735,7 +737,7 @@ export default function HassanAllamLandingPage() {
                   <h4>Xchange Business District</h4>
                   <p>Offices 39 – 155 sqm • Core & Shell</p>
                 </div>
-                <span className="overlay-plan-tag">5% / 9 YRS</span>
+                <span className="overlay-plan-tag">5% + 5% / 9 YRS</span>
               </div>
             </div>
           </div>
@@ -751,14 +753,14 @@ export default function HassanAllamLandingPage() {
         <div className="container block-inner-relative">
           <div className="editorial-section-header">
             <div className="header-left-cluster">
-              <span className="section-editorial-num">COLLECTION 04 / 05</span>
+              <span className="section-editorial-num">COLLECTION 04 / 06</span>
               <h2 className="section-project-title">Swanlake Residence</h2>
               <span className="section-location-tag">First Settlement • New Cairo Trophy Estate Community</span>
             </div>
             <div className="header-badge-pills">
               <span className="editorial-badge badge-charcoal">TROPHY ASSET</span>
               <span className="editorial-badge badge-subtle">READY TO MOVE VILLAS</span>
-              <span className="editorial-badge badge-outline">UP TO 10 YR PLANS</span>
+              <span className="editorial-badge badge-outline">5% + 5% / 10 YRS</span>
             </div>
           </div>
 
@@ -793,7 +795,7 @@ export default function HassanAllamLandingPage() {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span><strong>Fully Finished</strong> with luxury specifications</span>
+                    <span><strong>Fully Finished</strong> luxury specifications</span>
                   </li>
                   <li>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -805,7 +807,7 @@ export default function HassanAllamLandingPage() {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span><strong>5% Down Payment</strong> over 10 Years</span>
+                    <span><strong>5% + 5% after 3 months</strong> over 10 Years</span>
                   </li>
                 </ul>
               </div>
@@ -843,7 +845,7 @@ export default function HassanAllamLandingPage() {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span><strong>7 Years</strong> structured installments</span>
+                    <span><strong>3 Years Delivery</strong> • 7 Years installments</span>
                   </li>
                 </ul>
               </div>
@@ -875,13 +877,13 @@ export default function HassanAllamLandingPage() {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span><strong>Immediate Handover:</strong> on select standalone estates</span>
+                    <span><strong>Core & Shell:</strong> authentic architectural canvas</span>
                   </li>
                   <li>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span><strong>Premier Private Acreage</strong> and club privileges</span>
+                    <span><strong>Immediate Handover:</strong> on select standalone estates</span>
                   </li>
                 </ul>
               </div>
@@ -907,15 +909,105 @@ export default function HassanAllamLandingPage() {
       </section>
 
       {/* =========================================================================
-           SECTION 5: ENCORE SWANLAKE (El Gouna, Red Sea)
+           SECTION 5: AM:PM (New Cairo - Commercial)
            ========================================================================= */}
-      <section className="editorial-project-block block-pure-white" id="encore-elgouna">
+      <section className="editorial-project-block block-pure-white" id="ampm">
+        <div className="block-watermark-text">AM:PM</div>
+
+        <div className="container block-inner-relative">
+          <div className="editorial-section-header">
+            <div className="header-left-cluster">
+              <span className="section-editorial-num">COLLECTION 05 / 06</span>
+              <h2 className="section-project-title">AM:PM</h2>
+              <span className="section-location-tag">New Cairo • Prime Commercial & Corporate Suites • 1 Year Delivery</span>
+            </div>
+            <div className="header-badge-pills">
+              <span className="editorial-badge badge-charcoal">CORPORATE FLAGSHIP</span>
+              <span className="editorial-badge badge-subtle">1 YR DELIVERY</span>
+              <span className="editorial-badge badge-outline">5% + 5% / 7 YRS</span>
+            </div>
+          </div>
+
+          <div className="ampm-asymmetry">
+            <div className="ampm-visual-card">
+              <img
+                src="/images/hassan-allam/ampm-commercial.jpg"
+                alt="AM:PM New Cairo Commercial Development"
+                loading="lazy"
+              />
+              <div className="ampm-floating-badge">
+                NEW CAIRO BUSINESS GATEWAY • 1 YR DELIVERY
+              </div>
+            </div>
+
+            <div className="ampm-info-column">
+              <h3 className="ampm-headline-lead">
+                A Strategic Commercial Address in the Heart of New Cairo
+              </h3>
+              <p className="ampm-description-body">
+                Engineered for prominent corporate headquarters, financial institutions, and medical practices. AM:PM provides expansive, highly adaptable office plates delivered in core & shell specification with rapid 1-year delivery.
+              </p>
+
+              <div className="ampm-metrics-grid">
+                <div className="ampm-metric-item">
+                  <span className="ampm-metric-label">ENTRY OFFICES</span>
+                  <span className="ampm-metric-val">141 sqm</span>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-body)', marginTop: '4px' }}>from 40M EGP</div>
+                </div>
+
+                <div className="ampm-metric-item">
+                  <span className="ampm-metric-label">HEADQUARTERS</span>
+                  <span className="ampm-metric-val">Up to 497 sqm</span>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-body)', marginTop: '4px' }}>up to 142M EGP</div>
+                </div>
+
+                <div className="ampm-metric-item">
+                  <span className="ampm-metric-label">FINISH LEVEL</span>
+                  <span className="ampm-metric-val">Core & Shell</span>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-body)', marginTop: '4px' }}>Bespoke Fit-out Canvas</div>
+                </div>
+
+                <div className="ampm-metric-item">
+                  <span className="ampm-metric-label">DELIVERY HORIZON</span>
+                  <span className="ampm-metric-val">1 Year</span>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-body)', marginTop: '4px' }}>Rapid Handover Status</div>
+                </div>
+              </div>
+
+              <div className="payment-plan-editorial-box">
+                <div className="plan-info-left">
+                  <span className="plan-kicker">COMMERCIAL STRUCTURE</span>
+                  <span className="plan-highlight">5% + 5% after 3 months over 7 years</span>
+                  <span className="plan-note">Fast-track delivery within 12 months • Prime East Cairo positioning</span>
+                </div>
+              </div>
+
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20chat%20about%20AM:PM%20Commercial%20Offices.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-editorial-wa"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
+                </svg>
+                <span>Chat about AM:PM</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+           SECTION 6: ENCORE SWANLAKE (El Gouna, Red Sea)
+           ========================================================================= */}
+      <section className="editorial-project-block block-subtle-grey" id="encore-elgouna">
         <div className="block-watermark-text">EL GOUNA</div>
 
         <div className="container block-inner-relative">
           <div className="editorial-section-header">
             <div className="header-left-cluster">
-              <span className="section-editorial-num">COLLECTION 05 / 05</span>
+              <span className="section-editorial-num">COLLECTION 06 / 06</span>
               <h2 className="section-project-title">Encore Swanlake</h2>
               <span className="section-location-tag">El Gouna • Red Sea Coastal Waterfront Sanctuary</span>
             </div>
@@ -958,7 +1050,7 @@ export default function HassanAllamLandingPage() {
                   <div className="unit-spec-row">
                     <div>
                       <div className="unit-type-name">2 to 4 Bedroom Chalets</div>
-                      <div className="unit-dimension-sub">Lagoon terraces with pristine water views</div>
+                      <div className="unit-dimension-sub">Lagoon terraces with pristine water views • Deliveries in 1 to 2 years</div>
                     </div>
                     <div className="unit-price-metric">
                       <span className="price-main-number">25.6M – 40.4M</span>
@@ -969,7 +1061,7 @@ export default function HassanAllamLandingPage() {
                   <div className="unit-spec-row">
                     <div>
                       <div className="unit-type-name">Lagoon Duplexes</div>
-                      <div className="unit-dimension-sub">Double-height architectural living</div>
+                      <div className="unit-dimension-sub">Double-height architectural living • Deliveries in 1 to 2 years</div>
                     </div>
                     <div className="unit-price-metric">
                       <span className="price-main-number">Full Specs</span>
@@ -1050,6 +1142,7 @@ export default function HassanAllamLandingPage() {
                 <li><a href="#the-valleys">The Valleys Mostakbal City</a></li>
                 <li><a href="#xchange">Xchange Commercial Offices</a></li>
                 <li><a href="#swanlake-residence">Swanlake Residence New Cairo</a></li>
+                <li><a href="#ampm">AM:PM Commercial New Cairo</a></li>
                 <li><a href="#encore-elgouna">Encore Swanlake El Gouna</a></li>
               </ul>
             </div>
