@@ -6,7 +6,7 @@ import '../../hassan-allam.css';
  * Route: /hassan-allam/ strictly under properties-y.com domain architecture
  * Final Live URL: https://properties-y.com/hassan-allam/
  * Branding: 'By properties-y' | Independent Real Estate Consultancy
- * Aesthetic: Minimalist, Simple & Elegant Sans-Serif (Zero Gold Policy)
+ * Aesthetic: Modern Ultra-Luxury (Apple sleekness / Aman Resorts aesthetic)
  * Global WhatsApp: +201277752731 (Solid Vibrant Green #25D366, min 48px tap height)
  */
 
@@ -53,7 +53,7 @@ export default function HassanAllamLandingPage() {
   // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (!e.target.closest('.split-phone-wrap')) {
+      if (!e.target.closest('.phone-split-container')) {
         setIsDropdownOpen(false);
       }
     };
@@ -61,7 +61,7 @@ export default function HassanAllamLandingPage() {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
-  const modalWhatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20have%20just%20submitted%20my%20inquiry%20for%20Hassan%20Allam%20Properties%20portfolio%20and%20would%20like%20to%20receive%20the%20brochures%20and%20inventory.`;
+  const modalWhatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20have%20just%20submitted%20my%20inquiry%20for%20the%20Hassan%20Allam%20Properties%20portfolio%20and%20would%20like%20to%20receive%20the%20brochures%20and%20availability%20right%20away.`;
 
   const filteredCountries = COUNTRIES.filter(
     (c) =>
@@ -141,7 +141,7 @@ export default function HassanAllamLandingPage() {
       console.warn('Zapier notice:', err);
     }
 
-    // Email Dispatch (Backup)
+    // Backup Email Dispatch
     try {
       fetch('https://formsubmit.co/ajax/Rahma@irtkaz.com', {
         method: 'POST',
@@ -183,13 +183,13 @@ export default function HassanAllamLandingPage() {
   return (
     <div className="hap-page-wrapper">
       {/* =========================================================================
-           HEADER / BRAND BAR
+           1. SLEEK BRAND BAR / NAVIGATION
            ========================================================================= */}
-      <header className="hap-header-bar">
-        <div className="container header-inner">
-          <div className="brand-block">
-            <span className="brand-name">Hassan Allam Properties</span>
-            <span className="brand-consultancy">
+      <header className="hap-navbar">
+        <div className="container navbar-inner">
+          <div className="brand-identity">
+            <span className="brand-title">Hassan Allam Properties</span>
+            <span className="brand-tagline">
               By <strong>properties-y</strong> • Independent Real Estate Consultancy
             </span>
           </div>
@@ -198,7 +198,7 @@ export default function HassanAllamLandingPage() {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20am%20inquiring%20about%20the%20Hassan%20Allam%20Properties%20portfolio.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="header-wa-btn"
+            className="nav-contact-btn"
           >
             <svg viewBox="0 0 24 24">
               <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
@@ -209,49 +209,61 @@ export default function HassanAllamLandingPage() {
       </header>
 
       {/* =========================================================================
-           SIMPLIFIED HERO SECTION & CLEAR FORM
+           2. IMMERSIVE HERO SECTION WITH SLEEK FLOATING FORM CARD
            ========================================================================= */}
       <section className="hap-hero" id="hero">
-        <div className="container hero-grid">
-          {/* Hero Text (Extremely Brief) */}
-          <div className="hero-copy">
-            <span className="hero-badge">Curated Portfolio</span>
+        <div className="hero-bg-layer">
+          <img
+            src="/images/hassan-allam/hero-hap-cinematic.jpg"
+            alt="Hassan Allam Properties Ultra-Luxury Architecture"
+          />
+        </div>
+        <div className="hero-gradient-overlay" />
+
+        <div className="container hero-content-grid">
+          {/* Left Hero Narrative */}
+          <div className="hero-narrative">
+            <div className="hero-badge-pill">
+              <span className="hero-badge-dot" />
+              <span>Independent Real Estate Consultancy</span>
+            </div>
+
             <h1 className="hero-title">Hassan Allam Properties</h1>
             <p className="hero-subtitle">Discover the Exclusive Portfolio.</p>
 
-            <div className="hero-meta-summary">
-              <div className="hero-meta-item">
-                <span className="meta-item-val">5</span>
-                <span className="meta-item-lbl">Destinations</span>
+            <div className="hero-trust-row">
+              <div className="trust-item">
+                <span className="trust-val">4</span>
+                <span className="trust-lbl">Flagship Destinations</span>
               </div>
-              <div className="hero-meta-item">
-                <span className="meta-item-val">0%</span>
-                <span className="meta-item-lbl">Consultancy Fee</span>
+              <div className="trust-item">
+                <span className="trust-val">0%</span>
+                <span className="trust-lbl">Consultancy Fee</span>
               </div>
-              <div className="hero-meta-item">
-                <span className="meta-item-val">Up to 10 Yrs</span>
-                <span className="meta-item-lbl">Payment Plans</span>
+              <div className="trust-item">
+                <span className="trust-val">Up to 10 Yrs</span>
+                <span className="trust-lbl">Payment Plans</span>
               </div>
             </div>
           </div>
 
-          {/* Lead Capture Form (Standard Clean UI Card) */}
-          <div className="lead-form-card">
-            <div className="form-header">
+          {/* Sleek Floating White Lead Capture Form Card */}
+          <div className="lead-card-floating">
+            <div className="card-heading">
               <h3>Request Property Information</h3>
               <p>Direct dispatch to our senior consultancy team.</p>
             </div>
 
             <form onSubmit={handleFormSubmit}>
               {/* Full Name (Blank input, NO placeholder) */}
-              <div className="form-group">
-                <label htmlFor="reactFullName" className="form-label">
+              <div className="field-group">
+                <label htmlFor="reactLeadFullName" className="field-label">
                   Full Name
                 </label>
                 <input
                   type="text"
-                  id="reactFullName"
-                  className="form-input"
+                  id="reactLeadFullName"
+                  className="field-input"
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
@@ -259,21 +271,21 @@ export default function HassanAllamLandingPage() {
                 />
               </div>
 
-              {/* Phone Number (Split: Country code left, blank input right, NO placeholder) */}
-              <div className="form-group">
-                <label htmlFor="reactPhoneInput" className="form-label">
+              {/* Phone Number (Split: Country code left with UTF-8 flags, blank input right) */}
+              <div className="field-group">
+                <label htmlFor="reactLeadPhoneInput" className="field-label">
                   Phone Number
                 </label>
-                <div className="split-phone-wrap">
+                <div className="phone-split-container">
                   {/* Country Trigger Button */}
                   <button
                     type="button"
-                    className="country-btn"
+                    className="country-selector-btn"
                     aria-expanded={isDropdownOpen}
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   >
-                    <span className="flag-emoji">{selectedCountry.flag}</span>
-                    <span className="dial-code">{selectedCountry.dial}</span>
+                    <span className="flag-icon">{selectedCountry.flag}</span>
+                    <span className="dial-text">{selectedCountry.dial}</span>
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor">
                       <path
                         d="M1 1L5 5L9 1"
@@ -286,30 +298,30 @@ export default function HassanAllamLandingPage() {
                   </button>
 
                   {/* Popover */}
-                  <div className={`country-popover ${isDropdownOpen ? 'is-open' : ''}`}>
-                    <div className="country-search-wrap">
+                  <div className={`country-popover-panel ${isDropdownOpen ? 'is-open' : ''}`}>
+                    <div className="country-filter-wrap">
                       <input
                         type="text"
-                        className="country-search-input"
+                        className="country-filter-input"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder=""
                       />
                     </div>
-                    <div className="country-list">
+                    <div className="country-items-scroll">
                       {filteredCountries.map((c) => (
                         <div
                           key={c.code}
-                          className={`country-row ${c.code === selectedCountry.code ? 'is-selected' : ''}`}
+                          className={`country-item-btn ${c.code === selectedCountry.code ? 'is-active' : ''}`}
                           onClick={() => {
                             setSelectedCountry(c);
                             setIsDropdownOpen(false);
                             setSearchQuery('');
                           }}
                         >
-                          <span className="country-row-flag">{c.flag}</span>
-                          <span className="country-row-name">{c.name}</span>
-                          <span className="country-row-dial">{c.dial}</span>
+                          <span className="c-flag">{c.flag}</span>
+                          <span className="c-name">{c.name}</span>
+                          <span className="c-dial">{c.dial}</span>
                         </div>
                       ))}
                     </div>
@@ -318,8 +330,8 @@ export default function HassanAllamLandingPage() {
                   {/* Blank Phone Input (NO placeholder) */}
                   <input
                     type="tel"
-                    id="reactPhoneInput"
-                    className="form-input phone-field"
+                    id="reactLeadPhoneInput"
+                    className="field-input phone-main-input"
                     required
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
@@ -329,22 +341,22 @@ export default function HassanAllamLandingPage() {
               </div>
 
               {/* Solid Green Submit Button */}
-              <button type="submit" className="btn-submit-green" disabled={isSubmitting}>
+              <button type="submit" className="btn-submit-action" disabled={isSubmitting}>
                 <span>{isSubmitting ? 'Sending Request...' : 'Request Information'}</span>
               </button>
 
-              <p className="form-footnote">Independent Consultancy • Strict Confidentiality</p>
+              <p className="card-privacy-notice">Independent Consultancy • Strict Confidentiality</p>
             </form>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-           REFINED PROJECT DATA (ESSENTIALS ONLY, NO FLUFF)
+           3. REFINED PROJECT DATA (ESSENTIALS ONLY — EXACTLY 4 PROJECTS)
            ========================================================================= */}
-      <main className="projects-container">
+      <main className="portfolio-showcase-section">
         <div className="container">
-          <div className="section-divider-title">
+          <div className="portfolio-header-block">
             <h2>Featured Developments</h2>
             <p>Key unit types, starting prices, and official payment plans.</p>
           </div>
@@ -352,41 +364,41 @@ export default function HassanAllamLandingPage() {
           {/* =====================================================================
                SECTION 1: PARK CENTRAL (Mostakbal City)
                ===================================================================== */}
-          <article className="project-card-block" id="park-central">
-            <div className="project-grid">
-              <div className="project-media">
+          <article className="project-showcase-card" id="park-central">
+            <div className="project-showcase-grid">
+              <div className="project-visual-frame">
                 <img
                   src="/images/hassan-allam/park-central-exterior.jpg"
                   alt="Park Central Mostakbal City"
                   loading="lazy"
                 />
               </div>
-              <div className="project-content">
+              <div className="project-detail-panel">
                 <div>
-                  <div className="project-header">
-                    <h3 className="project-name">Park Central</h3>
-                    <span className="project-location">Mostakbal City</span>
+                  <div className="panel-header">
+                    <span className="location-pill">Mostakbal City</span>
+                    <h3 className="project-heading">Park Central</h3>
                   </div>
 
-                  <div className="essential-specs-grid">
-                    <div className="spec-box">
-                      <div className="spec-category">Villas</div>
-                      <div className="spec-types">Townhouses, Twin Houses, and One-Story Villas</div>
-                      <div className="spec-price">Starting from 20M to 75M EGP</div>
-                      <span className="spec-finish">Fully Finished</span>
+                  <div className="specs-overview-grid">
+                    <div className="spec-tile">
+                      <div className="spec-tag">Villas</div>
+                      <div className="spec-inventory">Townhouses, Twin Houses, and One-Story Villas</div>
+                      <div className="spec-price-range">Starting from 20M to 75M EGP</div>
+                      <span className="spec-badge">Fully Finished</span>
                     </div>
 
-                    <div className="spec-box">
-                      <div className="spec-category">Apartments</div>
-                      <div className="spec-types">1 to 3 Bedrooms & Duplexes</div>
-                      <div className="spec-price">Starting from 6.2M to 20M EGP</div>
-                      <span className="spec-finish">Fully Finished</span>
+                    <div className="spec-tile">
+                      <div className="spec-tag">Apartments</div>
+                      <div className="spec-inventory">1 to 3 Bedrooms & Duplexes</div>
+                      <div className="spec-price-range">Starting from 6.2M to 20M EGP</div>
+                      <span className="spec-badge">Fully Finished</span>
                     </div>
                   </div>
 
-                  <div className="payment-plan-strip">
-                    <span className="plan-label">Payment Plan</span>
-                    <div className="plan-details">10% Down Payment over 5 Years (or up to 10 Years)</div>
+                  <div className="payment-terms-box">
+                    <span className="terms-label">Payment Plan</span>
+                    <div className="terms-description">10% Down Payment over 5 Years (or up to 10 Years)</div>
                   </div>
                 </div>
 
@@ -395,7 +407,7 @@ export default function HassanAllamLandingPage() {
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Park%20Central%20Mostakbal%20City.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-whatsapp-cta"
+                  className="btn-whatsapp-chat"
                 >
                   <svg viewBox="0 0 24 24">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
@@ -409,34 +421,34 @@ export default function HassanAllamLandingPage() {
           {/* =====================================================================
                SECTION 2: THE VALLEYS (Mostakbal City)
                ===================================================================== */}
-          <article className="project-card-block" id="the-valleys">
-            <div className="project-grid">
-              <div className="project-media">
+          <article className="project-showcase-card" id="the-valleys">
+            <div className="project-showcase-grid">
+              <div className="project-visual-frame">
                 <img
                   src="/images/hassan-allam/the-valleys-villas.jpg"
                   alt="The Valleys Mostakbal City"
                   loading="lazy"
                 />
               </div>
-              <div className="project-content">
+              <div className="project-detail-panel">
                 <div>
-                  <div className="project-header">
-                    <h3 className="project-name">The Valleys</h3>
-                    <span className="project-location">Mostakbal City</span>
+                  <div className="panel-header">
+                    <span className="location-pill">Mostakbal City</span>
+                    <h3 className="project-heading">The Valleys</h3>
                   </div>
 
-                  <div className="essential-specs-grid">
-                    <div className="spec-box">
-                      <div className="spec-category">Exclusive Villas</div>
-                      <div className="spec-types">Townhouses, Twinhouses, and Standalones</div>
-                      <div className="spec-price">Starting from 29M to 55.6M EGP</div>
-                      <span className="spec-finish">Fully Finished</span>
+                  <div className="specs-overview-grid">
+                    <div className="spec-tile">
+                      <div className="spec-tag">Exclusive Villas</div>
+                      <div className="spec-inventory">Townhouses, Twinhouses, and Standalones</div>
+                      <div className="spec-price-range">Starting from 29M to 55.6M EGP</div>
+                      <span className="spec-badge">Fully Finished</span>
                     </div>
                   </div>
 
-                  <div className="payment-plan-strip">
-                    <span className="plan-label">Payment Plan</span>
-                    <div className="plan-details">5% Down Payment + 5% after 3 months over 9 Years</div>
+                  <div className="payment-terms-box">
+                    <span className="terms-label">Payment Plan</span>
+                    <div className="terms-description">5% Down Payment + 5% after 3 months over 9 Years</div>
                   </div>
                 </div>
 
@@ -445,7 +457,7 @@ export default function HassanAllamLandingPage() {
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20The%20Valleys%20Mostakbal%20City.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-whatsapp-cta"
+                  className="btn-whatsapp-chat"
                 >
                   <svg viewBox="0 0 24 24">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
@@ -457,90 +469,41 @@ export default function HassanAllamLandingPage() {
           </article>
 
           {/* =====================================================================
-               SECTION 3: XCHANGE (Mostakbal City - Commercial)
+               SECTION 3: SWANLAKE RESIDENCE (New Cairo)
                ===================================================================== */}
-          <article className="project-card-block" id="xchange">
-            <div className="project-grid">
-              <div className="project-media">
-                <img
-                  src="/images/hassan-allam/xchange-commercial.jpg"
-                  alt="Xchange Commercial Mostakbal City"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-content">
-                <div>
-                  <div className="project-header">
-                    <h3 className="project-name">Xchange</h3>
-                    <span className="project-location">Mostakbal City • Commercial</span>
-                  </div>
-
-                  <div className="essential-specs-grid">
-                    <div className="spec-box">
-                      <div className="spec-category">Premium Office Spaces</div>
-                      <div className="spec-types">39 sqm to 155 sqm Floorplates</div>
-                      <div className="spec-price">Starting from 4.7M to 21M EGP</div>
-                    </div>
-                  </div>
-
-                  <div className="payment-plan-strip">
-                    <span className="plan-label">Payment Plan</span>
-                    <div className="plan-details">5% Down Payment + 5% after 3 months over 9 Years</div>
-                  </div>
-                </div>
-
-                {/* CTA: Chat on WhatsApp */}
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Xchange%20Commercial.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp-cta"
-                >
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
-                  </svg>
-                  <span>Chat on WhatsApp</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          {/* =====================================================================
-               SECTION 4: SWANLAKE RESIDENCE (New Cairo)
-               ===================================================================== */}
-          <article className="project-card-block" id="swanlake-residence">
-            <div className="project-grid">
-              <div className="project-media">
+          <article className="project-showcase-card" id="swanlake-residence">
+            <div className="project-showcase-grid">
+              <div className="project-visual-frame">
                 <img
                   src="/images/hassan-allam/swanlake-residence-apartments.jpg"
                   alt="Swanlake Residence New Cairo"
                   loading="lazy"
                 />
               </div>
-              <div className="project-content">
+              <div className="project-detail-panel">
                 <div>
-                  <div className="project-header">
-                    <h3 className="project-name">Swanlake Residence</h3>
-                    <span className="project-location">New Cairo</span>
+                  <div className="panel-header">
+                    <span className="location-pill">New Cairo</span>
+                    <h3 className="project-heading">Swanlake Residence</h3>
                   </div>
 
-                  <div className="essential-specs-grid">
-                    <div className="spec-box">
-                      <div className="spec-category">Apartments & Monos</div>
-                      <div className="spec-types">Luxury Apartments & Signature Monos</div>
-                      <div className="spec-price">Starting from 15.5M to 59.4M EGP</div>
+                  <div className="specs-overview-grid">
+                    <div className="spec-tile">
+                      <div className="spec-tag">Apartments & Monos</div>
+                      <div className="spec-inventory">Luxury Apartments & Signature Monos</div>
+                      <div className="spec-price-range">Starting from 15.5M to 59.4M EGP</div>
                     </div>
 
-                    <div className="spec-box">
-                      <div className="spec-category">Signature Villas</div>
-                      <div className="spec-types">Twinhouses & Standalones</div>
-                      <div className="spec-price">Starting from 105M to 183M EGP</div>
+                    <div className="spec-tile">
+                      <div className="spec-tag">Signature Villas</div>
+                      <div className="spec-inventory">Twinhouses & Standalones</div>
+                      <div className="spec-price-range">Starting from 105M to 183M EGP</div>
                     </div>
                   </div>
 
-                  <div className="payment-plan-strip">
-                    <span className="plan-label">Payment Plan</span>
-                    <div className="plan-details">5% Down Payment over 10 Years</div>
+                  <div className="payment-terms-box">
+                    <span className="terms-label">Payment Plan</span>
+                    <div className="terms-description">5% Down Payment over 10 Years</div>
                   </div>
                 </div>
 
@@ -549,7 +512,7 @@ export default function HassanAllamLandingPage() {
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Swanlake%20Residence%20New%20Cairo.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-whatsapp-cta"
+                  className="btn-whatsapp-chat"
                 >
                   <svg viewBox="0 0 24 24">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
@@ -561,36 +524,36 @@ export default function HassanAllamLandingPage() {
           </article>
 
           {/* =====================================================================
-               SECTION 5: ENCORE SWANLAKE (El Gouna)
+               SECTION 4: ENCORE SWANLAKE (El Gouna)
                ===================================================================== */}
-          <article className="project-card-block" id="encore-elgouna">
-            <div className="project-grid">
-              <div className="project-media">
+          <article className="project-showcase-card" id="encore-elgouna">
+            <div className="project-showcase-grid">
+              <div className="project-visual-frame">
                 <img
                   src="/images/hassan-allam/encore-elgouna-lagoon.jpg"
                   alt="Encore Swanlake El Gouna"
                   loading="lazy"
                 />
               </div>
-              <div className="project-content">
+              <div className="project-detail-panel">
                 <div>
-                  <div className="project-header">
-                    <h3 className="project-name">Encore Swanlake</h3>
-                    <span className="project-location">El Gouna</span>
+                  <div className="panel-header">
+                    <span className="location-pill">El Gouna</span>
+                    <h3 className="project-heading">Encore Swanlake</h3>
                   </div>
 
-                  <div className="essential-specs-grid">
-                    <div className="spec-box">
-                      <div className="spec-category">Chalets & Duplexes</div>
-                      <div className="spec-types">Fully Finished Chalets & Duplexes</div>
-                      <div className="spec-price">Starting from 25.6M to 40.4M EGP</div>
-                      <span className="spec-finish">Buy now, live now program</span>
+                  <div className="specs-overview-grid">
+                    <div className="spec-tile">
+                      <div className="spec-tag">Chalets & Duplexes</div>
+                      <div className="spec-inventory">Fully Finished Chalets & Duplexes</div>
+                      <div className="spec-price-range">Starting from 25.6M to 40.4M EGP</div>
+                      <span className="spec-badge">Buy now, live now program</span>
                     </div>
                   </div>
 
-                  <div className="payment-plan-strip">
-                    <span className="plan-label">Payment Plan</span>
-                    <div className="plan-details">5% Down Payment over 8 Years</div>
+                  <div className="payment-terms-box">
+                    <span className="terms-label">Payment Plan</span>
+                    <div className="terms-description">5% Down Payment over 8 Years</div>
                   </div>
                 </div>
 
@@ -599,7 +562,7 @@ export default function HassanAllamLandingPage() {
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Encore%20Swanlake%20El%20Gouna.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-whatsapp-cta"
+                  className="btn-whatsapp-chat"
                 >
                   <svg viewBox="0 0 24 24">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
@@ -613,15 +576,15 @@ export default function HassanAllamLandingPage() {
       </main>
 
       {/* =========================================================================
-           MINIMALIST FOOTER
+           4. ULTRA-LUXURY FOOTER
            ========================================================================= */}
       <footer className="hap-footer">
         <div className="container">
-          <div className="footer-inner">
-            <div>
-              <span className="footer-brand">By properties-y</span> • Independent Real Estate Consultancy
+          <div className="footer-content">
+            <div className="footer-brand-title">
+              <span>By properties-y</span> • Independent Real Estate Consultancy
             </div>
-            <div className="footer-links">
+            <div className="footer-navigation">
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
                 WhatsApp: +201277752731
               </a>
@@ -630,54 +593,54 @@ export default function HassanAllamLandingPage() {
             </div>
           </div>
 
-          <div className="footer-disclaimer">
-            properties-y operates strictly as an Independent Real Estate Consultancy. Information and pricing are subject
-            to developer revision without prior notice.
+          <div className="footer-disclaimer-text">
+            properties-y operates strictly as an Independent Real Estate Consultancy. Information, availability, and pricing
+            are subject to developer revision without prior notice.
           </div>
         </div>
       </footer>
 
       {/* =========================================================================
-           FLOATING WHATSAPP BUTTON (+201277752731)
+           5. FLOATING WHATSAPP BUTTON (+201277752731)
            ========================================================================= */}
       <a
         href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20the%20Hassan%20Allam%20portfolio.`}
         target="_blank"
         rel="noopener noreferrer"
-        className="floating-wa-btn"
+        className="floating-whatsapp-widget"
         aria-label="Direct WhatsApp Consultation"
       >
         <svg viewBox="0 0 24 24">
           <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
         </svg>
-        <span className="wa-text">Chat on WhatsApp</span>
+        <span className="widget-label">Chat on WhatsApp</span>
       </a>
 
       {/* =========================================================================
-           SUCCESS MODAL OVERLAY (EXACT REQUIRED TEXT)
+           6. SUCCESS MODAL OVERLAY (EXACT REQUIRED TEXT)
            ========================================================================= */}
       <div
-        className={`success-modal-overlay ${isModalOpen ? 'is-active' : ''}`}
+        className={`modal-overlay success-modal-overlay ${isModalOpen ? 'is-active' : ''}`}
         role="dialog"
         aria-modal="true"
         onClick={(e) => {
-          if (e.target.classList.contains('success-modal-overlay')) {
+          if (e.target.classList.contains('modal-overlay')) {
             setIsModalOpen(false);
           }
         }}
       >
-        <div className="success-modal-card">
-          <div className="modal-icon">
+        <div className="modal-dialog-card success-modal-card">
+          <div className="modal-success-icon modal-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
               <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
           </div>
 
-          <h3 className="modal-title">Registration Received</h3>
+          <h3 className="modal-header-title modal-title">Registration Received</h3>
 
           {/* EXACT REQUIRED TEXT */}
-          <p className="modal-message">
+          <p className="modal-body-text modal-message">
             Thank you <strong>{submittedName || 'there'}</strong>! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability.
           </p>
 
@@ -686,7 +649,7 @@ export default function HassanAllamLandingPage() {
             href={modalWhatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-modal-wa"
+            className="btn-modal-whatsapp btn-modal-wa"
           >
             <svg viewBox="0 0 24 24">
               <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
@@ -697,7 +660,7 @@ export default function HassanAllamLandingPage() {
           {/* CLOSE WINDOW LINK */}
           <button
             type="button"
-            className="modal-close-link"
+            className="btn-modal-dismiss modal-close-link"
             onClick={() => setIsModalOpen(false)}
           >
             Close Window
