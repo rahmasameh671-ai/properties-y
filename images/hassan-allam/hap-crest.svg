@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" fill="none">
+  <!-- Minimalist Avant-Garde Hassan Allam Properties Wordmark & Architectural Crest -->
+  <g fill="#1A202C">
+    <!-- Architectural Stylized Monogram HA -->
+    <path d="M24 16 L28 16 L28 64 L24 64 Z" fill="#1A202C"/>
+    <path d="M48 16 L52 16 L52 64 L48 64 Z" fill="#1A202C"/>
+    <path d="M28 38 L48 38 L48 42 L28 42 Z" fill="#1A202C"/>
+    <path d="M38 16 L38 28 L34 28 L38 16 Z" fill="#1A202C"/>
+    
+    <!-- Fine Geometric Frame Line -->
+    <line x1="68" y1="18" x2="68" y2="62" stroke="#1A202C" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <!-- Modern Editorial Typography: HASSAN ALLAM -->
+    <text x="82" y="38" font-family="'Cinzel', 'Playfair Display', serif" font-size="19" font-weight="700" letter-spacing="4" fill="#1A202C">HASSAN ALLAM</text>
+    <!-- PROPERTIES Sub-Wordmark -->
+    <text x="83" y="56" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="600" letter-spacing="6" fill="#4A5568">PROPERTIES</text>
+  </g>
+</svg>

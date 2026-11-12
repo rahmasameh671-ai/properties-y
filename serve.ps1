@@ -54,7 +54,9 @@ try {
             $response.ContentType = $contentType
             $response.ContentLength64 = $bytes.Length
             $response.StatusCode = 200
-            $response.OutputStream.Write($bytes, 0, $bytes.Length)
+            if ($request.HttpMethod -ne "HEAD") {
+                $response.OutputStream.Write($bytes, 0, $bytes.Length)
+            }
         } else {
             $response.StatusCode = 404
         }
