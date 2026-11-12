@@ -1,17 +1,27 @@
 /* ==========================================================================
-   HASSAN ALLAM PROPERTIES PORTFOLIO — MINIMALIST & CHIC REDESIGN
+   HASSAN ALLAM PROPERTIES PORTFOLIO — TYPOGRAPHY & CORPORATE AESTHETIC REVISION
    By properties-y.com | Independent Real Estate Consultancy
-   Route: /hassan-allam/
-   Aesthetic: Clean, Modern, Simple & Elegant Sans-Serif (Zero Serifs, Zero Overlaps)
-   Palette: Crisp Pure White (#FFFFFF), Subtle Stone Grey (#F8F9FA), Dark Charcoal (#1A202C)
-   Zero Gold Policy: Strictly NO gold or yellow anywhere
-   Mobile: 100% Thumb-Friendly, Essentials Only, Full-Width Green CTAs (48px+ tap height)
+   Route: /hassan-allam/ strictly under properties-y.com
+   Final Live URL: https://properties-y.com/hassan-allam/
+
+   TYPOGRAPHY SPECIFICATION (NEW INSTRUCTION):
+   - Main Titles & Section Headers (CRITICAL): Highly professional, simple,
+     and elegant Sans-Serif font (Inter, Helvetica Neue, Plus Jakarta Sans).
+     Strictly NO overly decorative or heavy serif fonts on titles.
+     Aesthetic: Top-tier, highly professional corporate advisory firm.
+   - General Body Font: Reverted to the original chic, high-end editorial
+     style (Bodoni Moda / Playfair Display / Georgia) for body text and descriptions.
+   - Controls & Forms: Crisp, highly legible corporate Sans-Serif.
+   - Palette (Zero Gold Policy): Crisp pure whites (#FFFFFF), stone greys (#F8F9FA),
+     dark charcoal (#1A202C). NO gold or yellow anywhere.
+   - Layout: Elegant, clean, strictly corporate. No confusing overlaps.
+   - Mobile: 100% thumb-friendly single-column, 48px+ green WhatsApp CTAs.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Minimalist Monochromatic Palette (Strictly ZERO Gold or Yellow) */
+  /* Minimalist Monochromatic Corporate Palette (Strictly ZERO Gold or Yellow) */
   --bg-white: #FFFFFF;
   --bg-stone: #F8F9FA;
   --bg-subtle: #F1F3F5;
@@ -37,8 +47,14 @@
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.08);
 
-  /* Sans-Serif Font Stack */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* CRITICAL: Main Titles & Section Headers (Strictly Professional, Simple & Elegant Sans-Serif) */
+  --font-title-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Plus Jakarta Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+
+  /* CRITICAL: General Body Font & Descriptions (Original Chic, High-End Editorial Style) */
+  --font-editorial-body: 'Bodoni Moda', 'Playfair Display', Georgia, 'Times New Roman', serif;
+
+  /* Crisp Modern UI Sans for Forms, Inputs, Buttons, Badges, Labels & Technical Elements */
+  --font-ui-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   /* Layout */
   --container-width: 1200px;
@@ -62,7 +78,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-white);
   color: var(--text-dark);
-  font-family: var(--font-sans);
+  font-family: var(--font-editorial-body);
   overflow-x: hidden !important;
   width: 100%;
 }
@@ -73,9 +89,9 @@ body {
   min-height: 100vh;
   background-color: var(--bg-white);
   color: var(--text-dark);
-  font-family: var(--font-sans);
+  font-family: var(--font-editorial-body);
   overflow-x: hidden !important;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .hap-page-wrapper {
@@ -90,6 +106,14 @@ body {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* Headings: Strictly Simple, Elegant & Professional Sans-Serif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title-sans);
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 /* ==========================================================================
@@ -118,6 +142,7 @@ body {
 }
 
 .brand-name {
+  font-family: var(--font-title-sans);
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -126,6 +151,7 @@ body {
 }
 
 .brand-consultancy {
+  font-family: var(--font-ui-sans);
   font-size: 0.72rem;
   color: var(--text-muted);
   font-weight: 500;
@@ -138,6 +164,7 @@ body {
 }
 
 .header-wa-btn {
+  font-family: var(--font-ui-sans);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -185,6 +212,7 @@ body {
 }
 
 .hero-badge {
+  font-family: var(--font-ui-sans);
   display: inline-block;
   align-self: flex-start;
   background: #FFFFFF;
@@ -198,7 +226,9 @@ body {
   border-radius: var(--radius-pill);
 }
 
+/* Main Hero Title: Strictly Simple, Elegant & Professional Sans-Serif */
 .hero-title {
+  font-family: var(--font-title-sans);
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 800;
   line-height: 1.1;
@@ -206,11 +236,14 @@ body {
   letter-spacing: -0.03em;
 }
 
+/* Hero Subtitle: Chic, High-End Editorial Style */
 .hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-family: var(--font-editorial-body);
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 400;
   color: var(--text-soft);
-  line-height: 1.4;
+  line-height: 1.45;
   margin-top: 4px;
 }
 
@@ -228,12 +261,14 @@ body {
 }
 
 .meta-item-val {
+  font-family: var(--font-ui-sans);
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-dark);
 }
 
 .meta-item-lbl {
+  font-family: var(--font-ui-sans);
   font-size: 0.75rem;
   color: var(--text-muted);
   font-weight: 500;
@@ -251,54 +286,59 @@ body {
 }
 
 .form-header {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .form-header h3 {
+  font-family: var(--font-title-sans);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .form-header p {
-  font-size: 0.85rem;
+  font-family: var(--font-editorial-body);
+  font-size: 0.95rem;
   color: var(--text-muted);
   margin-top: 4px;
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .form-label {
+  font-family: var(--font-ui-sans);
   display: block;
   font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-charcoal);
   margin-bottom: 6px;
 }
 
 .form-input {
+  font-family: var(--font-ui-sans);
   width: 100%;
   height: 48px;
+  padding: 0 14px;
+  font-size: 0.92rem;
+  color: var(--text-dark);
   background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 0 14px;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  outline: none;
   transition: var(--transition);
+  outline: none;
 }
 
 .form-input:focus {
   border-color: var(--text-dark);
-  box-shadow: 0 0 0 1px var(--text-dark);
+  box-shadow: 0 0 0 2px rgba(26, 32, 44, 0.08);
 }
 
-/* Split Phone Input */
+/* Split Phone Field */
 .split-phone-wrap {
   display: flex;
   gap: 8px;
@@ -306,33 +346,37 @@ body {
 }
 
 .country-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  width: 110px;
-  min-width: 110px;
+  font-family: var(--font-ui-sans);
   height: 48px;
+  padding: 0 12px;
+  width: 112px;
+  min-width: 112px;
   background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-dark);
   transition: var(--transition);
+  outline: none;
 }
 
-.country-btn:hover {
-  background: var(--bg-stone);
-  border-color: var(--border-dark);
+.country-btn:hover,
+.country-btn[aria-expanded="true"] {
+  border-color: var(--text-dark);
 }
 
 .flag-emoji {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1;
+}
+
+.dial-code {
+  font-family: var(--font-ui-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
 .phone-field {
@@ -345,13 +389,12 @@ body {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  width: 300px;
-  max-width: 90vw;
+  width: 280px;
   background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
-  z-index: 500;
+  z-index: 50;
   overflow: hidden;
 }
 
@@ -361,19 +404,24 @@ body {
 
 .country-search-wrap {
   padding: 8px;
-  background: var(--bg-stone);
   border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-stone);
 }
 
 .country-search-input {
+  font-family: var(--font-ui-sans);
   width: 100%;
-  height: 36px;
+  height: 34px;
+  padding: 0 10px;
+  font-size: 0.82rem;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 0 10px;
-  font-size: 0.85rem;
-  font-family: var(--font-sans);
   outline: none;
+  background: #FFFFFF;
+}
+
+.country-search-input:focus {
+  border-color: var(--text-dark);
 }
 
 .country-list {
@@ -384,50 +432,50 @@ body {
 .country-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 9px 12px;
+  gap: 10px;
+  padding: 10px 12px;
   cursor: pointer;
-  font-size: 0.85rem;
-  border-bottom: 1px solid var(--bg-stone);
-  transition: background 0.15s ease;
+  transition: var(--transition);
+  font-size: 0.84rem;
 }
 
 .country-row:hover,
 .country-row.is-selected {
-  background: var(--bg-subtle);
+  background-color: var(--bg-stone);
 }
 
 .country-row-name {
+  font-family: var(--font-ui-sans);
   flex: 1;
-  margin-left: 8px;
   color: var(--text-dark);
   font-weight: 500;
 }
 
 .country-row-dial {
-  font-weight: 600;
+  font-family: var(--font-ui-sans);
   color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 
-/* Submit Button */
+/* Solid Green Submit Button */
 .btn-submit-green {
+  font-family: var(--font-ui-sans);
   width: 100%;
   min-height: 48px;
   background-color: var(--whatsapp-green);
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-sm);
-  font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
-  margin-top: 8px;
-  box-shadow: var(--whatsapp-shadow);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  box-shadow: var(--whatsapp-shadow);
+  margin-top: 10px;
 }
 
 .btn-submit-green:hover {
@@ -436,16 +484,18 @@ body {
 }
 
 .btn-submit-green:disabled {
-  opacity: 0.65;
+  opacity: 0.7;
   cursor: not-allowed;
+  transform: none;
 }
 
 .form-footnote {
-  font-size: 0.72rem;
+  font-family: var(--font-ui-sans);
+  font-size: 0.74rem;
   color: var(--text-muted);
   text-align: center;
   margin-top: 12px;
-  line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
@@ -461,16 +511,19 @@ body {
 }
 
 .section-divider-title h2 {
-  font-size: 1.75rem;
+  font-family: var(--font-title-sans);
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--text-dark);
   letter-spacing: -0.02em;
 }
 
 .section-divider-title p {
-  font-size: 0.95rem;
+  font-family: var(--font-editorial-body);
+  font-size: 1.1rem;
+  font-style: italic;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .project-card-block {
@@ -523,18 +576,22 @@ body {
   gap: 8px;
 }
 
+/* Section Title: Strictly Simple, Elegant & Professional Sans-Serif */
 .project-name {
-  font-size: 1.6rem;
+  font-family: var(--font-title-sans);
+  font-size: 1.65rem;
   font-weight: 800;
   color: var(--text-dark);
   letter-spacing: -0.02em;
 }
 
 .project-location {
+  font-family: var(--font-ui-sans);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* Essential Units Grid */
@@ -553,38 +610,46 @@ body {
 }
 
 .spec-category {
+  font-family: var(--font-ui-sans);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
   margin-bottom: 4px;
 }
 
+/* Descriptions: Original Chic High-End Editorial Style */
 .spec-types {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-family: var(--font-editorial-body);
+  font-size: 1.05rem;
+  font-weight: 500;
   color: var(--text-dark);
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
+/* Numerical Pricing: Clean Corporate Sans */
 .spec-price {
-  font-size: 1.15rem;
+  font-family: var(--font-title-sans);
+  font-size: 1.18rem;
   font-weight: 800;
   color: var(--text-dark);
   margin-top: 6px;
+  letter-spacing: -0.01em;
 }
 
 .spec-finish {
+  font-family: var(--font-editorial-body);
+  font-style: italic;
   display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 500;
   color: var(--text-soft);
   background: #FFFFFF;
   border: 1px solid var(--border-subtle);
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: var(--radius-pill);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 /* Payment Plan Box */
@@ -598,60 +663,64 @@ body {
 }
 
 .plan-label {
-  font-size: 0.72rem;
+  font-family: var(--font-ui-sans);
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
+  margin-bottom: 2px;
+  display: block;
 }
 
 .plan-details {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: var(--font-editorial-body);
+  font-size: 1.05rem;
+  font-weight: 500;
   color: var(--text-dark);
-  margin-top: 2px;
+  line-height: 1.4;
 }
 
-/* Solid Green WhatsApp CTA Button */
+/* CTA: Chat on WhatsApp (Solid Green #25D366, min 48px tap height) */
 .btn-whatsapp-cta {
+  font-family: var(--font-ui-sans);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  min-height: 48px;
   background-color: var(--whatsapp-green);
   color: #FFFFFF;
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 700;
-  padding: 14px 28px;
+  padding: 12px 24px;
   border-radius: var(--radius-sm);
-  transition: var(--transition);
-  min-height: 48px;
-  align-self: flex-start;
   box-shadow: var(--whatsapp-shadow);
+  transition: var(--transition);
+  align-self: flex-start;
 }
 
 .btn-whatsapp-cta:hover {
   background-color: var(--whatsapp-hover);
-  transform: translateY(-1px);
   color: #FFFFFF;
+  transform: translateY(-1px);
 }
 
 .btn-whatsapp-cta svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 
 /* ==========================================================================
-   MINIMALIST FOOTER
-   ========================================================================= */
+   MINIMALIST CORPORATE FOOTER
+   ========================================================================== */
 .hap-footer {
-  background: #FFFFFF;
+  background-color: var(--bg-stone);
   border-top: 1px solid var(--border-subtle);
   padding: 40px 0;
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  margin-top: 40px;
 }
 
 .footer-inner {
@@ -663,19 +732,23 @@ body {
 }
 
 .footer-brand {
+  font-family: var(--font-ui-sans);
   font-weight: 700;
   color: var(--text-dark);
 }
 
 .footer-links {
   display: flex;
-  gap: 18px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
+  font-family: var(--font-ui-sans);
   color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-size: 0.85rem;
+  transition: var(--transition);
 }
 
 .footer-links a:hover {
@@ -683,19 +756,19 @@ body {
 }
 
 .footer-disclaimer {
-  width: 100%;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 0.75rem;
-  line-height: 1.5;
+  font-family: var(--font-editorial-body);
+  font-size: 0.92rem;
   color: var(--text-muted);
+  font-style: italic;
+  margin-top: 20px;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
    FLOATING WHATSAPP BUTTON (+201277752731)
    ========================================================================== */
 .floating-wa-btn {
+  font-family: var(--font-ui-sans);
   position: fixed;
   bottom: 24px;
   right: 24px;
@@ -778,20 +851,30 @@ body {
 }
 
 .modal-title {
+  font-family: var(--font-title-sans);
   font-size: 1.45rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-dark);
+  letter-spacing: -0.01em;
   margin-bottom: 12px;
 }
 
 .modal-message {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--text-soft);
+  font-family: var(--font-editorial-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-dark);
   margin-bottom: 24px;
 }
 
+.modal-message strong {
+  font-family: var(--font-title-sans);
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
 .btn-modal-wa {
+  font-family: var(--font-ui-sans);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -821,6 +904,7 @@ body {
 }
 
 .modal-close-link {
+  font-family: var(--font-ui-sans);
   background: none;
   border: none;
   color: var(--text-muted);
@@ -893,7 +977,7 @@ body {
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .hero-meta-summary {
@@ -941,7 +1025,7 @@ body {
   }
 
   .spec-price {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   /* CRITICAL: Full-width, solid Green WhatsApp buttons with min 48px tap height */
