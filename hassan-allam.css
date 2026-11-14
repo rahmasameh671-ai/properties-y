@@ -102,6 +102,19 @@ body {
   padding: 0 28px;
 }
 
+/* Screen Reader Only Utility for Semantic SEO */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Headings: Sleek Geometric Modern Sans */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-brand);
@@ -109,6 +122,65 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.15;
+}
+
+/* Hero Brand Logo (Replaces Hero Title) */
+.hero-brand-logo-wrap {
+  margin: 12px 0 10px;
+}
+
+.hero-brand-logo {
+  max-width: clamp(260px, 36vw, 380px);
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+
+/* Project Heading Logo (Replaces Project Titles) */
+.project-logo-wrap {
+  margin: 8px 0 16px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.project-heading-logo {
+  max-width: 280px;
+  width: auto;
+  max-height: 60px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+
+/* Visual Image Frame Watermark Overlay */
+.visual-logo-watermark {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 3;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.visual-logo-watermark img {
+  max-height: 28px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* ==========================================================================
@@ -1104,6 +1176,32 @@ h1, h2, h3, h4, h5, h6 {
 
   .project-detail-panel {
     padding: 26px 20px;
+  }
+
+  .hero-brand-logo {
+    max-width: 250px;
+    max-height: 110px;
+  }
+
+  .project-logo-wrap {
+    margin: 6px 0 14px;
+    min-height: 44px;
+  }
+
+  .project-heading-logo {
+    max-width: 220px;
+    max-height: 48px;
+  }
+
+  .visual-logo-watermark {
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+  }
+
+  .visual-logo-watermark img {
+    max-height: 22px;
+    max-width: 110px;
   }
 
   .project-heading {

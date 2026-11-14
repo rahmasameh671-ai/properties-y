@@ -228,7 +228,14 @@ export default function HassanAllamLandingPage() {
               <span>Independent Real Estate Consultancy</span>
             </div>
 
-            <h1 className="hero-title">Hassan Allam Properties</h1>
+            <div className="hero-brand-logo-wrap">
+              <img
+                src="/images/hassan-allam/logo-hassan-allam.png"
+                alt="Hassan Allam Properties"
+                className="hero-brand-logo"
+              />
+              <h1 className="sr-only">Hassan Allam Properties</h1>
+            </div>
             <p className="hero-subtitle">Discover the Exclusive Portfolio.</p>
 
             <div className="hero-trust-row">
@@ -372,12 +379,22 @@ export default function HassanAllamLandingPage() {
                   alt="Park Central Mostakbal City"
                   loading="lazy"
                 />
+                <div className="visual-logo-watermark">
+                  <img src="/images/hassan-allam/logo-park-central.png" alt="Park Central" />
+                </div>
               </div>
               <div className="project-detail-panel">
                 <div>
                   <div className="panel-header">
                     <span className="location-pill">Mostakbal City</span>
-                    <h3 className="project-heading">Park Central</h3>
+                    <div className="project-logo-wrap">
+                      <img
+                        src="/images/hassan-allam/logo-park-central-dark.png"
+                        alt="Park Central by Hassan Allam"
+                        className="project-heading-logo"
+                      />
+                      <h3 className="sr-only">Park Central</h3>
+                    </div>
                   </div>
 
                   <div className="specs-overview-grid">
@@ -429,12 +446,22 @@ export default function HassanAllamLandingPage() {
                   alt="The Valleys Mostakbal City"
                   loading="lazy"
                 />
+                <div className="visual-logo-watermark">
+                  <img src="/images/hassan-allam/logo-the-valleys.png" alt="The Valleys" />
+                </div>
               </div>
               <div className="project-detail-panel">
                 <div>
                   <div className="panel-header">
                     <span className="location-pill">Mostakbal City</span>
-                    <h3 className="project-heading">The Valleys</h3>
+                    <div className="project-logo-wrap">
+                      <img
+                        src="/images/hassan-allam/logo-the-valleys-dark.png"
+                        alt="The Valleys"
+                        className="project-heading-logo"
+                      />
+                      <h3 className="sr-only">The Valleys</h3>
+                    </div>
                   </div>
 
                   <div className="specs-overview-grid">
@@ -479,12 +506,22 @@ export default function HassanAllamLandingPage() {
                   alt="Swanlake Residence New Cairo"
                   loading="lazy"
                 />
+                <div className="visual-logo-watermark">
+                  <img src="/images/hassan-allam/logo-swanlake-residence.png" alt="Swanlake Residence" />
+                </div>
               </div>
               <div className="project-detail-panel">
                 <div>
                   <div className="panel-header">
                     <span className="location-pill">New Cairo</span>
-                    <h3 className="project-heading">Swanlake Residence</h3>
+                    <div className="project-logo-wrap">
+                      <img
+                        src="/images/hassan-allam/logo-swanlake-residence-dark.png"
+                        alt="Swanlake Residence"
+                        className="project-heading-logo"
+                      />
+                      <h3 className="sr-only">Swanlake Residence</h3>
+                    </div>
                   </div>
 
                   <div className="specs-overview-grid">
@@ -534,12 +571,22 @@ export default function HassanAllamLandingPage() {
                   alt="Encore Swanlake El Gouna"
                   loading="lazy"
                 />
+                <div className="visual-logo-watermark">
+                  <img src="/images/hassan-allam/logo-encore-swanlake.png" alt="Encore Swanlake" />
+                </div>
               </div>
               <div className="project-detail-panel">
                 <div>
                   <div className="panel-header">
                     <span className="location-pill">El Gouna</span>
-                    <h3 className="project-heading">Encore Swanlake</h3>
+                    <div className="project-logo-wrap">
+                      <img
+                        src="/images/hassan-allam/logo-encore-swanlake-dark.png"
+                        alt="Encore Swanlake El Gouna"
+                        className="project-heading-logo"
+                      />
+                      <h3 className="sr-only">Encore Swanlake</h3>
+                    </div>
                   </div>
 
                   <div className="specs-overview-grid">
