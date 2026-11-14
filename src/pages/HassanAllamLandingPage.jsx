@@ -218,10 +218,6 @@ export default function HassanAllamLandingPage() {
                 <span className="trust-lbl">Flagship Destinations</span>
               </div>
               <div className="trust-item">
-                <span className="trust-val">0%</span>
-                <span className="trust-lbl">Consultancy Fee</span>
-              </div>
-              <div className="trust-item">
                 <span className="trust-val">Up to 10 Yrs</span>
                 <span className="trust-lbl">Payment Plans</span>
               </div>
