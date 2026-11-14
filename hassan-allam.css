@@ -184,94 +184,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   1. SLEEK BRAND BAR / NAVIGATION
+   1. SLEEK BRAND BAR / NAVIGATION (DEPRECATED & REMOVED: HERO AT TOP: 0)
    ========================================================================== */
 .hap-navbar {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 16px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: var(--transition);
-}
-
-.navbar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand-identity {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-title {
-  font-family: var(--font-brand);
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--text-dark);
-  text-transform: uppercase;
-}
-
-.brand-tagline {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.brand-tagline strong {
-  color: var(--text-dark);
-  font-weight: 700;
-}
-
-.nav-contact-btn {
-  font-family: var(--font-body);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--whatsapp-green);
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 10px 20px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
-  transition: var(--transition);
-}
-
-.nav-contact-btn:hover {
-  background-color: var(--whatsapp-hover);
-  transform: translateY(-1px);
-  box-shadow: var(--whatsapp-shadow);
-}
-
-.nav-contact-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
+  display: none !important;
 }
 
 /* ==========================================================================
-   2. IMMERSIVE HERO SECTION WITH SLEEK FLOATING FORM CARD
+   2. IMMERSIVE HERO SECTION WITH SLEEK FLOATING FORM CARD (STARTS DIRECTLY AT TOP: 0)
    ========================================================================== */
 .hap-hero {
   position: relative;
-  min-height: 82vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   background: #0F172A;
   overflow: hidden;
-  padding: 80px 0 90px;
+  padding: 100px 0 95px;
 }
 
 /* Stunning Full-Width Background Image Layer */
@@ -862,58 +791,132 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   4. ULTRA-LUXURY FOOTER
+   4. ULTRA-LUXURY EDITORIAL FOOTER & COMPLIANCE
    ========================================================================== */
 .hap-footer {
-  background-color: #FFFFFF;
+  background-color: #F8F9FA;
   border-top: 1px solid var(--border-subtle);
-  padding: 48px 0;
+  padding: 64px 0 48px;
 }
 
-.footer-content {
+.footer-inner-container {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-brand-logo {
+  max-width: 190px;
+  height: auto;
+  max-height: 48px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+.footer-signature-bar {
+  font-family: var(--font-brand);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.footer-consultancy-badge {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+
+.footer-consultation-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border: 1px solid #E2E8F0;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-brand);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 28px;
+}
+
+.footer-consultation-btn:hover {
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+  border-color: var(--whatsapp-green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
+}
+
+.footer-btn-wa-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.footer-compliance-text {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: #718096;
+  line-height: 1.7;
+  margin: 0 0 22px;
+  padding: 22px 0 0;
+  border-top: 1px solid #E2E8F0;
+}
+
+.footer-compliance-text strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.footer-legal-links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-.footer-brand-title {
-  font-family: var(--font-brand);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  letter-spacing: 0.02em;
-}
-
-.footer-navigation {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.footer-navigation a {
+.footer-legal-links a {
   font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.86rem;
-  font-weight: 500;
   transition: var(--transition);
 }
 
-.footer-navigation a:hover {
+.footer-legal-links a:hover {
   color: var(--text-dark);
+  text-decoration: underline;
 }
 
-.footer-disclaimer-text {
+.footer-legal-sep {
+  color: #CBD5E0;
+  font-size: 0.75rem;
+}
+
+.footer-copyright-line {
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border-subtle);
-  text-align: center;
+  font-size: 0.74rem;
+  color: #A0AEC0;
+  letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
@@ -1106,25 +1109,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 18px;
   }
 
-  .hap-navbar {
-    padding: 12px 0;
-  }
-
-  .brand-title {
-    font-size: 0.95rem;
-  }
-
-  .brand-tagline {
-    font-size: 0.68rem;
-  }
-
-  .nav-contact-btn {
-    padding: 8px 14px;
-    font-size: 0.75rem;
-  }
-
   .hap-hero {
-    padding: 50px 0 60px;
+    padding: 60px 0 60px;
     min-height: auto;
   }
 
@@ -1242,9 +1228,11 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  .footer-inner-container {
+    padding: 0 10px;
+  }
+
+  .footer-compliance-text {
+    font-size: 0.74rem;
   }
 }

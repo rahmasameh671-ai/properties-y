@@ -183,33 +183,7 @@ export default function HassanAllamLandingPage() {
   return (
     <div className="hap-page-wrapper">
       {/* =========================================================================
-           1. SLEEK BRAND BAR / NAVIGATION
-           ========================================================================= */}
-      <header className="hap-navbar">
-        <div className="container navbar-inner">
-          <div className="brand-identity">
-            <span className="brand-title">Hassan Allam Properties</span>
-            <span className="brand-tagline">
-              By <strong>properties-y</strong> • Independent Real Estate Consultancy
-            </span>
-          </div>
-
-          <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20am%20inquiring%20about%20the%20Hassan%20Allam%20Properties%20portfolio.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-contact-btn"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
-            </svg>
-            <span>+201277752731</span>
-          </a>
-        </div>
-      </header>
-
-      {/* =========================================================================
-           2. IMMERSIVE HERO SECTION WITH SLEEK FLOATING FORM CARD
+           1. IMMERSIVE HERO SECTION WITH SLEEK FLOATING FORM CARD (STARTS AT TOP: 0)
            ========================================================================= */}
       <section className="hap-hero" id="hero">
         <div className="hero-bg-layer">
@@ -225,7 +199,7 @@ export default function HassanAllamLandingPage() {
           <div className="hero-narrative">
             <div className="hero-badge-pill">
               <span className="hero-badge-dot" />
-              <span>Independent Real Estate Consultancy</span>
+              <span>By properties-y • Independent Real Estate Consultancy</span>
             </div>
 
             <div className="hero-brand-logo-wrap">
@@ -623,26 +597,47 @@ export default function HassanAllamLandingPage() {
       </main>
 
       {/* =========================================================================
-           4. ULTRA-LUXURY FOOTER
+           4. ULTRA-LUXURY EDITORIAL FOOTER & COMPLIANCE
            ========================================================================= */}
       <footer className="hap-footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand-title">
-              <span>By properties-y</span> • Independent Real Estate Consultancy
-            </div>
-            <div className="footer-navigation">
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
-                WhatsApp: +201277752731
-              </a>
-              <a href="/privacy-policy">Privacy Policy</a>
-              <a href="/terms-conditions">Terms & Conditions</a>
-            </div>
+        <div className="container footer-inner-container">
+          <img
+            src="/images/hassan-allam/logo-hassan-allam-dark.png"
+            alt="Hassan Allam Properties Official Logo"
+            className="footer-brand-logo"
+            loading="lazy"
+          />
+
+          <div className="footer-signature-bar">By properties-y</div>
+          <div className="footer-consultancy-badge">Independent Real Estate Consultancy</div>
+
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20the%20Hassan%20Allam%20Properties%20portfolio.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-consultation-btn"
+          >
+            <svg viewBox="0 0 24 24" className="footer-btn-wa-icon" aria-hidden="true">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
+            </svg>
+            <span>Direct WhatsApp Consultation</span>
+          </a>
+
+          <p className="footer-compliance-text">
+            This landing page is presented by <strong>properties-y.com</strong>, an Independent Real Estate Consultancy. It is not an
+            official direct web property of Hassan Allam Properties. All trademarks, project designations, and architectural visualizations
+            belong to their respective developers. Displayed prices, terms, and inventory availability are subject to official developer
+            verification and market change without notice.
+          </p>
+
+          <div className="footer-legal-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <span className="footer-legal-sep">&bull;</span>
+            <a href="/terms-conditions">Terms &amp; Conditions</a>
           </div>
 
-          <div className="footer-disclaimer-text">
-            properties-y operates strictly as an Independent Real Estate Consultancy. Information, availability, and pricing
-            are subject to developer revision without prior notice.
+          <div className="footer-copyright-line">
+            &copy; 2026 properties-y.com &mdash; Independent Real Estate Consultancy. All Rights Reserved.
           </div>
         </div>
       </footer>
