@@ -3,9 +3,8 @@ import '../../mountain-view/mountain-view.css';
 
 /**
  * Mountain View Exclusive Portfolio Landing Page Component
- * Explicit Route: /mountain-view strictly under properties-y.com domain architecture
- * Final Live URL: https://properties-y.com/mountain-view
- * Branding: 'By properties-y.com' | Independent Real Estate Consultancy
+ * Explicit Route: /mountain-view strictly under ir-properties.com domain architecture
+ * Branding: 'By ir-properties' | Independent Real Estate Consultancy
  * Aesthetic: Radically New High-Fashion Calm Luxury | Zero Gold Policy | Asymmetric Cards
  * Global WhatsApp: Strictly +201277752731 (Solid Vibrant Green #25D366)
  */
@@ -50,7 +49,7 @@ export default function MountainViewLandingPage() {
   const [submittedName, setSubmittedName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const modalWhatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20I%20have%20just%20submitted%20my%20inquiry%20for%20Mountain%20View%20on%20properties-y.com%20and%20would%20like%20to%20receive%20the%20brochures%20and%20availability%20right%20away`;
+  const modalWhatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20I%20have%20just%20submitted%20my%20inquiry%20for%20Mountain%20View`;
 
   // Handle Form Submission
   const handleFormSubmit = async (e) => {
@@ -72,31 +71,58 @@ export default function MountainViewLandingPage() {
 
     // Save Lead Locally
     try {
-      const stored = JSON.parse(localStorage.getItem('properties_y_mountain_view_leads') || '[]');
+      const stored = JSON.parse(localStorage.getItem('ir_mountain_view_leads') || '[]');
       stored.push({
         name: clientName,
         phone: fullPhone,
         timestamp: new Date().toISOString(),
         portfolio: 'Mountain View Exclusive Portfolio',
-        consultancy: 'properties-y.com Independent Real Estate Consultancy'
+        consultancy: 'ir-properties Independent Real Estate Consultancy'
       });
-      localStorage.setItem('properties_y_mountain_view_leads', JSON.stringify(stored));
+      localStorage.setItem('ir_mountain_view_leads', JSON.stringify(stored));
     } catch (err) {
       console.warn('Storage warning:', err);
     }
 
     // Google Tag Conversion Event Tracking
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      try {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD'
-        });
-        window.gtag('event', 'generate_lead', {
-          event_category: 'form',
-          event_label: 'Mountain View Lead Inquiry'
-        });
-      } catch (err) {
-        console.warn('Gtag tracking warning:', err);
+    if (typeof window !== 'undefined') {
+      if (typeof window.gtag_report_form_conversion === 'function') {
+        try {
+          window.gtag_report_form_conversion();
+        } catch (err) {
+          console.warn('Form conversion notice:', err);
+        }
+      } else if (typeof window.gtag_report_conversion === 'function') {
+        try {
+          window.gtag_report_conversion();
+        } catch (err) {
+          console.warn('Conversion notice:', err);
+        }
+      } else if (typeof window.gtag === 'function') {
+        try {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+            'value': 1.0,
+            'currency': 'EGP'
+          });
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18125180547',
+            'value': 1.0,
+            'currency': 'EGP'
+          });
+          window.gtag('event', 'generate_lead', {
+            'send_to': 'AW-18125180547',
+            'value': 1.0,
+            'currency': 'EGP',
+            event_category: 'form',
+            event_label: 'Mountain View Lead Inquiry'
+          });
+          window.gtag('event', 'lead_form_submission', {
+            'send_to': 'AW-18125180547'
+          });
+        } catch (err) {
+          console.warn('Gtag tracking warning:', err);
+        }
       }
     }
 
@@ -126,11 +152,11 @@ export default function MountainViewLandingPage() {
         body: JSON.stringify({
           name: clientName,
           phone: fullPhone,
-          source: 'Mountain View Portfolio – properties-y.com',
-          consultancy: 'properties-y.com Independent Real Estate Consultancy',
+          source: 'Mountain View Portfolio – ir-properties.com',
+          consultancy: 'ir-properties Independent Real Estate Consultancy',
           _replyto: 'Rahma@irtkaz.com',
           _cc: 'Mostafa.a.ashmawy@gmail.com,Mostafa.ashmawy@irtkaz.com',
-          _subject: `New Lead: Mountain View - ${clientName} (${fullPhone}) [properties-y.com]`,
+          _subject: `New Lead: Mountain View - ${clientName} (${fullPhone})`,
           _template: 'table'
         })
       }).catch((err) => console.warn('Dispatch notification notice:', err));
@@ -170,68 +196,50 @@ export default function MountainViewLandingPage() {
 
         <div className="container hero-editorial-grid">
 
-          {/* Hero Left Column: Mountain View 1.1 Exclusive Offer */}
+          {/* Hero Left Column: Editorial Narrative & Highlights */}
           <div className="hero-content-column">
 
             <div className="hero-brand-signature-bar">
               <img 
-                src="/images/mountain-view/logo-mv-1-1.png" 
-                alt="Mountain View 1.1 Official Crest" 
+                src="/images/mountain-view/logo-mv-official-black.png" 
+                alt="Mountain View Official Crest" 
                 className="hero-brand-logo-img"
-                width="150"
+                width="160"
                 height="auto"
               />
               <div className="hero-signature-label">
-                <span className="signature-by">By properties-y.com</span>
+                <span className="signature-by">By ir-properties</span>
                 <span className="signature-role">Independent Real Estate Consultancy</span>
               </div>
             </div>
 
-            <div style={{ marginBottom: '14px' }}>
-              <span className="chic-badge chic-badge-dark">EXCLUSIVE OFFER • NEW CAIRO</span>
+            <div style={{ marginBottom: '16px' }}>
+              <span className="chic-badge chic-badge-dark">Exclusive Portfolio</span>
             </div>
 
             <h1 className="hero-main-headline">
-              Mountain View 1.1
-              <span>Ready to Move • Fully Finished Luxury Residences</span>
+              Mountain View Exclusive Portfolio
+              <span>Discover premium residences across New Cairo and Mostakbal City.</span>
             </h1>
 
             <p className="hero-lead-text">
-              Immediate delivery with turnkey luxury finishing in New Cairo. Exclusive 10% down payment with 7 years installments through properties-y.com.
+              Impartial private advisory and direct priority allocations across Mountain View's flagship master developments. Benefit from transparent market intelligence, bespoke payment arrangements, and dedicated advisor guidance.
             </p>
 
-            {/* Simplified & Refined Offer Terms (4 Core Highlights) */}
+            {/* Terms Highlights Bar */}
             <div className="hero-terms-highlights">
               <div className="term-highlight-card">
-                <span className="term-stat-number">15.9M EGP</span>
-                <span className="term-stat-label">Starting Price</span>
+                <span className="term-stat-number">5%</span>
+                <span className="term-stat-label">Starting Down Payment</span>
               </div>
               <div className="term-highlight-card">
-                <span className="term-stat-number">Ready to Move</span>
-                <span className="term-stat-label">Immediate Delivery</span>
+                <span className="term-stat-number">12 YRS</span>
+                <span className="term-stat-label">Flexible Installments</span>
               </div>
               <div className="term-highlight-card">
-                <span className="term-stat-number">Fully Finished</span>
-                <span className="term-stat-label">Turnkey Residences</span>
+                <span className="term-stat-number">12M EGP</span>
+                <span className="term-stat-label">Starting Rates</span>
               </div>
-              <div className="term-highlight-card">
-                <span className="term-stat-number">7 Years</span>
-                <span className="term-stat-label">10% Down Payment</span>
-              </div>
-            </div>
-
-            {/* Quick WhatsApp Direct CTA in Hero */}
-            <div className="hero-quick-cta">
-              <a 
-                href="https://wa.me/201277752731?text=Hello%2C%20I%20am%20inquiring%20about%20Mountain%20View%201.1" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-whatsapp-solid">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
-                </svg>
-                <span>INQUIRE ABOUT MV 1.1</span>
-              </a>
             </div>
 
           </div>
@@ -241,7 +249,7 @@ export default function MountainViewLandingPage() {
             <div className="frosted-lead-card">
               
               <div className="form-header-block">
-                <span className="form-eyebrow">BY PROPERTIES-Y.COM</span>
+                <span className="form-eyebrow">BY IR-PROPERTIES</span>
                 <h2 className="form-headline">REGISTER YOUR INTEREST</h2>
                 <p className="form-subtext">Direct allocation access, official brochures, and tailored payment plans.</p>
               </div>
@@ -356,7 +364,7 @@ export default function MountainViewLandingPage() {
 
               {/* Form Legal Disclaimer */}
               <p className="form-legal-disclaimer">
-                By submitting, you agree to receive communications from <strong>properties-y.com</strong> regarding real estate projects. This landing page is operated by <strong>properties-y.com</strong>, an Independent Real Estate Consultancy, and is not the official website of the developer. Prices and availability are subject to change.
+                By submitting, you agree to receive communications from <strong>ir-properties</strong> regarding real estate projects. This landing page is operated by <strong>ir-properties</strong>, an Independent Real Estate Consultancy, and is not the official website of the developer. Prices and availability are subject to change.
               </p>
 
               <div className="form-legal-links">
@@ -404,7 +412,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">01 / 05</span>
-                <span className="project-location-badge">MV 1.1 • New Cairo</span>
+                <span className="project-location-badge">New Cairo</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -417,11 +425,14 @@ export default function MountainViewLandingPage() {
                 />
               </div>
 
+              <h3 className="project-title-editorial">Mountain View 1.1</h3>
+              <p className="project-subtitle-editorial">Fully Finished Ready-To-Move Residences in New Cairo</p>
+
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
                   <div className="matrix-cell">
                     <span className="matrix-cell-label">Starting Price</span>
-                    <span className="matrix-cell-value">15,900,000 EGP</span>
+                    <span className="matrix-cell-value">14,500,000 EGP</span>
                     <span className="matrix-cell-sub">Starting Rate</span>
                   </div>
                   <div className="matrix-cell">
@@ -449,7 +460,7 @@ export default function MountainViewLandingPage() {
                   rel="noopener noreferrer" 
                   className="btn-whatsapp-solid">
                   <svg viewBox="0 0 24 24">
-                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.77 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
                   </svg>
                   <span>INQUIRE ON WHATSAPP</span>
                 </a>
@@ -476,7 +487,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">02 / 05</span>
-                <span className="project-location-badge">iCity • New Cairo</span>
+                <span className="project-location-badge">New Cairo</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -489,11 +500,14 @@ export default function MountainViewLandingPage() {
                 />
               </div>
 
+              <h3 className="project-title-editorial">Mountain View iCity</h3>
+              <p className="project-subtitle-editorial">Integrated Smart City Living in New Cairo</p>
+
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
                   <div className="matrix-cell">
                     <span className="matrix-cell-label">Starting Price</span>
-                    <span className="matrix-cell-value">10,500,000 EGP</span>
+                    <span className="matrix-cell-value">15,000,000 EGP</span>
                     <span className="matrix-cell-sub">Starting Rate</span>
                   </div>
                   <div className="matrix-cell">
@@ -548,7 +562,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">03 / 05</span>
-                <span className="project-location-badge">Hyde Park • New Cairo</span>
+                <span className="project-location-badge">New Cairo (200-Acre Masterpiece)</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -560,6 +574,9 @@ export default function MountainViewLandingPage() {
                   loading="lazy" 
                 />
               </div>
+
+              <h3 className="project-title-editorial">Mountain View Hyde Park</h3>
+              <p className="project-subtitle-editorial">Signature i-Villas in a 200-Acre Masterpiece</p>
 
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
@@ -620,7 +637,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">04 / 05</span>
-                <span className="project-location-badge">ALIVA • Mostakbal City</span>
+                <span className="project-location-badge">Mostakbal City</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -632,6 +649,9 @@ export default function MountainViewLandingPage() {
                   loading="lazy" 
                 />
               </div>
+
+              <h3 className="project-title-editorial">ALIVA</h3>
+              <p className="project-subtitle-editorial">Experience-Based Metropolis in Mostakbal City</p>
 
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
@@ -692,7 +712,7 @@ export default function MountainViewLandingPage() {
             <div className="project-info-column">
               <div className="project-meta-header">
                 <span className="project-index-number">05 / 05</span>
-                <span className="project-location-badge">Grand Valleys • New Cairo</span>
+                <span className="project-location-badge">South 90th / New Cairo</span>
               </div>
 
               {/* Official Project Logo as Prominent Section Heading */}
@@ -705,11 +725,14 @@ export default function MountainViewLandingPage() {
                 />
               </div>
 
+              <h3 className="project-title-editorial">Mountain View Grand Valleys</h3>
+              <p className="project-subtitle-editorial">Private Natural Valleys Sanctuary</p>
+
               <div className="project-terms-matrix">
                 <div className="terms-matrix-grid">
                   <div className="matrix-cell">
                     <span className="matrix-cell-label">Starting Price</span>
-                    <span className="matrix-cell-value">30,000,000 EGP</span>
+                    <span className="matrix-cell-value">30,400,000 EGP</span>
                     <span className="matrix-cell-sub">Starting Rate</span>
                   </div>
                   <div className="matrix-cell">
@@ -737,7 +760,7 @@ export default function MountainViewLandingPage() {
                   rel="noopener noreferrer" 
                   className="btn-whatsapp-solid">
                   <svg viewBox="0 0 24 24">
-                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.77 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
                   </svg>
                   <span>INQUIRE ON WHATSAPP</span>
                 </a>
@@ -749,14 +772,14 @@ export default function MountainViewLandingPage() {
       </main>
 
       {/* =========================================================================
-           3. WHY PROPERTIES-Y.COM CONSULTANCY (INDEPENDENT ADVISORY PILLARS)
+           3. WHY IR-PROPERTIES CONSULTANCY (INDEPENDENT ADVISORY PILLARS)
            ========================================================================= */}
       <section className="why-consultancy-section">
         <div className="container">
           
           <div className="section-editorial-intro">
             <span className="editorial-kicker">STRATEGIC ADVANTAGE</span>
-            <h2 className="editorial-section-title">Why Consult properties-y.com</h2>
+            <h2 className="editorial-section-title">Why Consult ir-properties</h2>
             <p className="editorial-section-desc">
               We deliver fiduciary real estate consultancy designed exclusively around your capital objectives, risk preferences, and portfolio returns.
             </p>
@@ -790,7 +813,7 @@ export default function MountainViewLandingPage() {
 
           <div className="why-cta-center">
             <a 
-              href="https://wa.me/201277752731?text=Hello%2C%20I%20would%20like%20to%20talk%20to%20an%20independent%20expert%20about%20Mountain%20View%20projects%20on%20properties-y.com" 
+              href="https://wa.me/201277752731?text=Hello%2C%20I%20would%20like%20to%20talk%20to%20an%20independent%20expert%20about%20Mountain%20View%20projects" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-whatsapp-solid">
@@ -817,7 +840,7 @@ export default function MountainViewLandingPage() {
           />
 
           <div className="footer-signature-bar">
-            By properties-y.com
+            By ir-properties
           </div>
 
           <div className="footer-consultancy-positioning">
@@ -825,7 +848,7 @@ export default function MountainViewLandingPage() {
           </div>
 
           <p className="footer-compliance-text">
-            This landing page is presented by <strong>properties-y.com</strong>, an Independent Real Estate Consultancy. It is not an official direct web property of Mountain View. All trademarks, project designations, and architectural visualizations belong to their respective developers. Displayed prices, terms, and inventory availability are subject to official developer verification and market change without notice.
+            This landing page is presented by <strong>ir-properties</strong>, an Independent Real Estate Consultancy. It is not an official direct web property of Mountain View. All trademarks, project designations, and architectural visualizations belong to their respective developers. Displayed prices, terms, and inventory availability are subject to official developer verification and market change without notice.
           </p>
 
           <div className="footer-legal-links">
@@ -835,7 +858,7 @@ export default function MountainViewLandingPage() {
           </div>
 
           <div className="footer-copyright">
-            © 2026 properties-y.com – Independent Real Estate Consultancy. All Rights Reserved.
+            © 2026 ir-properties – Independent Real Estate Consultancy. All Rights Reserved.
           </div>
 
         </div>
@@ -845,14 +868,14 @@ export default function MountainViewLandingPage() {
            5. FLOATING WHATSAPP BUTTON (ROUND GREEN ICON ONLY #25D366)
            ========================================================================= */}
       <a 
-        href="https://wa.me/201277752731?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20the%20Mountain%20View%20Portfolio%20on%20properties-y.com" 
+        href="https://wa.me/201277752731?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20the%20Mountain%20View%20Portfolio" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="floating-whatsapp-trigger" 
         aria-label="Direct WhatsApp Consultation">
         <div className="whatsapp-pulse-ring" />
         <svg viewBox="0 0 24 24">
-          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z" />
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.05 3.69C14.25 3.69 16.31 4.55 17.87 6.11C19.42 7.67 20.28 9.73 20.28 11.93C20.27 16.48 16.59 20.15 12.05 20.15ZM16.56 14.33C16.31 14.2 15.09 13.6 14.86 13.52C14.64 13.44 14.47 13.4 14.31 13.65C14.15 13.9 13.68 14.45 13.54 14.61C13.4 14.77 13.26 14.79 13.01 14.66C12.76 14.54 11.96 14.27 11.01 13.43C10.27 12.77 9.77 11.96 9.63 11.71C9.49 11.46 9.61 11.33 9.74 11.2C9.85 11.09 9.99 10.91 10.12 10.76C10.25 10.61 10.29 10.5 10.37 10.33C10.45 10.16 10.41 10.02 10.35 9.89C10.29 9.76 9.79 8.54 9.59 8.04C9.39 7.56 9.18 7.62 9.03 7.61C8.89 7.6 8.72 7.6 8.55 7.6C8.38 7.6 8.11 7.66 7.88 7.91C7.65 8.16 7 8.77 7 10.01C7 11.25 7.9 12.44 8.02 12.61C8.14 12.77 9.8 15.33 12.33 16.42C12.93 16.68 13.4 16.84 13.76 16.95C14.36 17.14 14.91 17.12 15.34 17.05C15.82 16.98 16.82 16.45 17.03 15.86C17.23 15.27 17.23 14.77 17.17 14.66C17.11 14.56 16.95 14.49 16.7 14.37L16.56 14.33Z"/>
         </svg>
       </a>
 
@@ -899,4 +922,3 @@ export default function MountainViewLandingPage() {
     </div>
   );
 }
-

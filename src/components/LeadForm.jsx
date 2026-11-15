@@ -18,6 +18,48 @@ export const LeadForm = () => {
       submissionDate: new Date().toISOString(), // Captures the exact date and time
     };
 
+    // Google Ads & Tag Lead Conversion Event for Form Submission
+    if (typeof window !== "undefined") {
+      if (typeof window.gtag_report_form_conversion === "function") {
+        try {
+          window.gtag_report_form_conversion();
+        } catch (err) {
+          console.warn("Form conversion notice:", err);
+        }
+      } else if (typeof window.gtag_report_conversion === "function") {
+        try {
+          window.gtag_report_conversion();
+        } catch (err) {
+          console.warn("Conversion notice:", err);
+        }
+      } else if (typeof window.gtag === "function") {
+        try {
+          window.gtag("event", "conversion", {
+            send_to: "AW-18125180547/AZcICJes-qQcEIOd4cJD",
+            value: 1.0,
+            currency: "EGP",
+          });
+          window.gtag("event", "conversion", {
+            send_to: "AW-18125180547",
+            value: 1.0,
+            currency: "EGP",
+          });
+          window.gtag("event", "generate_lead", {
+            send_to: "AW-18125180547",
+            value: 1.0,
+            currency: "EGP",
+            event_category: "form",
+            event_label: "Lead Form Submission",
+          });
+          window.gtag("event", "lead_form_submission", {
+            send_to: "AW-18125180547",
+          });
+        } catch (err) {
+          console.warn("GTag notice:", err);
+        }
+      }
+    }
+
     try {
       await fetch("https://hooks.zapier.com/hooks/catch/25429357/uclzmpn/", {
         method: "POST",

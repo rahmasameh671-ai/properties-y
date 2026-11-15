@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SodicLandingPage from './src/pages/SodicLandingPage';
 import CityGateLandingPage from './src/pages/CityGateLandingPage';
@@ -8,11 +8,50 @@ import HassanAllamLandingPage from './src/pages/HassanAllamLandingPage';
 
 /**
  * Main Application Routing Configuration
- * Directives: Explicit Routes under properties-y.com architecture
+ * Directives: Explicit Routes under ir-properties.com / properties-y.com architecture
+ * - /sodic: SODIC Signature Living
+ * - /city-gate & /citygate: City Gate New Cairo by Qatari Diar
+ * - /Madient-Masr: Madinet Masr Curated Portfolio (The Butterfly, Taj City Etaje, Sarai, Talala)
  * - /mountain-view: Mountain View Exclusive Portfolio (1.1, iCity, Hyde Park, ALIVA, Grand Valleys)
  * - /hassan-allam: Hassan Allam Properties Portfolio (Park Central, The Valleys, Xchange, Swanlake Residence, Encore El Gouna)
  */
 export default function App() {
+  // Global Outbound WhatsApp Click Conversion Tracking for all React Routes
+  useEffect(() => {
+    const handleWaClick = (e) => {
+      const waLink = e.target.closest('a[href*="wa.me"]');
+      if (waLink) {
+        if (typeof window !== 'undefined') {
+          if (typeof window.gtag_report_conversion === 'function') {
+            window.gtag_report_conversion(waLink.href);
+          } else if (typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+              'value': 1.0,
+              'currency': 'EGP'
+            });
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-18125180547',
+              'value': 1.0,
+              'currency': 'EGP'
+            });
+            window.gtag('event', 'contact', {
+              'send_to': 'AW-18125180547',
+              'method': 'WhatsApp',
+              'event_category': 'WhatsApp',
+              'event_label': 'WhatsApp Click'
+            });
+            window.gtag('event', 'whatsapp_click', {
+              'send_to': 'AW-18125180547'
+            });
+          }
+        }
+      }
+    };
+    document.addEventListener('click', handleWaClick);
+    return () => document.removeEventListener('click', handleWaClick);
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>

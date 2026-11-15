@@ -1,6 +1,6 @@
 /**
  * MOUNTAIN VIEW PORTFOLIO – INTERACTIVE LOGIC
- * By properties-y.com | Independent Real Estate Consultancy
+ * By ir-properties | Independent Real Estate Consultancy
  * Global WhatsApp: +201277752731
  */
 
@@ -52,9 +52,23 @@ document.addEventListener("DOMContentLoaded", () => {
         window.gtag_report_conversion(waLink.href);
       } else if (typeof window.gtag === "function") {
         window.gtag("event", "conversion", {
-          "send_to": "AW-18564830215/A7t2CIvYnLYdEIeos5RF",
+          "send_to": "AW-18125180547/AZcICJes-qQcEIOd4cJD",
           "value": 1.0,
           "currency": "EGP"
+        });
+        window.gtag("event", "conversion", {
+          "send_to": "AW-18125180547",
+          "value": 1.0,
+          "currency": "EGP"
+        });
+        window.gtag("event", "contact", {
+          "send_to": "AW-18125180547",
+          "method": "WhatsApp",
+          "event_category": "WhatsApp",
+          "event_label": "WhatsApp Click"
+        });
+        window.gtag("event", "whatsapp_click", {
+          "send_to": "AW-18125180547"
         });
       }
     }
@@ -232,21 +246,27 @@ function setupLeadForm() {
       phone: fullPhoneNumber,
       timestamp: new Date().toISOString(),
       portfolio: "Mountain View Exclusive Portfolio",
-      consultancy: "properties-y.com (Independent Real Estate Consultancy)",
+      consultancy: "ir-properties (Independent Real Estate Consultancy)",
       url: window.location.href
     };
 
     // Store in LocalStorage backup
     try {
-      const stored = JSON.parse(localStorage.getItem("properties_y_mountain_view_leads") || "[]");
+      const stored = JSON.parse(localStorage.getItem("ir_mountain_view_leads") || "[]");
       stored.push(leadRecord);
-      localStorage.setItem("properties_y_mountain_view_leads", JSON.stringify(stored));
+      localStorage.setItem("ir_mountain_view_leads", JSON.stringify(stored));
     } catch (err) {
       console.warn("Storage notice:", err);
     }
 
     // Google Ads & Tag Lead Conversion Event for Form Submission
-    if (typeof window.gtag_report_conversion === "function") {
+    if (typeof window.gtag_report_form_conversion === "function") {
+      try {
+        window.gtag_report_form_conversion();
+      } catch (err) {
+        console.warn("Form conversion notice:", err);
+      }
+    } else if (typeof window.gtag_report_conversion === "function") {
       try {
         window.gtag_report_conversion();
       } catch (err) {
@@ -256,18 +276,22 @@ function setupLeadForm() {
     if (typeof window.gtag === "function") {
       try {
         window.gtag("event", "conversion", {
-          "send_to": "AW-18564830215/A7t2CIvYnLYdEIeos5RF",
-          "value": 1.0,
-          "currency": "EGP"
-        });
-        window.gtag("event", "conversion", {
           "send_to": "AW-18125180547/AZcICJes-qQcEIOd4cJD",
           "value": 1.0,
           "currency": "EGP"
         });
+        window.gtag("event", "conversion", {
+          "send_to": "AW-18125180547",
+          "value": 1.0,
+          "currency": "EGP"
+        });
         window.gtag("event", "generate_lead", {
+          "send_to": "AW-18125180547",
           event_category: "form",
           event_label: "Mountain View Lead Inquiry"
+        });
+        window.gtag("event", "lead_form_submission", {
+          "send_to": "AW-18125180547"
         });
       } catch (err) {
         console.warn("GTag notice:", err);
@@ -300,11 +324,11 @@ function setupLeadForm() {
         body: JSON.stringify({
           name: fullName,
           phone: fullPhoneNumber,
-          source: "Mountain View Portfolio – properties-y.com",
-          consultancy: "properties-y.com Independent Real Estate Consultancy",
+          source: "Mountain View Portfolio – ir-properties.com",
+          consultancy: "ir-properties Independent Real Estate Consultancy",
           _replyto: "Rahma@irtkaz.com",
           _cc: "Mostafa.a.ashmawy@gmail.com,Mostafa.ashmawy@irtkaz.com",
-          _subject: `New Lead: Mountain View - ${fullName} (${fullPhoneNumber}) [properties-y.com]`,
+          _subject: `New Lead: Mountain View - ${fullName} (${fullPhoneNumber})`,
           _template: "table"
         })
       }).catch(err => console.warn("Dispatch notice:", err));
@@ -313,7 +337,7 @@ function setupLeadForm() {
     }
 
     // Prepare WhatsApp URL as specified in prompt requirement 6
-    const waUrl = `https://wa.me/${TARGET_WHATSAPP}?text=Hello%20I%20have%20just%20submitted%20my%20inquiry%20for%20Mountain%20View%20on%20properties-y.com%20and%20would%20like%20to%20receive%20the%20brochures%20and%20availability%20right%20away`;
+    const waUrl = `https://wa.me/${TARGET_WHATSAPP}?text=Hello%20I%20have%20just%20submitted%20my%20inquiry%20for%20Mountain%20View`;
 
     // Reset button state
     setTimeout(() => {

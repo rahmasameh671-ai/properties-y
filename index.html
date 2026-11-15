@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,33 +14,79 @@
     gtag('config', 'AW-18564830215');
     gtag('config', 'AW-18125180547');
 
+        var _lastWaConversionTime = 0;
     function gtag_report_conversion(url) {
-      var navigated = false;
-      var callback = function () {
-        if (!navigated && typeof(url) != 'undefined' && url) {
-          navigated = true;
-          window.location = url;
-        }
-      };
-      if (typeof(url) != 'undefined' && url) {
-        setTimeout(callback, 500);
+      var now = Date.now();
+      if (now - _lastWaConversionTime < 300) {
+        return true;
       }
+      _lastWaConversionTime = now;
+
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
-            'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
-            'value': 1.0,
-            'currency': 'EGP',
-            'event_callback': callback
+          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+          'value': 1.0,
+          'currency': 'EGP'
         });
         gtag('event', 'conversion', {
-            'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
-            'value': 1.0,
-            'currency': 'EGP'
+          'send_to': 'AW-18125180547',
+          'value': 1.0,
+          'currency': 'EGP'
         });
-      } else {
-        callback();
+        gtag('event', 'contact', {
+          'send_to': 'AW-18125180547',
+          'method': 'WhatsApp',
+          'event_category': 'WhatsApp',
+          'event_label': 'WhatsApp Click'
+        });
+        gtag('event', 'whatsapp_click', {
+          'send_to': 'AW-18125180547'
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
       }
-      return false;
+      return true;
+    }
+
+    var _lastFormConversionTime = 0;
+    function gtag_report_form_conversion() {
+      var now = Date.now();
+      if (now - _lastFormConversionTime < 500) {
+        return true;
+      }
+      _lastFormConversionTime = now;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18125180547',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+        gtag('event', 'generate_lead', {
+          'send_to': 'AW-18125180547',
+          'value': 1.0,
+          'currency': 'EGP',
+          'event_category': 'form',
+          'event_label': 'Lead Form Submission'
+        });
+        gtag('event', 'lead_form_submission', {
+          'send_to': 'AW-18125180547'
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+      }
+      return true;
     }
   </script>
   <meta charset="UTF-8">
@@ -77,7 +123,7 @@
           <span class="divider">•</span>
           <span>Cairo • Ras El Hekma • Red Sea</span>
           <span class="divider">•</span>
-          <a href="https://wa.me/201277752731" target="_blank" rel="noopener noreferrer" class="direct-call">
+          <a href="https://wa.me/201277752731" target="_blank" rel="noopener noreferrer" class="direct-call" onclick="return gtag_report_conversion(this.href);">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.879.809 2.796.809 3.183 0 5.77-2.587 5.77-5.766.001-3.187-2.575-5.996-5.77-5.996zm7.986 5.766c-.001 4.405-3.584 7.988-7.986 7.988-1.379 0-2.674-.356-3.812-1.002l-4.219 1.106 1.127-4.116c-.714-1.189-1.082-2.56-1.082-3.976.002-4.406 3.586-7.988 7.988-7.988 4.398.001 7.984 3.584 7.984 7.988z" />
@@ -137,7 +183,7 @@
           <!-- Direct Hero Actions -->
           <div class="hero-actions">
             <a href="https://wa.me/201277752731" target="_blank" rel="noopener noreferrer"
-              class="btn btn-whatsapp-green">
+              class="btn btn-whatsapp-green" onclick="return gtag_report_conversion(this.href);">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.879.809 2.796.809 3.183 0 5.77-2.587 5.77-5.766.001-3.187-2.575-5.996-5.77-5.996zm7.986 5.766c-.001 4.405-3.584 7.988-7.986 7.988-1.379 0-2.674-.356-3.812-1.002l-4.219 1.106 1.127-4.116c-.714-1.189-1.082-2.56-1.082-3.976.002-4.406 3.586-7.988 7.988-7.988 4.398.001 7.984 3.584 7.984 7.988z" />
@@ -285,7 +331,7 @@
             </div>
             <div class="developer-card-footer">
               <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20SODIC%20developments."
-                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm">
+                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm" onclick="return gtag_report_conversion(this.href);">
                 Speak to a Consultant →
               </a>
               <span class="dev-action-link">Verified Developer Partner</span>
@@ -333,7 +379,7 @@
                 Explore Portfolio →
               </a>
               <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Hassan%20Allam%20Properties."
-                target="_blank" rel="noopener noreferrer" class="dev-action-link">
+                target="_blank" rel="noopener noreferrer" class="dev-action-link" onclick="return gtag_report_conversion(this.href);">
                 WhatsApp Advisor
               </a>
             </div>
@@ -378,7 +424,7 @@
             </div>
             <div class="developer-card-footer">
               <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Mountain%20View."
-                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm">
+                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm" onclick="return gtag_report_conversion(this.href);">
                 Speak to a Consultant →
               </a>
               <span class="dev-action-link">Verified Partner</span>
@@ -424,7 +470,7 @@
             </div>
             <div class="developer-card-footer">
               <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Madinet%20Masr."
-                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm">
+                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm" onclick="return gtag_report_conversion(this.href);">
                 Speak to a Consultant →
               </a>
               <span class="dev-action-link">Verified Partner</span>
@@ -470,7 +516,7 @@
             </div>
             <div class="developer-card-footer">
               <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20City%20Gate%20by%20Qatari%20Diar."
-                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm">
+                target="_blank" rel="noopener noreferrer" class="dev-action-btn-sm" onclick="return gtag_report_conversion(this.href);">
                 Speak to a Consultant →
               </a>
               <span class="dev-action-link">Verified Partner</span>
@@ -488,7 +534,7 @@
             zero markup.</p>
         </div>
         <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20would%20like%20to%20speak%20to%20a%20consultant%20regarding%20developer%20portfolios."
-          target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-green">
+          target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-green" onclick="return gtag_report_conversion(this.href);">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.879.809 2.796.809 3.183 0 5.77-2.587 5.77-5.766.001-3.187-2.575-5.996-5.77-5.996zm7.986 5.766c-.001 4.405-3.584 7.988-7.986 7.988-1.379 0-2.674-.356-3.812-1.002l-4.219 1.106 1.127-4.116c-.714-1.189-1.082-2.56-1.082-3.976.002-4.406 3.586-7.988 7.988-7.988 4.398.001 7.984 3.584 7.984 7.988z" />
@@ -525,7 +571,7 @@
           <p class="dest-details">Prime East Cairo districts, private compounds, and direct proximity to the New
             Capital. High capital yield and established infrastructure.</p>
           <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20am%20interested%20in%20New%20Cairo%20properties."
-            target="_blank" rel="noopener noreferrer" class="dest-inquire">Speak to a Consultant →</a>
+            target="_blank" rel="noopener noreferrer" class="dest-inquire" onclick="return gtag_report_conversion(this.href);">Speak to a Consultant →</a>
         </div>
 
         <div class="destination-compact-card">
@@ -534,7 +580,7 @@
           <p class="dest-details">Egypt's smart green mega-city with masterplans by Hassan Allam, Mountain View, and
             Tatweer Misr with 8-10 year plans.</p>
           <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20am%20interested%20in%20Mostakbal%20City%20properties."
-            target="_blank" rel="noopener noreferrer" class="dest-inquire">Speak to a Consultant →</a>
+            target="_blank" rel="noopener noreferrer" class="dest-inquire" onclick="return gtag_report_conversion(this.href);">Speak to a Consultant →</a>
         </div>
 
         <div class="destination-compact-card">
@@ -543,7 +589,7 @@
           <p class="dest-details">Global sovereign Mediterranean destination featuring white sands, turquoise waters,
             and premier international hospitality brands.</p>
           <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20am%20interested%20in%20Ras%20El%20Hekma%20properties."
-            target="_blank" rel="noopener noreferrer" class="dest-inquire">Speak to a Consultant →</a>
+            target="_blank" rel="noopener noreferrer" class="dest-inquire" onclick="return gtag_report_conversion(this.href);">Speak to a Consultant →</a>
         </div>
 
         <div class="destination-compact-card">
@@ -552,7 +598,7 @@
           <p class="dest-details">Established family estates in West Cairo, plus year-round holiday homes and high-yield
             marina berths in El Gouna and Somabay.</p>
           <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20am%20interested%20in%20West%20Cairo%20or%20Red%20Sea%20properties."
-            target="_blank" rel="noopener noreferrer" class="dest-inquire">Speak to a Consultant →</a>
+            target="_blank" rel="noopener noreferrer" class="dest-inquire" onclick="return gtag_report_conversion(this.href);">Speak to a Consultant →</a>
         </div>
       </div>
 
@@ -648,7 +694,7 @@
           </p>
         </div>
         <a href="https://wa.me/201277752731?text=Hello%20properties-y,%20I%20would%20like%20to%20speak%20to%20a%20consultant%20regarding%20property%20advisory."
-          target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-green">
+          target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-green" onclick="return gtag_report_conversion(this.href);">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.879.809 2.796.809 3.183 0 5.77-2.587 5.77-5.766.001-3.187-2.575-5.996-5.77-5.996zm7.986 5.766c-.001 4.405-3.584 7.988-7.986 7.988-1.379 0-2.674-.356-3.812-1.002l-4.219 1.106 1.127-4.116c-.714-1.189-1.082-2.56-1.082-3.976.002-4.406 3.586-7.988 7.988-7.988 4.398.001 7.984 3.584 7.984 7.988z" />
@@ -718,7 +764,7 @@
        Fixed bottom-right round solid green icon (#25D366) linking to +201277752731
        ========================================================================== -->
   <a href="https://wa.me/201277752731" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn"
-    aria-label="Direct WhatsApp Consultation with properties-y">
+    aria-label="Direct WhatsApp Consultation with properties-y" onclick="return gtag_report_conversion(this.href);">
     <span class="whatsapp-tooltip">Chat with a Consultant</span>
     <svg viewBox="0 0 24 24">
       <path
@@ -752,7 +798,7 @@
 
       <!-- Action Button: Solid green (#25D366) reading "CHAT ON WHATSAPP" -->
       <a href="https://wa.me/201277752731?text=Hello%2C%20I%20have%20just%20submitted%20my%20inquiry%20on%20properties-y%20and%20would%20like%20to%20receive%20the%20brochures%20and%20availability%20right%20away"
-        target="_blank" rel="noopener noreferrer" class="modal-action-btn">
+        target="_blank" rel="noopener noreferrer" class="modal-action-btn" onclick="return gtag_report_conversion(this.href);">
         <svg viewBox="0 0 24 24">
           <path
             d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.879.809 2.796.809 3.183 0 5.77-2.587 5.77-5.766.001-3.187-2.575-5.996-5.77-5.996zm7.986 5.766c-.001 4.405-3.584 7.988-7.986 7.988-1.379 0-2.674-.356-3.812-1.002l-4.219 1.106 1.127-4.116c-.714-1.189-1.082-2.56-1.082-3.976.002-4.406 3.586-7.988 7.988-7.988 4.398.001 7.984 3.584 7.984 7.988z" />

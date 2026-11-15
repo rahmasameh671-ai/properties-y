@@ -52,9 +52,23 @@ document.addEventListener("DOMContentLoaded", () => {
         window.gtag_report_conversion(waLink.href);
       } else if (typeof window.gtag === "function") {
         window.gtag("event", "conversion", {
-          "send_to": "AW-18564830215/A7t2CIvYnLYdEIeos5RF",
+          "send_to": "AW-18125180547/AZcICJes-qQcEIOd4cJD",
           "value": 1.0,
           "currency": "EGP"
+        });
+        window.gtag("event", "conversion", {
+          "send_to": "AW-18125180547",
+          "value": 1.0,
+          "currency": "EGP"
+        });
+        window.gtag("event", "contact", {
+          "send_to": "AW-18125180547",
+          "method": "WhatsApp",
+          "event_category": "WhatsApp",
+          "event_label": "WhatsApp Click"
+        });
+        window.gtag("event", "whatsapp_click", {
+          "send_to": "AW-18125180547"
         });
       }
     }
@@ -244,7 +258,13 @@ function setupLeadForm() {
     }
 
     // Google Ads & Tag Lead Conversion Event
-    if (typeof window.gtag_report_conversion === "function") {
+    if (typeof window.gtag_report_form_conversion === "function") {
+      try {
+        window.gtag_report_form_conversion();
+      } catch (err) {
+        console.warn("Form conversion notice:", err);
+      }
+    } else if (typeof window.gtag_report_conversion === "function") {
       try {
         window.gtag_report_conversion();
       } catch (err) {
@@ -254,18 +274,22 @@ function setupLeadForm() {
     if (typeof window.gtag === "function") {
       try {
         window.gtag("event", "conversion", {
-          "send_to": "AW-18564830215/A7t2CIvYnLYdEIeos5RF",
-          "value": 1.0,
-          "currency": "EGP"
-        });
-        window.gtag("event", "conversion", {
           "send_to": "AW-18125180547/AZcICJes-qQcEIOd4cJD",
           "value": 1.0,
           "currency": "EGP"
         });
+        window.gtag("event", "conversion", {
+          "send_to": "AW-18125180547",
+          "value": 1.0,
+          "currency": "EGP"
+        });
         window.gtag("event", "generate_lead", {
+          "send_to": "AW-18125180547",
           event_category: "form",
           event_label: "Hassan Allam Lead Inquiry"
+        });
+        window.gtag("event", "lead_form_submission", {
+          "send_to": "AW-18125180547"
         });
       } catch (err) {
         console.warn("GTag notice:", err);

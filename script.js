@@ -1,44 +1,64 @@
 /**
- * PROPERTIES-Y (properties-y.com)
- * Corporate Homepage Client Script
- * Features:
- * - Lead Capture Form Handling with validation
- * - Dynamic Success Modal with customized response
- * - Seamless WhatsApp Integration (+201277752731)
- * - Modal dismiss on backdrop click and Escape key
+ * IR-PROPERTIES - CORPORATE HOMEPAGE LOGIC
+ * WhatsApp Integration: +201277752731
+ * Zero Gold / Clean Minimalist Luxury
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const consultationForm = document.getElementById('consultationForm');
-  const fullNameInput = document.getElementById('fullName');
+  // Elements
+  const leadForm = document.getElementById('consultationForm');
   const countryCodeSelect = document.getElementById('countryCode');
+  const fullNameInput = document.getElementById('fullName');
   const phoneNumberInput = document.getElementById('phoneNumber');
   const confirmationModal = document.getElementById('confirmationModal');
-  const modalParagraph = document.getElementById('modalParagraph');
   const closeModalBtn = document.getElementById('closeModalBtn');
+  const modalWhatsappLink = document.getElementById('modalWhatsappLink');
+
+  // WhatsApp Base Config
+  const WHATSAPP_NUMBER = '201277752731';
 
   // Handle Form Submission
-  if (consultationForm) {
-    consultationForm.addEventListener('submit', (e) => {
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const fullName = (fullNameInput.value || '').trim();
+      const name = fullNameInput.value.trim();
       const countryCode = countryCodeSelect.value;
-      const phoneNumber = (phoneNumberInput.value || '').trim();
+      const phone = phoneNumberInput.value.trim();
 
-      // Basic Validation
-      if (!fullName) {
+      if (!name) {
         fullNameInput.focus();
+        fullNameInput.style.borderColor = '#E53E3E';
+        setTimeout(() => {
+          fullNameInput.style.borderColor = '';
+        }, 3000);
         return;
       }
 
-      if (!phoneNumber || phoneNumber.replace(/\D/g, '').length < 6) {
+      if (!phone) {
         phoneNumberInput.focus();
+        phoneNumberInput.style.borderColor = '#E53E3E';
+        setTimeout(() => {
+          phoneNumberInput.style.borderColor = '';
+        }, 3000);
         return;
       }
+
+      const fullPhoneNumber = `${countryCode} ${phone}`;
+      
+      // Construct Pre-filled WhatsApp Consultation message
+      const messageText = `Hello ir-properties,\nI would like to schedule a private consultation regarding Egypt premier real estate destinations.\n\n*Client Name:* ${name}\n*Contact Number:* ${fullPhoneNumber}\n\nPlease share customized property portfolios and market comparisons.`;
+      const encodedMsg = encodeURIComponent(messageText);
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`;
 
       // Trigger Google Ads Conversion Tracking for Form Submit
-      if (typeof window.gtag_report_conversion === 'function') {
+      if (typeof window.gtag_report_form_conversion === 'function') {
+        try {
+          window.gtag_report_form_conversion();
+        } catch (err) {
+          console.warn('Form conversion notice:', err);
+        }
+      } else if (typeof window.gtag_report_conversion === 'function') {
         try {
           window.gtag_report_conversion();
         } catch (err) {
@@ -48,18 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (typeof window.gtag === 'function') {
         try {
           window.gtag('event', 'conversion', {
-            'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
-            'value': 1.0,
-            'currency': 'EGP'
-          });
-          window.gtag('event', 'conversion', {
             'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
             'value': 1.0,
             'currency': 'EGP'
           });
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18125180547',
+            'value': 1.0,
+            'currency': 'EGP'
+          });
           window.gtag('event', 'generate_lead', {
+            'send_to': 'AW-18125180547',
             event_category: 'form',
             event_label: 'Consultation Form Submit'
+          });
+          window.gtag('event', 'lead_form_submission', {
+            'send_to': 'AW-18125180547'
           });
         } catch (err) {
           console.warn('GTag notice:', err);
@@ -71,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch("https://hooks.zapier.com/hooks/catch/25429357/uclzmpn/", {
           method: "POST",
           body: JSON.stringify({
-            fullName: fullName,
-            phoneNumber: `${countryCode} ${phoneNumber}`.trim(),
+            fullName: name,
+            phoneNumber: fullPhoneNumber,
             landingPageUrl: window.location.href,
             submissionDate: new Date().toISOString()
           })
@@ -81,62 +105,51 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn("Zapier webhook transmission notice:", err);
       }
 
-      // Populate Success Modal Paragraph Text exactly as specified:
-      // "Thank you {name}! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability."
-      // (Ensure no brand names are in this specific text block)
-      if (modalParagraph) {
-        modalParagraph.textContent = `Thank you ${fullName}! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability.`;
+      // Update Modal Link
+      if (modalWhatsappLink) {
+        modalWhatsappLink.href = waUrl;
       }
 
-      // Open Modal
-      openModal();
+      // Show confirmation modal
+      if (confirmationModal) {
+        confirmationModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
 
-      // Reset form fields cleanly
-      consultationForm.reset();
-      // Ensure country code resets to +20
+      // Reset form
+      leadForm.reset();
       countryCodeSelect.value = '+20';
     });
   }
 
-  // Modal Open & Close Utilities
-  function openModal() {
-    if (confirmationModal) {
-      confirmationModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeModal() {
-    if (confirmationModal) {
+  // Close Confirmation Modal
+  if (closeModalBtn && confirmationModal) {
+    closeModalBtn.addEventListener('click', () => {
       confirmationModal.classList.remove('active');
       document.body.style.overflow = '';
-    }
-  }
-
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeModal();
     });
-  }
 
-  // Close when clicking modal backdrop
-  if (confirmationModal) {
     confirmationModal.addEventListener('click', (e) => {
       if (e.target === confirmationModal) {
-        closeModal();
+        confirmationModal.classList.remove('active');
+        document.body.style.overflow = '';
       }
     });
   }
 
-  // Close on Escape key press
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && confirmationModal && confirmationModal.classList.contains('active')) {
-      closeModal();
-    }
+  // Destination WhatsApp Quick Direct Buttons
+  const destinationLinks = document.querySelectorAll('[data-destination]');
+  destinationLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const destination = link.getAttribute('data-destination');
+      const text = `Hello ir-properties, I would like to inquire about available properties in ${destination}.`;
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    });
   });
 
-  // Outbound WhatsApp Click Conversion Tracking (Delegated for 100% Coverage)
+  // Outbound WhatsApp Click Conversion Tracking (100% Delegated Coverage)
   document.addEventListener('click', (e) => {
     const waLink = e.target.closest('a[href*="wa.me"]');
     if (waLink) {
@@ -144,29 +157,37 @@ document.addEventListener('DOMContentLoaded', () => {
         window.gtag_report_conversion(waLink.href);
       } else if (typeof window.gtag === 'function') {
         window.gtag('event', 'conversion', {
-          'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
           'value': 1.0,
           'currency': 'EGP'
+        });
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-18125180547',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+        window.gtag('event', 'contact', {
+          'send_to': 'AW-18125180547',
+          'method': 'WhatsApp',
+          'event_category': 'WhatsApp',
+          'event_label': 'WhatsApp Click'
+        });
+        window.gtag('event', 'whatsapp_click', {
+          'send_to': 'AW-18125180547'
         });
       }
     }
   });
 
-  // Smooth scroll helper for internal anchor buttons
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId && targetId !== '#') {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    });
-  });
-});
+  // Local File Protocol Fallback for Standalone Legal Links & Portfolio Routes
+  if (window.location.protocol === 'file:') {
+    const linkPrivacy = document.getElementById('linkPrivacy');
+    const linkTerms = document.getElementById('linkTerms');
+    if (linkPrivacy) linkPrivacy.setAttribute('href', 'privacy-policy.html');
+    if (linkTerms) linkTerms.setAttribute('href', 'terms-conditions.html');
 
+    document.querySelectorAll('a[href="/sodic"]').forEach(a => {
+      a.setAttribute('href', 'sodic.html');
+    });
+  }
+});

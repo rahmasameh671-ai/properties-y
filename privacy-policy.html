@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtm.js & gtag.js) -->
@@ -13,26 +13,79 @@
     gtag('config', 'AW-18564830215');
     gtag('config', 'AW-18125180547');
 
+        var _lastWaConversionTime = 0;
     function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      if (typeof(url) != 'undefined' && url) {
-        setTimeout(callback, 500);
+      var now = Date.now();
+      if (now - _lastWaConversionTime < 300) {
+        return true;
       }
+      _lastWaConversionTime = now;
+
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
-            'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
-            'value': 1.0,
-            'currency': 'EGP',
-            'event_callback': callback
+          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+          'value': 1.0,
+          'currency': 'EGP'
         });
-      } else {
-        callback();
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18125180547',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+        gtag('event', 'contact', {
+          'send_to': 'AW-18125180547',
+          'method': 'WhatsApp',
+          'event_category': 'WhatsApp',
+          'event_label': 'WhatsApp Click'
+        });
+        gtag('event', 'whatsapp_click', {
+          'send_to': 'AW-18125180547'
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
       }
-      return false;
+      return true;
+    }
+
+    var _lastFormConversionTime = 0;
+    function gtag_report_form_conversion() {
+      var now = Date.now();
+      if (now - _lastFormConversionTime < 500) {
+        return true;
+      }
+      _lastFormConversionTime = now;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18125180547',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+        gtag('event', 'generate_lead', {
+          'send_to': 'AW-18125180547',
+          'value': 1.0,
+          'currency': 'EGP',
+          'event_category': 'form',
+          'event_label': 'Lead Form Submission'
+        });
+        gtag('event', 'lead_form_submission', {
+          'send_to': 'AW-18125180547'
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+      }
+      return true;
     }
   </script>
   <meta charset="UTF-8">
@@ -139,7 +192,7 @@
     rel="noopener noreferrer" 
     class="floating-whatsapp-btn" 
     aria-label="Direct WhatsApp Consultation with properties-y"
-  >
+   onclick="return gtag_report_conversion(this.href);">
     <svg viewBox="0 0 24 24">
       <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.541 1.879.809 2.796.809 3.183 0 5.77-2.587 5.77-5.766.001-3.187-2.575-5.996-5.77-5.996zm7.986 5.766c-.001 4.405-3.584 7.988-7.986 7.988-1.379 0-2.674-.356-3.812-1.002l-4.219 1.106 1.127-4.116c-.714-1.189-1.082-2.56-1.082-3.976.002-4.406 3.586-7.988 7.988-7.988 4.398.001 7.984 3.584 7.984 7.988z"/>
     </svg>
