@@ -1355,7 +1355,7 @@
 
   <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
   <script>
-    function handleLeadSubmit(e) {
+    async function handleLeadSubmit(e) {
       e.preventDefault();
       const nameInput = document.getElementById('fullName');
       const countryInput = document.getElementById('countryCode');
@@ -1363,13 +1363,55 @@
       const submitBtn = document.getElementById('submitBtn');
 
       const name = nameInput.value.trim();
-      const country = countryInput.value;
+      const country = countryInput ? countryInput.value : '';
       const phone = phoneInput.value.trim();
+      const fullPhoneNumber = country ? `${country} ${phone}` : phone;
 
       submitBtn.innerHTML = `<span>Processing...</span>`;
       submitBtn.disabled = true;
 
-      setTimeout(() => {
+      // Construct lead data payload matching Zapier webhook requirements
+      const data = {
+        fullName: name,
+        phoneNumber: fullPhoneNumber,
+        countryCode: country,
+        rawPhone: phone,
+        landingPageUrl: window.location.href,
+        submissionDate: new Date().toISOString(),
+        project: 'Tatweer Misr'
+      };
+
+      // Google Ads / Analytics Conversion Reporting if configured
+      if (typeof window !== 'undefined') {
+        if (typeof window.gtag_report_form_conversion === 'function') {
+          try { window.gtag_report_form_conversion(); } catch (err) {}
+        } else if (typeof window.gtag_report_conversion === 'function') {
+          try { window.gtag_report_conversion(); } catch (err) {}
+        } else if (typeof window.gtag === 'function') {
+          try {
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+              'value': 1.0,
+              'currency': 'EGP'
+            });
+            window.gtag('event', 'generate_lead', {
+              'send_to': 'AW-18125180547',
+              'value': 1.0,
+              'currency': 'EGP'
+            });
+          } catch (err) {}
+        }
+      }
+
+      // Dispatch to Zapier Webhook
+      try {
+        await fetch("https://hooks.zapier.com/hooks/catch/25429357/uclzmpn/", {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
+      } catch (error) {
+        console.error("Webhook dispatch notice:", error);
+      } finally {
         // Reset button state
         submitBtn.innerHTML = `<span>Submit Inquiry</span><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>`;
         submitBtn.disabled = false;
@@ -1382,7 +1424,7 @@
 
         // Reset form inputs
         document.getElementById('heroLeadForm').reset();
-      }, 500);
+      }
     }
 
     function closeSuccessModal() {
