@@ -10,10 +10,13 @@
 /privacy-policy/    /privacy-policy    301
 /terms-conditions/  /terms-conditions  301
 
-# Tatweer Misr Canonical Redirects
-/tatweermisr        /tatweer-misr/     301
-/tatweermisr/       /tatweer-misr/     301
-/TatweerMisr        /Tatweer-Misr/     301
-/TatweerMisr/       /Tatweer-Misr/     301
-/tatweer-misr       /tatweer-misr/     301
-/Tatweer-Misr       /Tatweer-Misr/     301
+# Tatweer Misr Rewrites & Routing (supports /Tatweer-Misr/ and /tatweer-misr/)
+/Tatweer-Misr/*     /tatweer-misr/:splat  200
+/Tatweer-Misr/      /tatweer-misr/index.html 200
+/Tatweer-Misr       /tatweer-misr/index.html 200
+/TatweerMisr/*      /tatweer-misr/:splat  200
+/TatweerMisr/       /tatweer-misr/index.html 200
+/TatweerMisr        /tatweer-misr/index.html 200
+/tatweermisr        /tatweer-misr/        301
+/tatweermisr/       /tatweer-misr/        301
+/tatweer-misr       /tatweer-misr/        301
