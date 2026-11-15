@@ -666,6 +666,53 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
 }
 
+/* Project Subtitle & Highlights Grid */
+.panel-header-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.project-subtitle-lead {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 6px 0 14px;
+  line-height: 1.5;
+}
+
+.project-highlights-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.highlight-pill {
+  font-family: var(--font-body);
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  background: var(--bg-stone);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.01em;
+}
+
+.highlight-pill.highlight-pill-discount {
+  color: var(--text-dark);
+  background: #FFFFFF;
+  border: 1.5px solid var(--text-dark);
+  font-weight: 800;
+}
+
 /* Essential Specs Grid */
 .specs-overview-grid {
   display: grid;
@@ -1192,6 +1239,20 @@ h1, h2, h3, h4, h5, h6 {
 
   .project-heading {
     font-size: 1.45rem;
+  }
+
+  .project-subtitle-lead {
+    font-size: 0.88rem;
+    margin: 4px 0 10px;
+  }
+
+  .project-highlights-grid {
+    gap: 6px;
+  }
+
+  .highlight-pill {
+    font-size: 0.69rem;
+    padding: 4px 9px;
   }
 
   .spec-price-range {

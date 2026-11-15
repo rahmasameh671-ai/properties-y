@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import '../../hassan-allam.css';
 
 /**
@@ -239,7 +239,7 @@ export default function HassanAllamLandingPage() {
 
             <div className="hero-trust-row">
               <div className="trust-item">
-                <span className="trust-val">4</span>
+                <span className="trust-val">5</span>
                 <span className="trust-lbl">Flagship Destinations</span>
               </div>
               <div className="trust-item">
@@ -602,6 +602,90 @@ export default function HassanAllamLandingPage() {
                 {/* CTA: Chat on WhatsApp */}
                 <a
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Encore%20Swanlake%20El%20Gouna.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp-chat"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
+                  </svg>
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* =====================================================================
+               SECTION 5: GROVA EASTHILLS (VILLAS ONLY COMMUNITY)
+               ===================================================================== */}
+          <article className="project-showcase-card" id="grova-easthills">
+            <div className="project-showcase-grid">
+              <div className="project-visual-frame">
+                <img
+                  src="/images/hassan-allam/grova-easthills-villas.jpg"
+                  alt="Grova Easthills by Hassan Allam"
+                  loading="lazy"
+                />
+                <div className="visual-logo-watermark">
+                  <img src="/images/hassan-allam/logo-grova-easthills.png" alt="Grova Easthills" />
+                </div>
+              </div>
+              <div className="project-detail-panel">
+                <div>
+                  <div className="panel-header">
+                    <div className="panel-header-badges">
+                      <span className="location-pill">New Launch &bull; New Cairo</span>
+                      <span className="spec-badge">Villas Only</span>
+                      <span className="spec-badge">Fully Finished</span>
+                    </div>
+
+                    <div className="project-logo-wrap">
+                      <img
+                        src="/images/hassan-allam/logo-grova-easthills-dark.png"
+                        alt="Grova Easthills by Hassan Allam"
+                        className="project-heading-logo"
+                      />
+                      <h3 className="sr-only">Grova Easthills</h3>
+                    </div>
+
+                    <p className="project-subtitle-lead">An exclusive Villas-Only community by Hassan Allam Holding.</p>
+
+                    <div className="project-highlights-grid">
+                      <span className="highlight-pill">300 Feddans &bull; 15% Footprint &bull; 1,217 Keys</span>
+                      <span className="highlight-pill">Villas Only &bull; Fully Finished</span>
+                      <span className="highlight-pill highlight-pill-discount">Exclusive Offer: 25% Cash Discount</span>
+                    </div>
+                  </div>
+
+                  <div className="specs-overview-grid">
+                    <div className="spec-tile">
+                      <div className="spec-tag">Townhouses (Middle &amp; Corner)</div>
+                      <div className="spec-inventory">BUA: 263 SQM</div>
+                      <div className="spec-price-range">Starting from 35,800,000 EGP</div>
+                    </div>
+
+                    <div className="spec-tile">
+                      <div className="spec-tag">Twin Houses (Type A &amp; B)</div>
+                      <div className="spec-inventory">BUA: 276 &ndash; 287 SQM</div>
+                      <div className="spec-price-range">Starting from 43,600,000 EGP</div>
+                    </div>
+
+                    <div className="spec-tile">
+                      <div className="spec-tag">Signature Villas (V1 &amp; V2B)</div>
+                      <div className="spec-inventory">BUA: 332 &ndash; 397 SQM</div>
+                      <div className="spec-price-range">Starting from 49,800,000 EGP (Up to 77.9M)</div>
+                    </div>
+                  </div>
+
+                  <div className="payment-terms-box">
+                    <span className="terms-label">Payment Plan</span>
+                    <div className="terms-description">5% Down Payment + 5% After 3 Months | 8 Years Equal Installments &bull; 7% Maintenance</div>
+                  </div>
+                </div>
+
+                {/* CTA: Chat on WhatsApp */}
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20Grova%20Easthills%20by%20Hassan%20Allam`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-whatsapp-chat"
