@@ -622,7 +622,7 @@ export default function HassanAllamLandingPage() {
             <div className="project-showcase-grid">
               <div className="project-visual-frame">
                 <img
-                  src="/images/hassan-allam/grova-easthills-villas.jpg"
+                  src="/images/hassan-allam/grova-easthills-villas.jpg?v=20261116v1"
                   alt="Grova Easthills by Hassan Allam"
                   loading="lazy"
                 />
