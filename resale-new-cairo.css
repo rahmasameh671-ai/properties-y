@@ -1,0 +1,1357 @@
+/* ==========================================================================
+   NEW CAIRO EXCLUSIVE RESALE PORTFOLIO — MODERN ULTRA-LUXURY STYLESHEET
+   By properties-y.com | Independent Real Estate Consultancy
+   Route: /resale-new-cairo/ strictly under properties-y.com architecture
+   Final Live URL: https://properties-y.com/resale-new-cairo/
+
+   AESTHETIC SPECIFICATION:
+   - Modern Ultra-Luxury (Apple sleekness / Aman Resorts aesthetic)
+   - Zero Gold Policy: Crisp pure whites (#FFFFFF), subtle stone grey (#F8F9FA),
+     deep charcoal (#1A202C). Strictly NO gold, bronze, or yellow anywhere.
+   - Typography: Clean, simple, premium Sans-Serif font (Montserrat & Plus Jakarta Sans / Inter)
+   - Layout: Hero section starts directly at top: 0. Sleek white floating cards,
+     edge-to-edge high-resolution imagery without messy overlaps.
+   - 100% thumb-friendly single-column layout on mobile (overflow-x: hidden)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Ultra-Luxury Monochromatic Palette (Strictly ZERO Gold or Yellow) */
+  --bg-white: #FFFFFF;
+  --bg-stone: #F8F9FA;
+  --bg-subtle: #F1F5F9;
+  --bg-card: #FFFFFF;
+
+  /* Typography Colors */
+  --text-dark: #1A202C;
+  --text-charcoal: #2D3748;
+  --text-slate: #4A5568;
+  --text-muted: #718096;
+  --text-light: #94A3B8;
+
+  /* Architectural Borders */
+  --border-subtle: #E2E8F0;
+  --border-mid: #CBD5E1;
+  --border-dark: #1A202C;
+
+  /* Solid Vibrant Green WhatsApp (#25D366) */
+  --whatsapp-green: #25D366;
+  --whatsapp-hover: #20BD5A;
+  --whatsapp-shadow: 0 10px 24px -4px rgba(37, 211, 102, 0.35);
+
+  /* Modern Ultra-Luxury Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 12px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  --shadow-floating: 0 24px 48px -12px rgba(0, 0, 0, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
+  --shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.28);
+
+  /* Typography Stacks */
+  --font-heading: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout Constants */
+  --container-width: 1240px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  overflow-x: hidden !important;
+  line-height: 1.6;
+}
+
+.resale-page-wrapper {
+  width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+  background-color: var(--bg-white);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Typography Utility */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-slate);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Screen reader utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ==========================================================================
+   1. TOP NAVIGATION / STATUS BAR (MINIMALIST LUXURY)
+   ========================================================================== */
+.resale-top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+  padding: 22px 0;
+  pointer-events: none;
+}
+
+.resale-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.resale-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-domain-tag {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+.brand-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.resale-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-consultancy-link {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-consultancy-link {
+    display: inline-block;
+  }
+}
+
+/* ==========================================================================
+   2. HERO SECTION (STARTS AT TOP: 0 WITH SLEEK WHITE FLOATING FORM CARD)
+   ========================================================================== */
+.resale-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 0;
+  padding-top: 100px;
+  padding-bottom: 70px;
+  display: flex;
+  align-items: center;
+  background-color: var(--text-dark);
+  overflow: hidden;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(0.68) contrast(1.08);
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 32, 44, 0.88) 0%,
+    rgba(26, 32, 44, 0.65) 50%,
+    rgba(26, 32, 44, 0.82) 100%
+  );
+}
+
+.hero-content-grid {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-content-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+  }
+}
+
+/* Hero Narrative Left Column */
+.hero-narrative {
+  color: #FFFFFF;
+}
+
+.hero-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.hero-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--whatsapp-green);
+  box-shadow: 0 0 10px var(--whatsapp-green);
+}
+
+.hero-branding-tagline {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 3.85rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+.hero-trust-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  max-width: 540px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-value {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   3. HERO SLEEK WHITE FLOATING FORM CARD
+   ========================================================================== */
+.lead-card-floating {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 34px 30px;
+  box-shadow: var(--shadow-floating);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  position: relative;
+  z-index: 15;
+  width: 100%;
+}
+
+.card-header-block {
+  margin-bottom: 22px;
+}
+
+.card-header-block h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.card-header-block p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.field-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 7px;
+}
+
+.field-input {
+  width: 100%;
+  height: 50px;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--bg-stone);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: var(--transition);
+}
+
+.field-input:focus {
+  background: #FFFFFF;
+  border-color: var(--text-dark);
+  box-shadow: 0 0 0 3px rgba(26, 32, 44, 0.08);
+}
+
+/* Split Phone Input Layout */
+.phone-split-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background: var(--bg-stone);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.phone-split-container:focus-within {
+  background: #FFFFFF;
+  border-color: var(--text-dark);
+  box-shadow: 0 0 0 3px rgba(26, 32, 44, 0.08);
+}
+
+.country-selector-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border-subtle);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.country-selector-btn:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.country-flag-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.country-dial-code {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 0.88rem;
+}
+
+.phone-split-input {
+  flex: 1;
+  height: 50px;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+}
+
+/* Country Selector Popover */
+.country-popover-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 290px;
+  max-width: 90vw;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-floating);
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.country-popover-panel.is-open {
+  display: flex;
+}
+
+.country-search-box {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-stone);
+}
+
+.country-search-input {
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  outline: none;
+  background: #FFFFFF;
+}
+
+.country-search-input:focus {
+  border-color: var(--text-dark);
+}
+
+.country-items-scroll {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.country-option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.country-option-row:hover,
+.country-option-row.is-active {
+  background: var(--bg-stone);
+}
+
+.country-option-name {
+  flex: 1;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.country-option-dial {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Solid Green Submit Button */
+.btn-submit-luxury {
+  width: 100%;
+  height: 52px;
+  background-color: var(--whatsapp-green);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+}
+
+.btn-submit-luxury:hover {
+  background-color: var(--whatsapp-hover);
+  box-shadow: var(--whatsapp-shadow);
+  transform: translateY(-1px);
+}
+
+.btn-submit-luxury:active {
+  transform: translateY(0);
+}
+
+.btn-submit-luxury:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Card Disclaimer */
+.card-disclaimer-text {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   4. INVENTORY PRESENTATION SECTION HEADINGS & BADGES
+   ========================================================================== */
+.resale-inventory-section {
+  padding: 85px 0 60px;
+  background-color: var(--bg-white);
+}
+
+.resale-section-divider {
+  padding: 60px 0 85px;
+  background-color: var(--bg-stone);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header-block {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px;
+}
+
+.section-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--bg-stone);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.resale-section-divider .section-badge-pill {
+  background: #FFFFFF;
+}
+
+.section-main-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .section-main-title {
+    font-size: 2.5rem;
+  }
+}
+
+.section-lead-text {
+  font-size: 1.05rem;
+  color: var(--text-slate);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   5. INVENTORY CARDS GRID & CARDS DESIGN (BELOW MARKET ADVANTAGE)
+   ========================================================================== */
+.inventory-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .inventory-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .inventory-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Sleek White Card */
+.resale-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.resale-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-floating);
+  border-color: var(--border-mid);
+}
+
+/* Edge-to-Edge Image Header */
+.card-media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: var(--text-dark);
+}
+
+.card-media-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.resale-card:hover .card-media-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Below Market Price Highlight Badge */
+.card-advantage-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(26, 32, 44, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+/* Status Pill */
+.card-status-pill {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Card Body Content */
+.card-body-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-compound-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.card-unit-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+/* Specs Grid (BUA, Land, Beds, Baths) */
+.card-specs-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 14px;
+  background: var(--bg-stone);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 16px;
+}
+
+.spec-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.spec-value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 2px;
+}
+
+/* Unit Highlights Callout */
+.card-highlights-box {
+  background: #FFFFFF;
+  border-left: 3px solid var(--text-dark);
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  font-size: 0.82rem;
+  color: var(--text-charcoal);
+  line-height: 1.45;
+}
+
+.card-highlights-box strong {
+  color: var(--text-dark);
+}
+
+/* Pricing Display (Clean, Bold, Transparent) */
+.card-pricing-block {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 18px;
+}
+
+.price-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.price-total-figure {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.price-breakdown-note {
+  font-size: 0.78rem;
+  color: var(--text-slate);
+  margin-top: 4px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+/* WhatsApp CTA Button Under Each Card (Solid Vibrant Green #25D366) */
+.btn-card-whatsapp {
+  width: 100%;
+  height: 48px;
+  background-color: var(--whatsapp-green);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.22);
+}
+
+.btn-card-whatsapp:hover {
+  background-color: var(--whatsapp-hover);
+  box-shadow: var(--whatsapp-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-card-whatsapp svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   6. WHY CHOOSE PROPERTIES-Y RESALE CONSULTANCY (TRUST SECTION)
+   ========================================================================== */
+.resale-trust-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.trust-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .trust-pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.trust-pillar-card {
+  background: var(--bg-stone);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: var(--transition);
+}
+
+.trust-pillar-card:hover {
+  border-color: var(--text-dark);
+  background: #FFFFFF;
+  box-shadow: var(--shadow-card);
+}
+
+.pillar-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.pillar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.pillar-desc {
+  font-size: 0.88rem;
+  color: var(--text-slate);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   7. ULTRA-LUXURY EDITORIAL FOOTER & COMPLIANCE
+   ========================================================================== */
+.resale-footer {
+  background-color: var(--text-dark);
+  color: #FFFFFF;
+  padding: 70px 0 45px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-inner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.footer-signature-bar {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 4px;
+}
+
+.footer-consultancy-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.footer-wa-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--whatsapp-green);
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  margin-bottom: 34px;
+}
+
+.footer-wa-action-btn:hover {
+  background-color: var(--whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.footer-wa-action-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.footer-compliance-text {
+  max-width: 820px;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.footer-compliance-text strong {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 20px;
+}
+
+.footer-legal-links a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   8. FLOATING WHATSAPP BUTTON (SOLID VIBRANT GREEN #25D366)
+   ========================================================================== */
+.floating-whatsapp-widget {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--whatsapp-green);
+  color: #FFFFFF;
+  padding: 12px 20px 12px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+  transition: var(--transition);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.floating-whatsapp-widget:hover {
+  background-color: var(--whatsapp-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+}
+
+.floating-whatsapp-widget svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .floating-whatsapp-widget {
+    bottom: 18px;
+    right: 18px;
+    padding: 12px;
+    border-radius: 50%;
+  }
+
+  .floating-whatsapp-widget .widget-label {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   9. SUCCESS MODAL OVERLAY (VERBATIM PROMPT SPECIFICATION)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(26, 32, 44, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 38px 32px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: var(--shadow-modal);
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.is-active .modal-dialog-card {
+  transform: scale(1);
+}
+
+.modal-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(37, 211, 102, 0.12);
+  color: var(--whatsapp-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modal-icon-wrap svg {
+  width: 32px;
+  height: 32px;
+}
+
+.modal-header-title {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.modal-body-text {
+  font-size: 0.95rem;
+  color: var(--text-slate);
+  line-height: 1.6;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.btn-modal-whatsapp {
+  width: 100%;
+  height: 52px;
+  background-color: var(--whatsapp-green);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+  margin-bottom: 14px;
+}
+
+.btn-modal-whatsapp:hover {
+  background-color: var(--whatsapp-hover);
+  box-shadow: var(--whatsapp-shadow);
+  transform: translateY(-1px);
+}
+
+.btn-modal-whatsapp svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.btn-modal-dismiss {
+  background: transparent;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.2s ease;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.btn-modal-dismiss:hover {
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   10. MOBILE OPTIMIZATION (100% THUMB-FRIENDLY SINGLE COLUMN)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .resale-hero {
+    padding-top: 85px;
+    padding-bottom: 45px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 22px;
+  }
+
+  .hero-trust-metrics {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .metric-value {
+    font-size: 1.15rem;
+  }
+
+  .metric-label {
+    font-size: 0.68rem;
+  }
+
+  .lead-card-floating {
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .card-header-block h3 {
+    font-size: 1.2rem;
+  }
+
+  .resale-inventory-section,
+  .resale-section-divider {
+    padding: 55px 0;
+  }
+
+  .section-main-title {
+    font-size: 1.85rem;
+  }
+
+  .section-lead-text {
+    font-size: 0.95rem;
+  }
+
+  .inventory-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .card-body-content {
+    padding: 20px;
+  }
+
+  .card-unit-title {
+    font-size: 1.2rem;
+  }
+
+  .card-media-wrapper {
+    height: 200px;
+  }
+
+  .modal-dialog-card {
+    padding: 28px 22px;
+  }
+}

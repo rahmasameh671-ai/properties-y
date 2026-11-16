@@ -1,12 +1,17 @@
 {
   "cleanUrls": true,
   "redirects": [
+    { "source": "/resale-new-cairo", "destination": "/resale-new-cairo/", "permanent": true },
+    { "source": "/resalenewcairo", "destination": "/resale-new-cairo/", "permanent": true },
     { "source": "/tatweer-misr", "destination": "/tatweer-misr/", "permanent": true },
     { "source": "/Tatweer-Misr", "destination": "/Tatweer-Misr/", "permanent": true },
     { "source": "/tatweermisr", "destination": "/tatweer-misr/", "permanent": true },
     { "source": "/TatweerMisr", "destination": "/Tatweer-Misr/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/resale-new-cairo/", "destination": "/resale-new-cairo/index.html" },
+    { "source": "/resale-new-cairo", "destination": "/resale-new-cairo/index.html" },
+    { "source": "/resale-new-cairo/:path*", "destination": "/resale-new-cairo/:path*" },
     { "source": "/hassan-allam", "destination": "/hassan-allam/index.html" },
     { "source": "/hassan-allam/", "destination": "/hassan-allam/index.html" },
     { "source": "/hassanallam", "destination": "/hassan-allam/index.html" },

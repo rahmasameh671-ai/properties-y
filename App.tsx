@@ -5,10 +5,12 @@ import CityGateLandingPage from './src/pages/CityGateLandingPage';
 import MadinetMasrLandingPage from './src/pages/MadinetMasrLandingPage';
 import MountainViewLandingPage from './src/pages/MountainViewLandingPage';
 import HassanAllamLandingPage from './src/pages/HassanAllamLandingPage';
+import ResaleNewCairoLandingPage from './src/pages/ResaleNewCairoLandingPage';
 
 /**
  * Main Application Routing Configuration (TypeScript)
  * Directives: Explicit Routes under properties-y.com architecture
+ * - /resale-new-cairo: New Cairo Exclusive Resale Portfolio
  * - /mountain-view: Mountain View Exclusive Portfolio (1.1, iCity, Hyde Park, ALIVA, Grand Valleys)
  * - /hassan-allam: Hassan Allam Properties Portfolio (Park Central, The Valleys, Xchange, Swanlake Residence, Encore El Gouna)
  */
@@ -41,6 +43,10 @@ export default function App(): JSX.Element {
         <Route path="/hassan-allam/" element={<HassanAllamLandingPage />} />
         <Route path="/hassanallam" element={<HassanAllamLandingPage />} />
         <Route path="/hassanallam/" element={<HassanAllamLandingPage />} />
+
+        {/* Dedicated New Cairo Exclusive Resale Portfolio Route (Strict route: /resale-new-cairo/ & /resale-new-cairo) */}
+        <Route path="/resale-new-cairo" element={<ResaleNewCairoLandingPage />} />
+        <Route path="/resale-new-cairo/" element={<ResaleNewCairoLandingPage />} />
       </Routes>
     </BrowserRouter>
   );

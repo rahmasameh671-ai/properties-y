@@ -5,10 +5,12 @@ import CityGateLandingPage from './src/pages/CityGateLandingPage';
 import MadinetMasrLandingPage from './src/pages/MadinetMasrLandingPage';
 import MountainViewLandingPage from './src/pages/MountainViewLandingPage';
 import HassanAllamLandingPage from './src/pages/HassanAllamLandingPage';
+import ResaleNewCairoLandingPage from './src/pages/ResaleNewCairoLandingPage';
 
 /**
  * Main Application Routing Configuration
  * Directives: Explicit Routes under ir-properties.com / properties-y.com architecture
+ * - /resale-new-cairo: New Cairo Exclusive Resale Portfolio
  * - /sodic: SODIC Signature Living
  * - /city-gate & /citygate: City Gate New Cairo by Qatari Diar
  * - /Madient-Masr: Madinet Masr Curated Portfolio (The Butterfly, Taj City Etaje, Sarai, Talala)
@@ -80,6 +82,10 @@ export default function App() {
         <Route path="/hassan-allam/" element={<HassanAllamLandingPage />} />
         <Route path="/hassanallam" element={<HassanAllamLandingPage />} />
         <Route path="/hassanallam/" element={<HassanAllamLandingPage />} />
+
+        {/* Dedicated New Cairo Exclusive Resale Portfolio Route (Strict route: /resale-new-cairo/ & /resale-new-cairo) */}
+        <Route path="/resale-new-cairo" element={<ResaleNewCairoLandingPage />} />
+        <Route path="/resale-new-cairo/" element={<ResaleNewCairoLandingPage />} />
       </Routes>
     </BrowserRouter>
   );

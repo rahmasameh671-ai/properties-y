@@ -10,6 +10,13 @@
 /privacy-policy/    /privacy-policy    301
 /terms-conditions/  /terms-conditions  301
 
+# Resale New Cairo Rewrites & Routing (supports /resale-new-cairo/ and /resale-new-cairo)
+/resale-new-cairo/*  /resale-new-cairo/:splat 200
+/resale-new-cairo/   /resale-new-cairo/index.html 200
+/resale-new-cairo    /resale-new-cairo/ 301
+/resalenewcairo      /resale-new-cairo/ 301
+/resalenewcairo/     /resale-new-cairo/ 301
+
 # Tatweer Misr Rewrites & Routing (supports /Tatweer-Misr/ and /tatweer-misr/)
 /Tatweer-Misr/*     /tatweer-misr/:splat  200
 /Tatweer-Misr/      /tatweer-misr/index.html 200
