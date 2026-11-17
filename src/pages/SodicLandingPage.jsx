@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import '../../sodic.css';
 
 /**
- * SODIC Exclusive Portfolio Landing Page Component
+ * SODIC NEW RELEASE LANDING PAGE COMPONENT
  * Route: /sodic/ strictly under properties-y.com domain architecture
  * Final Live URL: https://properties-y.com/sodic/
  *
+ * Focus: EASTVALE & SODIC EAST — NOW COLLECTING EOIs EGP 100,000 (Refundable)
+ * Aesthetic: Modern Ultra-Luxury (Clean Whites #FFFFFF, Stone Grey #F8F9FA, Charcoal #1A202C)
+ * Zero Gold Policy: Strictly NO gold, bronze, or yellow anywhere.
  * Branding: 'By properties-y.com' | Independent Real Estate Consultancy
- * Aesthetic: Modern Ultra-Luxury (Aman / Apple sleekness | Zero Gold Policy)
- * Global WhatsApp: +201277752731 (Solid Vibrant Green #25D366)
+ * WhatsApp CTA: +201277752731 (Solid Green #25D366)
  */
 
 const COUNTRIES = [
@@ -40,12 +42,11 @@ const COUNTRIES = [
 
 export default function SodicLandingPage() {
   const WHATSAPP_NUMBER = '201277752731';
-  const GLOBAL_WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20the%20SODIC%20Exclusive%20Portfolio`;
+  const GLOBAL_WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20the%20SODIC%20New%20Release%20Portfolio`;
 
-  // Specific Project CTAs exactly as specified in the prompt
-  const OGAMI_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20Ogami%20by%20SODIC.`;
-  const EAST_VALE_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20East%20Vale%20by%20SODIC.`;
-  const SODIC_EAST_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20SODIC%20East.`;
+  // Specific Project CTAs
+  const THE_LAKES_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20The%20Lakes%20at%20SODIC%20East`;
+  const EASTVALE_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20Eastvale%20by%20SODIC`;
 
   // Form State
   const [fullName, setFullName] = useState('');
@@ -69,9 +70,9 @@ export default function SodicLandingPage() {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
-  // Update Page Title and Meta for SEO
+  // Update Page Title for SEO
   useEffect(() => {
-    document.title = 'SODIC Signature Destinations | properties-y.com Exclusive Portfolio';
+    document.title = 'EASTVALE & SODIC EAST – New Release | properties-y.com';
   }, []);
 
   const filteredCountries = COUNTRIES.filter(
@@ -103,7 +104,7 @@ export default function SodicLandingPage() {
       clientName
     )}%20(${encodeURIComponent(
       fullPhone
-    )}).%20I%20have%20registered%20for%20the%20SODIC%20Exclusive%20Portfolio%20and%20would%20like%20to%20receive%20brochures%2C%20master%20plans%2C%20and%20unit%20availability.`;
+    )}).%20I%20have%20registered%20for%20the%20SODIC%20New%20Release%20Portfolio%20and%20would%20like%20to%20receive%20brochures%2C%20master%20plans%2C%20and%20unit%20availability.`;
     setModalWhatsappLink(personalizedWaUrl);
 
     // Save Lead Locally
@@ -113,7 +114,7 @@ export default function SodicLandingPage() {
         name: clientName,
         phone: fullPhone,
         timestamp: new Date().toISOString(),
-        portfolio: 'SODIC Exclusive Portfolio',
+        portfolio: 'SODIC New Release Portfolio',
         consultancy: 'properties-y.com Independent Real Estate Consultancy'
       });
       localStorage.setItem('properties_y_sodic_leads', JSON.stringify(stored));
@@ -175,7 +176,7 @@ export default function SodicLandingPage() {
         body: JSON.stringify({
           fullName: clientName,
           phoneNumber: fullPhone,
-          portfolio: 'SODIC Exclusive Portfolio',
+          portfolio: 'SODIC New Release Portfolio',
           consultancy: 'properties-y.com Independent Real Estate Consultancy',
           landingPageUrl: typeof window !== 'undefined' ? window.location.href : 'https://properties-y.com/sodic/',
           submissionDate: new Date().toISOString()
@@ -189,19 +190,10 @@ export default function SodicLandingPage() {
     setIsModalOpen(true);
   };
 
-  const scrollToHeroForm = () => {
-    const el = document.getElementById('sodic-lead-form');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      const input = document.getElementById('sodicFullNameInput');
-      if (input) input.focus();
-    }
-  };
-
   return (
     <div className="sodic-page-wrapper">
       {/* =========================================================================
-           1. TOP NAVIGATION / STATUS BAR (MODERN ULTRA-LUXURY)
+           1. TOP NAVIGATION / STATUS BAR
            ========================================================================= */}
       <header className="sodic-top-nav">
         <div className="container sodic-nav-inner">
@@ -219,18 +211,17 @@ export default function SodicLandingPage() {
       </header>
 
       {/* =========================================================================
-           2. HERO SECTION
-           Badge/Eyebrow: EXCLUSIVE PORTFOLIO
-           Title: SODIC Signature Destinations
-           Subtitle: Discover premium residential and coastal communities by SODIC,
-           designed to elevate your lifestyle across New Cairo, Mostakbal City, and Ras El Hekma.
-           Features 'By properties-y.com' and includes the Lead Capture Form here.
+           2. HERO SECTION (NEW RELEASE FOCUS)
+           Badge/Eyebrow: NEW RELEASE
+           Title: EASTVALE & SODIC EAST
+           Subtitle: NOW COLLECTING EOIs — EGP 100,000 (Refundable). Secure your premium residence in our newest launch today.
+           Features 'By properties-y.com' and includes the Lead Capture Form directly here.
            ========================================================================= */}
       <section className="sodic-hero" id="hero">
         <div className="hero-bg-layer">
           <img
             src="/images/hero-masterview.jpg"
-            alt="SODIC Signature Destinations Architectural Showcase"
+            alt="EASTVALE &amp; SODIC EAST Architectural Showcase"
             loading="eager"
           />
         </div>
@@ -242,44 +233,36 @@ export default function SodicLandingPage() {
             <div className="hero-narrative">
               <div className="hero-eyebrow-pill">
                 <span className="hero-eyebrow-dot"></span>
-                EXCLUSIVE PORTFOLIO
-              </div>
-
-              <div className="hero-developer-brand-tag">
-                <img
-                  src="/images/sodic-logo.png"
-                  alt="SODIC Official Developer Mark"
-                  className="hero-developer-logo"
-                />
+                NEW RELEASE
               </div>
 
               <h1 className="hero-main-title">
-                SODIC Signature Destinations
+                EASTVALE &amp; SODIC EAST
               </h1>
 
               <p className="hero-lead-subtitle">
-                Discover premium residential and coastal communities by SODIC, designed to elevate your lifestyle across New Cairo, Mostakbal City, and Ras El Hekma.
+                NOW COLLECTING EOIs — EGP 100,000 (Refundable). Secure your premium residence in our newest launch today.
               </p>
 
               <div className="hero-consultancy-stamp">
                 <span className="consultancy-stamp-dot"></span>
                 <span className="consultancy-stamp-text">
-                  Curated <strong>By properties-y.com</strong> &bull; Independent Real Estate Consultancy
+                  Presented <strong>By properties-y.com</strong> &bull; Independent Real Estate Consultancy
                 </span>
               </div>
 
               <div className="hero-trust-metrics">
                 <div className="metric-item">
-                  <span className="metric-value">3</span>
-                  <span className="metric-label">Iconic Destinations</span>
+                  <span className="metric-value">100,000 EGP</span>
+                  <span className="metric-label">Refundable EOI</span>
                 </div>
                 <div className="metric-item">
-                  <span className="metric-value">Up to 10 Yrs</span>
-                  <span className="metric-label">Payment Flexibility</span>
+                  <span className="metric-value">1.5% &ndash; 5%</span>
+                  <span className="metric-label">Starting Down Payment</span>
                 </div>
                 <div className="metric-item">
-                  <span className="metric-value">1.5% - 5%</span>
-                  <span className="metric-label">Starting Down Payments</span>
+                  <span className="metric-value">Over 10 Yrs</span>
+                  <span className="metric-label">Installment Horizon</span>
                 </div>
               </div>
             </div>
@@ -288,7 +271,7 @@ export default function SodicLandingPage() {
             <div className="lead-card-floating" id="sodic-lead-form">
               <div className="card-header-block">
                 <h3>Request Master Plans &amp; Pricing</h3>
-                <p>Register below for direct consultancy, real-time inventory, and complete brochures.</p>
+                <p>Register below for priority unit allotment, official launch inventory, and complete brochures.</p>
               </div>
 
               <form onSubmit={handleFormSubmit} noValidate>
@@ -303,7 +286,7 @@ export default function SodicLandingPage() {
                     className="field-input"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Enter your full name"
+                    placeholder=""
                     required
                     autoComplete="name"
                   />
@@ -363,13 +346,14 @@ export default function SodicLandingPage() {
                       </div>
                     )}
 
-                    {/* Blank Phone Input (NO placeholder) */}
+                    {/* Blank Phone Input */}
                     <input
                       type="tel"
                       id="sodicPhoneInput"
                       className="phone-split-input"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
+                      placeholder=""
                       required
                       autoComplete="tel"
                     />
@@ -382,12 +366,12 @@ export default function SodicLandingPage() {
                   className="btn-submit-luxury"
                   disabled={isSubmitting}
                 >
-                  <span>{isSubmitting ? 'DISPATCHING...' : 'Request Project Details'}</span>
+                  <span>{isSubmitting ? 'DISPATCHING...' : 'REQUEST PROJECT DETAILS'}</span>
                 </button>
 
                 {/* Form Disclaimer */}
                 <p className="card-disclaimer-text">
-                  By properties-y.com &bull; Independent Real Estate Consultancy &bull; Strict Confidentiality
+                  By properties-y.com &bull; Independent Real Estate Consultancy &bull; Strict Confidentiality. Prices and availability are subject to developer terms.
                 </p>
               </form>
             </div>
@@ -396,280 +380,27 @@ export default function SodicLandingPage() {
       </section>
 
       {/* =========================================================================
-           4. PROJECT SECTIONS (CLEAN, MINIMALIST CARDS)
-           Present the following three projects as visually stunning, separate sections:
-           - SECTION A: Ogami by SODIC (Ras El Hekma)
-           - SECTION B: East Vale (Mostakbal City)
-           - SECTION C: SODIC East (New Cairo)
+           3. PROJECT SECTIONS (CLEAN, MINIMALIST CARDS)
+           SECTION A: THE LAKES | SODIC EAST (NEW LAUNCH)
+           SECTION B: EASTVALE (MOSTAKBAL CITY)
            ========================================================================= */}
 
-      {/* SECTION A: Ogami by SODIC (Ras El Hekma) */}
-      <section className="sodic-project-section" id="ogami-section">
+      {/* SECTION A: THE LAKES | SODIC EAST */}
+      <section className="sodic-project-section" id="the-lakes-section">
         <div className="container">
           <div className="section-header-block">
             <div className="section-badge-pill">
-              SECTION A &bull; RAS EL HEKMA COASTAL DESTINATION
+              SECTION A &bull; NEW RELEASE &bull; NEW CAIRO
             </div>
-            <h2 className="section-main-title">Ogami by SODIC</h2>
             <div className="section-location-tag">
-              <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>Ras El Hekma, Km 204 (Alexandria-Matrouh Road)</span>
+              <span>New Cairo Integrated Destination &bull; 650 Feddans</span>
             </div>
             <p className="section-lead-text">
-              A 440-feddan Maldivian-inspired coastal destination featuring an 800m beachfront, crystal lagoons, and contemporary Japanese architecture.
-            </p>
-          </div>
-
-          <article className="project-card-full">
-            <div className="project-card-grid">
-              {/* Media Column */}
-              <div className="project-media-col">
-                <img
-                  src="/images/ogami.jpg"
-                  alt="Ogami by SODIC Ras El Hekma"
-                  loading="lazy"
-                />
-                <div className="project-media-gradient"></div>
-
-                <div className="project-brand-overlay">
-                  <img
-                    src="/images/ogami-logo.png"
-                    alt="Ogami by SODIC Brand Mark"
-                  />
-                </div>
-
-                <span className="project-status-badge">North Coast Coastal Haven</span>
-
-                <div className="project-media-caption">
-                  <div className="media-caption-title">Maldivian-Inspired Waterfront</div>
-                  <div className="media-caption-subtitle">800-Meter Pristine Beachfront &bull; Crystal Lagoons</div>
-                </div>
-              </div>
-
-              {/* Content Column */}
-              <div className="project-content-col">
-                <div>
-                  <div className="project-meta-eyebrow">RAS EL HEKMA &bull; KM 204</div>
-                  <h3 className="project-content-heading">Ogami by SODIC</h3>
-                  <p className="project-narrative-lead">
-                    A 440-feddan Maldivian-inspired coastal destination featuring an 800m beachfront, crystal lagoons, and contemporary Japanese architecture.
-                  </p>
-
-                  {/* Specs Matrix */}
-                  <div className="project-specs-matrix">
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Location</span>
-                      <span className="spec-entry-value">Ras El Hekma, Km 204</span>
-                    </div>
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Beachfront</span>
-                      <span className="spec-entry-value">800m Coastal Frontage</span>
-                    </div>
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Masterplan Area</span>
-                      <span className="spec-entry-value">440 Feddans</span>
-                    </div>
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Architecture</span>
-                      <span className="spec-entry-value">Contemporary Japanese</span>
-                    </div>
-                  </div>
-
-                  {/* Financials & Payment Plan */}
-                  <div className="project-financials-block">
-                    <div className="financials-unit-row">
-                      <span className="unit-tier-label">Unit Types</span>
-                      <span className="unit-tier-price">Fully Finished Chalets &amp; Signature Villas</span>
-                    </div>
-                    <div className="financials-unit-row">
-                      <span className="unit-tier-label">Starting Price</span>
-                      <span className="unit-tier-price">18,800,000 EGP</span>
-                    </div>
-                    <div className="payment-plan-badge-row">
-                      <svg className="plan-badge-icon" viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                      </svg>
-                      <span className="payment-plan-text">Payment Plan: Installments over 7 Years</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTAs */}
-                <div className="project-cta-group">
-                  <a
-                    href={OGAMI_CTA}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-card-whatsapp"
-                  >
-                    <svg viewBox="0 0 24 24">
-                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
-                    </svg>
-                    <span>Inquire About Ogami via WhatsApp</span>
-                  </a>
-
-                  <button
-                    type="button"
-                    onClick={scrollToHeroForm}
-                    className="btn-card-secondary"
-                  >
-                    Request Ogami Master Plan &amp; Brochure
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      {/* SECTION B: East Vale (Mostakbal City) */}
-      <section className="sodic-project-section" id="east-vale-section">
-        <div className="container">
-          <div className="section-header-block">
-            <div className="section-badge-pill">
-              SECTION B &bull; MOSTAKBAL CITY FLAGSHIP MASTERPLAN
-            </div>
-            <h2 className="section-main-title">East Vale</h2>
-            <div className="section-location-tag">
-              <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>Mostakbal City</span>
-            </div>
-            <p className="section-lead-text">
-              SODIC’s flagship masterplan in Mostakbal City, blending lush green spaces with modern architecture for ultimate privacy and serenity.
-            </p>
-          </div>
-
-          <article className="project-card-full">
-            <div className="project-card-grid">
-              {/* Media Column */}
-              <div className="project-media-col">
-                <img
-                  src="/images/east-vale.jpg"
-                  alt="East Vale by SODIC Mostakbal City"
-                  loading="lazy"
-                />
-                <div className="project-media-gradient"></div>
-
-                <div className="project-brand-overlay">
-                  <img
-                    src="/images/east-vale-logo.png"
-                    alt="East Vale Brand Mark"
-                  />
-                </div>
-
-                <span className="project-status-badge">Flagship Mostakbal City</span>
-
-                <div className="project-media-caption">
-                  <div className="media-caption-title">Modern Architectural Serenity</div>
-                  <div className="media-caption-subtitle">Lush Green Landscapes &bull; Ultimate Residential Privacy</div>
-                </div>
-              </div>
-
-              {/* Content Column */}
-              <div className="project-content-col">
-                <div>
-                  <div className="project-meta-eyebrow">MOSTAKBAL CITY &bull; SIGNATURE LIVING</div>
-                  <h3 className="project-content-heading">East Vale</h3>
-                  <p className="project-narrative-lead">
-                    SODIC’s flagship masterplan in Mostakbal City, blending lush green spaces with modern architecture for ultimate privacy and serenity.
-                  </p>
-
-                  {/* Specs Matrix */}
-                  <div className="project-specs-matrix">
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Location</span>
-                      <span className="spec-entry-value">Mostakbal City</span>
-                    </div>
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Finish Specs</span>
-                      <span className="spec-entry-value">Fully Finished units with ACs</span>
-                    </div>
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Environment</span>
-                      <span className="spec-entry-value">Lush Green Landscapes</span>
-                    </div>
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Developer</span>
-                      <span className="spec-entry-value">SODIC Master Developer</span>
-                    </div>
-                  </div>
-
-                  {/* Financials & Payment Plan */}
-                  <div className="project-financials-block">
-                    <div className="financials-unit-row">
-                      <span className="unit-tier-label">Premium Apartments</span>
-                      <span className="unit-tier-price">Starting from 10,500,000 EGP</span>
-                    </div>
-                    <div className="financials-unit-row">
-                      <span className="unit-tier-label">Signature Villas</span>
-                      <span className="unit-tier-price">Starting from 33,000,000 EGP</span>
-                    </div>
-                    <div className="financials-unit-row">
-                      <span className="unit-tier-label">Unit Specifications</span>
-                      <span className="unit-tier-price" style={{ fontSize: '0.9rem' }}>Fully Finished units with ACs</span>
-                    </div>
-                    <div className="payment-plan-badge-row">
-                      <svg className="plan-badge-icon" viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                      </svg>
-                      <span className="payment-plan-text">Payment Plan: 5% Down Payment | 9 Years Installments</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTAs */}
-                <div className="project-cta-group">
-                  <a
-                    href={EAST_VALE_CTA}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-card-whatsapp"
-                  >
-                    <svg viewBox="0 0 24 24">
-                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
-                    </svg>
-                    <span>Inquire About East Vale via WhatsApp</span>
-                  </a>
-
-                  <button
-                    type="button"
-                    onClick={scrollToHeroForm}
-                    className="btn-card-secondary"
-                  >
-                    Request East Vale Master Plan &amp; Brochure
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      {/* SECTION C: SODIC East (New Cairo) */}
-      <section className="sodic-project-section" id="sodic-east-section">
-        <div className="container">
-          <div className="section-header-block">
-            <div className="section-badge-pill">
-              SECTION C &bull; NEW CAIRO INTEGRATED DESTINATION
-            </div>
-            <h2 className="section-main-title">SODIC East</h2>
-            <div className="section-location-tag">
-              <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>New Cairo</span>
-            </div>
-            <p className="section-lead-text">
-              A 650-feddan integrated modern destination featuring vast green landscapes and a world-class sports club.
+              A 650-feddan integrated modern destination in New Cairo featuring vast green landscapes and a world-class sports club.
             </p>
           </div>
 
@@ -679,33 +410,44 @@ export default function SodicLandingPage() {
               <div className="project-media-col">
                 <img
                   src="/images/sodic-east.jpg"
-                  alt="SODIC East New Cairo"
+                  alt="The Lakes at SODIC East Master Community"
                   loading="lazy"
                 />
                 <div className="project-media-gradient"></div>
 
+                {/* Visual Emblem Badge PNG */}
                 <div className="project-brand-overlay">
                   <img
                     src="/images/sodic-east-logo.png"
-                    alt="SODIC East Brand Mark"
+                    alt="SODIC East Official Logo"
                   />
                 </div>
 
-                <span className="project-status-badge">650-Feddan Community</span>
+                <span className="project-status-badge">New Release &bull; The Lakes</span>
 
                 <div className="project-media-caption">
-                  <div className="media-caption-title">Integrated Modern Destination</div>
-                  <div className="media-caption-subtitle">Vast Green Landscapes &bull; World-Class Sports Club</div>
+                  <div className="media-caption-title">The Lakes at SODIC East</div>
+                  <div className="media-caption-subtitle">650 Feddans &bull; World-Class Sports Club &amp; Vast Green Landscapes</div>
                 </div>
               </div>
 
               {/* Content Column */}
               <div className="project-content-col">
                 <div>
-                  <div className="project-meta-eyebrow">NEW CAIRO &bull; INTEGRATED DESTINATION</div>
-                  <h3 className="project-content-heading">SODIC East</h3>
+                  {/* Official Brand Logo PNG Header (No redundant text title) */}
+                  <div className="project-brand-badge" style={{ marginBottom: '16px' }}>
+                    <img
+                      src="/images/sodic-east-logo.png"
+                      alt="SODIC East Logo"
+                      className="project-badge-logo"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="project-meta-eyebrow">NEW CAIRO &bull; 650-FEDDAN DESTINATION</div>
+
                   <p className="project-narrative-lead">
-                    A 650-feddan integrated modern destination featuring vast green landscapes and a world-class sports club.
+                    A 650-feddan integrated modern destination in New Cairo featuring vast green landscapes and a world-class sports club.
                   </p>
 
                   {/* Specs Matrix */}
@@ -719,31 +461,58 @@ export default function SodicLandingPage() {
                       <span className="spec-entry-value">650 Feddans</span>
                     </div>
                     <div className="spec-entry">
+                      <span className="spec-entry-label">Finishing Specs</span>
+                      <span className="spec-entry-value">Flexi Plus Finishing</span>
+                    </div>
+                    <div className="spec-entry">
                       <span className="spec-entry-label">Amenities</span>
                       <span className="spec-entry-value">World-Class Sports Club</span>
                     </div>
-                    <div className="spec-entry">
-                      <span className="spec-entry-label">Nature</span>
-                      <span className="spec-entry-value">Expansive Green Parks</span>
+                  </div>
+
+                  {/* Unit Typologies & Areas Matrix */}
+                  <div className="unit-typologies-block">
+                    <div className="typology-block-title">UNIT TYPOLOGIES &amp; AREAS</div>
+                    <div className="typology-grid">
+                      <div className="typology-chip">
+                        <span className="typology-type">1 Bedroom</span>
+                        <span className="typology-area">75 SQM</span>
+                      </div>
+                      <div className="typology-chip">
+                        <span className="typology-type">2 Bedrooms</span>
+                        <span className="typology-area">130 SQM</span>
+                      </div>
+                      <div className="typology-chip">
+                        <span className="typology-type">3 Bedrooms</span>
+                        <span className="typology-area">147 SQM</span>
+                      </div>
+                      <div className="typology-chip">
+                        <span className="typology-type">3 Bedrooms Loft</span>
+                        <span className="typology-area">220 SQM</span>
+                      </div>
+                      <div className="typology-chip">
+                        <span className="typology-type">4 Bedrooms + Nanny</span>
+                        <span className="typology-area">250 SQM</span>
+                      </div>
+                      <div className="typology-chip highlight-chip">
+                        <span className="typology-type">NEW Duplex (Ground &amp; Upper)</span>
+                        <span className="typology-area">200 SQM</span>
+                      </div>
                     </div>
                   </div>
 
                   {/* Financials & Payment Plan */}
                   <div className="project-financials-block">
                     <div className="financials-unit-row">
-                      <span className="unit-tier-label">Premium Apartments</span>
-                      <span className="unit-tier-price">Starting from 13,500,000 EGP</span>
-                    </div>
-                    <div className="financials-unit-row">
-                      <span className="unit-tier-label">Signature Villas</span>
-                      <span className="unit-tier-price">Starting from 28,000,000 EGP</span>
+                      <span className="unit-tier-label">Payment Schedule</span>
+                      <span className="unit-tier-price">Over 10 Years</span>
                     </div>
                     <div className="payment-plan-badge-row">
-                      <svg className="plan-badge-icon" viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg className="plan-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
                       </svg>
-                      <span className="payment-plan-text">Payment Plan: 1.5% Down Payment | 10 Years Installments</span>
+                      <span className="payment-plan-text">Payment Plan: 1.5% Down Payment | Over 10 Years</span>
                     </div>
                   </div>
                 </div>
@@ -751,7 +520,7 @@ export default function SodicLandingPage() {
                 {/* CTAs */}
                 <div className="project-cta-group">
                   <a
-                    href={SODIC_EAST_CTA}
+                    href={THE_LAKES_CTA}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-card-whatsapp"
@@ -759,16 +528,166 @@ export default function SodicLandingPage() {
                     <svg viewBox="0 0 24 24">
                       <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
                     </svg>
-                    <span>Inquire About SODIC East via WhatsApp</span>
+                    <span>Inquire About The Lakes via WhatsApp</span>
                   </a>
 
-                  <button
-                    type="button"
-                    onClick={scrollToHeroForm}
+                  <a
+                    href="#hero"
                     className="btn-card-secondary"
                   >
-                    Request SODIC East Master Plan &amp; Brochure
-                  </button>
+                    Request Full Floor Plans &amp; Brochure
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* SECTION B: EASTVALE (MOSTAKBAL CITY) */}
+      <section className="sodic-project-section" id="eastvale-section">
+        <div className="container">
+          <div className="section-header-block">
+            <div className="section-badge-pill">
+              SECTION B &bull; MOSTAKBAL CITY FLAGSHIP
+            </div>
+            <div className="section-location-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Mostakbal City Master Community</span>
+            </div>
+            <p className="section-lead-text">
+              SODIC’s flagship masterplan in Mostakbal City, blending lush green spaces with modern architecture for ultimate privacy and serenity.
+            </p>
+          </div>
+
+          <article className="project-card-full">
+            <div className="project-card-grid">
+              {/* Media Column */}
+              <div className="project-media-col">
+                <img
+                  src="/images/east-vale.jpg"
+                  alt="Eastvale by SODIC Mostakbal City"
+                  loading="lazy"
+                />
+                <div className="project-media-gradient"></div>
+
+                {/* Visual Emblem Badge PNG */}
+                <div className="project-brand-overlay dark-overlay">
+                  <img
+                    src="/images/east-vale-logo.png"
+                    alt="Eastvale Official Logo"
+                  />
+                </div>
+
+                <span className="project-status-badge">Flagship Masterplan</span>
+
+                <div className="project-media-caption">
+                  <div className="media-caption-title">Eastvale by SODIC</div>
+                  <div className="media-caption-subtitle">Lush Green Spaces &bull; Serene Modern Architecture</div>
+                </div>
+              </div>
+
+              {/* Content Column */}
+              <div className="project-content-col">
+                <div>
+                  {/* Official Brand Logo PNG Header (No redundant text title) */}
+                  <div className="project-brand-badge dark-badge" style={{ marginBottom: '16px' }}>
+                    <img
+                      src="/images/east-vale-logo.png"
+                      alt="Eastvale Logo"
+                      className="project-badge-logo"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="project-meta-eyebrow">MOSTAKBAL CITY &bull; FLAGSHIP COMMUNITY</div>
+
+                  <p className="project-narrative-lead">
+                    SODIC’s flagship masterplan in Mostakbal City, blending lush green spaces with modern architecture for ultimate privacy and serenity.
+                  </p>
+
+                  {/* Specs Matrix */}
+                  <div className="project-specs-matrix">
+                    <div className="spec-entry">
+                      <span className="spec-entry-label">Location</span>
+                      <span className="spec-entry-value">Mostakbal City</span>
+                    </div>
+                    <div className="spec-entry">
+                      <span className="spec-entry-label">Finishing Specs</span>
+                      <span className="spec-entry-value">Fully Finished with ACs</span>
+                    </div>
+                    <div className="spec-entry">
+                      <span className="spec-entry-label">Architecture</span>
+                      <span className="spec-entry-value">Modern Minimalist</span>
+                    </div>
+                    <div className="spec-entry">
+                      <span className="spec-entry-label">Atmosphere</span>
+                      <span className="spec-entry-value">Lush Greenery &amp; Privacy</span>
+                    </div>
+                  </div>
+
+                  {/* Unit Typologies & Areas Matrix */}
+                  <div className="unit-typologies-block">
+                    <div className="typology-block-title">UNIT TYPOLOGIES &amp; AREAS</div>
+                    <div className="typology-grid">
+                      <div className="typology-chip">
+                        <span className="typology-type">2 Bedrooms + Nanny</span>
+                        <span className="typology-area">130 SQM</span>
+                      </div>
+                      <div className="typology-chip">
+                        <span className="typology-type">3 Bedrooms + Nanny</span>
+                        <span className="typology-area">170 SQM</span>
+                      </div>
+                      <div className="typology-chip">
+                        <span className="typology-type">3 Bedrooms Loft</span>
+                        <span className="typology-area">210 SQM</span>
+                      </div>
+                      <div className="typology-chip highlight-chip">
+                        <span className="typology-type">3 Bedrooms Duplex</span>
+                        <span className="typology-area">210 SQM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Financials & Payment Plan */}
+                  <div className="project-financials-block">
+                    <div className="financials-unit-row">
+                      <span className="unit-tier-label">Payment Schedule</span>
+                      <span className="unit-tier-price">Over 10 Years</span>
+                    </div>
+                    <div className="payment-plan-badge-row">
+                      <svg className="plan-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span className="payment-plan-text">Payment Plan: 5% Down Payment | Over 10 Years</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="project-cta-group">
+                  <a
+                    href={EASTVALE_CTA}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-card-whatsapp"
+                  >
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
+                    </svg>
+                    <span>Inquire About Eastvale via WhatsApp</span>
+                  </a>
+
+                  <a
+                    href="#hero"
+                    className="btn-card-secondary"
+                  >
+                    Request Eastvale Floor Plans &amp; Brochure
+                  </a>
                 </div>
               </div>
             </div>
@@ -777,15 +696,15 @@ export default function SodicLandingPage() {
       </section>
 
       {/* =========================================================================
-           5. PORTFOLIO COMPARISON SUMMARY (MINIMALIST MATRIX)
+           4. NEW RELEASE OVERVIEW TABLE (NO LOGO BEFORE FOOTER)
            ========================================================================= */}
       <section className="sodic-summary-section">
         <div className="container">
           <div className="section-header-block" style={{ marginBottom: '32px' }}>
-            <div className="section-badge-pill">CURATED SUMMARY</div>
-            <h2 className="section-main-title">SODIC Portfolio Quick Overview</h2>
+            <div className="section-badge-pill">NEW RELEASE COMPARISON</div>
+            <h2 className="section-main-title">Launch Inventory &amp; Terms</h2>
             <p className="section-lead-text">
-              Direct comparison of key SODIC destinations curated by properties-y.com.
+              Direct comparison of featured SODIC New Release destinations curated by properties-y.com.
             </p>
           </div>
 
@@ -793,24 +712,24 @@ export default function SodicLandingPage() {
             <table className="comparison-table">
               <thead>
                 <tr>
+                  <th>Project</th>
                   <th>Destination</th>
-                  <th>Location</th>
-                  <th>Unit Types</th>
-                  <th>Starting Price</th>
+                  <th>Finishing Specs</th>
+                  <th>Unit Typologies</th>
                   <th>Payment Plan</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="table-project-name">Ogami by SODIC</td>
-                  <td>Ras El Hekma, Km 204</td>
-                  <td>Fully Finished Chalets &amp; Villas</td>
-                  <td className="table-price-tag">18,800,000 EGP</td>
-                  <td>Installments over 7 Years</td>
+                  <td className="table-project-name">The Lakes | SODIC East</td>
+                  <td>New Cairo (650 Feddans)</td>
+                  <td>Flexi Plus Finishing</td>
+                  <td>1–4 Beds, Lofts &amp; Duplexes (75–250 SQM)</td>
+                  <td className="table-price-tag">1.5% DP | Over 10 Yrs</td>
                   <td>
                     <a
-                      href={OGAMI_CTA}
+                      href={THE_LAKES_CTA}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="table-action-link"
@@ -820,31 +739,14 @@ export default function SodicLandingPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="table-project-name">East Vale</td>
-                  <td>Mostakbal City</td>
-                  <td>Apartments &amp; Signature Villas</td>
-                  <td className="table-price-tag">From 10,500,000 EGP</td>
-                  <td>5% DP | 9 Yrs</td>
+                  <td className="table-project-name">Eastvale</td>
+                  <td>Mostakbal City Flagship</td>
+                  <td>Fully Finished with ACs</td>
+                  <td>2–3 Beds + Nanny, Lofts &amp; Duplexes (130–210 SQM)</td>
+                  <td className="table-price-tag">5% DP | Over 10 Yrs</td>
                   <td>
                     <a
-                      href={EAST_VALE_CTA}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="table-action-link"
-                    >
-                      Inquire &rarr;
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="table-project-name">SODIC East</td>
-                  <td>New Cairo</td>
-                  <td>Apartments &amp; Signature Villas</td>
-                  <td className="table-price-tag">From 13,500,000 EGP</td>
-                  <td>1.5% DP | 10 Yrs</td>
-                  <td>
-                    <a
-                      href={SODIC_EAST_CTA}
+                      href={EASTVALE_CTA}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="table-action-link"
@@ -860,7 +762,8 @@ export default function SodicLandingPage() {
       </section>
 
       {/* =========================================================================
-           6. FOOTER (INDEPENDENT REAL ESTATE CONSULTANCY BRANDING)
+           5. FOOTER (INDEPENDENT REAL ESTATE CONSULTANCY BRANDING)
+           No SODIC Logo before or inside footer.
            Feature 'By properties-y.com' in the Footer.
            Position as an 'Independent Real Estate Consultancy'.
            ========================================================================= */}
@@ -884,7 +787,7 @@ export default function SodicLandingPage() {
           </a>
 
           <p className="footer-compliance-text">
-            This SODIC showcase is curated and published by <strong>properties-y.com</strong>, an Independent Real Estate Consultancy. We provide specialized advisory and client representation for premium developments across Egypt. All trademarks, community names, architectural concepts, and developer marks belong strictly to SODIC and their respective registered owners. Pricing and availability reflect developer updates and are subject to change according to market dynamics.
+            This SODIC showcase is curated and published by <strong>properties-y.com</strong>, an Independent Real Estate Consultancy. We provide specialized advisory and strategic client representation for premium developments across Egypt. All trademarks, community names, architectural concepts, and developer marks belong strictly to SODIC and their respective registered owners. Pricing and availability reflect developer updates and are subject to change according to market dynamics.
           </p>
 
           <div className="footer-legal-links">
@@ -900,7 +803,7 @@ export default function SodicLandingPage() {
       </footer>
 
       {/* =========================================================================
-           7. FLOATING WHATSAPP BUTTON (SOLID VIBRANT GREEN #25D366)
+           6. FLOATING WHATSAPP BUTTON (SOLID GREEN #25D366)
            ========================================================================= */}
       <a
         href={GLOBAL_WA_LINK}
@@ -916,60 +819,63 @@ export default function SodicLandingPage() {
       </a>
 
       {/* =========================================================================
-           8. SUCCESS MODAL OVERLAY (VERBATIM PROMPT SPECIFICATION)
+           7. SUCCESS MODAL OVERLAY (VERBATIM PROMPT SPECIFICATION)
            "Thank you {name}! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability."
-           Followed by a green "CHAT ON WHATSAPP" button and "Close Window" link.
+           Followed by green "CHAT ON WHATSAPP" button and "Close Window" link.
            ========================================================================= */}
-      <div
-        className={`modal-overlay ${isModalOpen ? 'is-active' : ''}`}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalSuccessHeading"
-      >
-        <div className="modal-dialog-card">
-          <div className="modal-icon-wrap">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+      {isModalOpen && (
+        <div
+          className="modal-overlay is-active"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modalSuccessTitle"
+        >
+          <div className="modal-dialog-card">
+            <div className="modal-icon-wrap">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+
+            <h3 id="modalSuccessTitle" className="modal-header-title">
+              Registration Received
+            </h3>
+
+            {/* Verbatim Requirement */}
+            <p className="modal-body-text">
+              Thank you {submittedName || 'there'}! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability.
+            </p>
+
+            <a
+              href={modalWhatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-modal-whatsapp"
             >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
+              </svg>
+              <span>CHAT ON WHATSAPP</span>
+            </a>
+
+            <button
+              type="button"
+              className="btn-modal-dismiss"
+              onClick={() => setIsModalOpen(false)}
+            >
+              Close Window
+            </button>
           </div>
-
-          <h3 id="modalSuccessHeading" className="modal-header-title">
-            Registration Received
-          </h3>
-
-          <p className="modal-body-text">
-            Thank you {submittedName || 'there'}! Your registration has been securely dispatched to our senior consultancy team. A dedicated property advisor will contact you shortly with full brochures, master plans, and unit availability.
-          </p>
-
-          <a
-            href={modalWhatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-modal-whatsapp"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
-            </svg>
-            <span>CHAT ON WHATSAPP</span>
-          </a>
-
-          <button
-            type="button"
-            className="btn-modal-dismiss"
-            onClick={() => setIsModalOpen(false)}
-          >
-            Close Window
-          </button>
         </div>
-      </div>
+      )}
     </div>
   );
 }

@@ -985,6 +985,88 @@ a {
   color: var(--text-dark);
 }
 
+/* Unit Typologies Matrix (New Release Launch) */
+.unit-typologies-block {
+  margin-bottom: 24px;
+}
+
+.typology-block-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.typology-block-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.typology-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .typology-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.typology-chip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-stone);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.typology-chip:hover {
+  background: #FFFFFF;
+  border-color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.typology-chip.highlight-chip {
+  background: #FFFFFF;
+  border-color: var(--text-dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.typology-type {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.typology-area {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-slate);
+  background: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  letter-spacing: 0.02em;
+}
+
+.typology-chip.highlight-chip .typology-area {
+  background: var(--text-dark);
+  color: #FFFFFF;
+  border-color: var(--text-dark);
+}
+
 /* CTA Buttons */
 .project-cta-group {
   display: flex;
