@@ -1,6 +1,6 @@
-{
+﻿{
   "cleanUrls": true,
-  "redirects": [
+  "redirects": [`r`n    { "source": "/sodic", "destination": "/sodic/", "permanent": true },
     { "source": "/tatweer-misr", "destination": "/tatweer-misr/", "permanent": true },
     { "source": "/Tatweer-Misr", "destination": "/Tatweer-Misr/", "permanent": true },
     { "source": "/tatweermisr", "destination": "/tatweer-misr/", "permanent": true },
