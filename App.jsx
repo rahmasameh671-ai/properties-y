@@ -1,5 +1,6 @@
 ﻿import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import SodicLandingPage from './src/pages/SodicLandingPage';
 import CityGateLandingPage from './src/pages/CityGateLandingPage';
 import MadinetMasrLandingPage from './src/pages/MadinetMasrLandingPage';
 import MountainViewLandingPage from './src/pages/MountainViewLandingPage';
@@ -10,6 +11,7 @@ import ResaleNewCairoLandingPage from './src/pages/ResaleNewCairoLandingPage';
  * Main Application Routing Configuration
  * Directives: Explicit Routes under ir-properties.com / properties-y.com architecture
  * - /resale-new-cairo: New Cairo Exclusive Resale Portfolio
+ * - /sodic: SODIC Signature Living
  * - /city-gate & /citygate: City Gate New Cairo by Qatari Diar
  * - /Madient-Masr: Madinet Masr Curated Portfolio (The Butterfly, Taj City Etaje, Sarai, Talala)
  * - /mountain-view: Mountain View Exclusive Portfolio (1.1, iCity, Hyde Park, ALIVA, Grand Valleys)
@@ -55,6 +57,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Dedicated SODIC Portfolio Route */}
+        <Route path="/sodic" element={<Navigate to="/sodic/" replace />} />
+        <Route path="/sodic/" element={<SodicLandingPage />} />
+
         {/* Dedicated City Gate New Cairo Routes (supports both hyphenated & non-hyphenated slugs) */}
         <Route path="/city-gate" element={<CityGateLandingPage />} />
         <Route path="/city-gate/" element={<CityGateLandingPage />} />

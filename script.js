@@ -185,5 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const linkTerms = document.getElementById('linkTerms');
     if (linkPrivacy) linkPrivacy.setAttribute('href', 'privacy-policy.html');
     if (linkTerms) linkTerms.setAttribute('href', 'terms-conditions.html');
+
+    document.querySelectorAll('a[href="/sodic"]').forEach(a => {
+      a.setAttribute('href', 'sodic.html');
+    });
   }
 });

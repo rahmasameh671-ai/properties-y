@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" fill="none">
+  <!-- SODIC Cube -->
+  <g transform="translate(10, 8) scale(1.1)">
+    <!-- Top Face -->
+    <path d="M48 2L92 24L48 46L4 24Z" fill="#0082A6"/>
+    <!-- Left Face -->
+    <path d="M4 28L46 49V94L4 72Z" fill="#007293"/>
+    <!-- Right Face -->
+    <path d="M50 49L92 28V72L50 94Z" fill="#008EB5"/>
+  </g>
+  <!-- SODIC Typography -->
+  <text x="135" y="82" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-weight="900" font-size="82" letter-spacing="-0.03em" fill="#0082A6">SODIC</text>
+</svg>
