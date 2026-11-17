@@ -7,6 +7,8 @@
     { "source": "/TatweerMisr", "destination": "/Tatweer-Misr/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/sodic", "destination": "/sodic/index.html" },
+    { "source": "/sodic/", "destination": "/sodic/index.html" },
     { "source": "/resale-new-cairo", "destination": "/resale-new-cairo/index.html" },
     { "source": "/resale-new-cairo/", "destination": "/resale-new-cairo/index.html" },
     { "source": "/resalenewcairo", "destination": "/resale-new-cairo/index.html" },
