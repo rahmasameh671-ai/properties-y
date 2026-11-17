@@ -1,14 +1,12 @@
 ﻿{
   "cleanUrls": true,
-  "redirects": [`r`n    { "source": "/sodic", "destination": "/sodic/", "permanent": true },
+  "redirects": [
     { "source": "/tatweer-misr", "destination": "/tatweer-misr/", "permanent": true },
     { "source": "/Tatweer-Misr", "destination": "/Tatweer-Misr/", "permanent": true },
     { "source": "/tatweermisr", "destination": "/tatweer-misr/", "permanent": true },
     { "source": "/TatweerMisr", "destination": "/Tatweer-Misr/", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/sodic", "destination": "/sodic/index.html" },
-    { "source": "/sodic/", "destination": "/sodic/index.html" },
     { "source": "/resale-new-cairo", "destination": "/resale-new-cairo/index.html" },
     { "source": "/resale-new-cairo/", "destination": "/resale-new-cairo/index.html" },
     { "source": "/resalenewcairo", "destination": "/resale-new-cairo/index.html" },
