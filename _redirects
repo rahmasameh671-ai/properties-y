@@ -1,4 +1,4 @@
-﻿# Canonical 301 redirects to clean URLs (No circular rewrites)
+# Canonical 301 redirects to clean URLs (No circular rewrites)
 /mountain-view/     /mountain-view     301
 /mountainview       /mountain-view     301
 /mountainview/      /mountain-view     301
