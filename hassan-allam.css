@@ -566,14 +566,15 @@ h1, h2, h3, h4, h5, h6 {
    - Essentials ONLY: Property type, price, payment plan
    ========================================================================== */
 .portfolio-showcase-section {
-  padding: 80px 0 100px;
-  background-color: var(--bg-stone);
+  padding: 70px 0 100px;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 25%, #F8FAFC 100%);
+  position: relative;
 }
 
 .portfolio-header-block {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 56px;
+  margin: 0 auto 36px;
 }
 
 .portfolio-header-block h2 {
@@ -591,26 +592,129 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 8px;
 }
 
+/* Portfolio Quick Navigation Chips */
+.portfolio-nav-bar {
+  margin: 0 auto 48px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.portfolio-nav-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  padding: 6px 8px;
+  border-radius: 100px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-nav-chip {
+  font-family: var(--font-body);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-slate);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-nav-chip:hover {
+  color: var(--text-dark);
+  background: #F1F5F9;
+}
+
+.portfolio-nav-chip.active {
+  background: var(--text-dark);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px -2px rgba(26, 32, 44, 0.35);
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #94A3B8;
+  transition: background 0.2s ease;
+}
+
+.portfolio-nav-chip.active .chip-dot {
+  background: var(--whatsapp-green);
+}
+
+.nav-chip-badge {
+  font-size: 0.68rem;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: #ECFDF5;
+  color: #065F46;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.portfolio-nav-chip.active .nav-chip-badge {
+  background: #065F46;
+  color: #ECFDF5;
+}
+
 /* Project Master Container */
 .project-showcase-card {
   background: #FFFFFF;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
   margin-bottom: 48px;
-  transition: var(--transition);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  scroll-margin-top: 30px;
 }
 
 .project-showcase-card:hover {
-  box-shadow: var(--shadow-floating);
-  border-color: var(--border-mid);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.14);
+}
+
+.project-card-featured {
+  border: 1.5px solid rgba(15, 23, 42, 0.14);
+  box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.09), 0 2px 6px rgba(15, 23, 42, 0.04);
 }
 
 .project-showcase-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
+}
+
+/* Desktop Alternating Zig-Zag Layout */
+@media (min-width: 961px) {
+  .project-showcase-card.project-card-reverse .project-showcase-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-showcase-card.project-card-reverse .project-visual-frame {
+    order: 2;
+  }
+
+  .project-showcase-card.project-card-reverse .project-detail-panel {
+    order: 1;
+  }
 }
 
 /* Expansive High-Quality Visual Frame */
@@ -649,13 +753,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .location-pill {
   font-family: var(--font-body);
-  display: inline-block;
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  color: var(--text-dark);
+  background: #F1F5F9;
+  border: 1px solid var(--border-subtle);
+  border-radius: 100px;
+  padding: 4px 12px;
   margin-bottom: 8px;
+}
+
+.location-pill.location-pill-launch {
+  background: #ECFDF5;
+  color: #065F46;
+  border-color: #A7F3D0;
+  font-weight: 800;
+}
+
+.location-pill.location-pill-gouna {
+  background: #F0F9FF;
+  color: #0369A1;
+  border-color: #BAE6FD;
 }
 
 .project-heading {
@@ -707,9 +829,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .highlight-pill.highlight-pill-discount {
-  color: var(--text-dark);
-  background: #FFFFFF;
-  border: 1.5px solid var(--text-dark);
+  color: #FFFFFF;
+  background: #065F46;
+  border: 1px solid #065F46;
   font-weight: 800;
 }
 
@@ -717,21 +839,22 @@ h1, h2, h3, h4, h5, h6 {
 .specs-overview-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 24px;
 }
 
 .spec-tile {
-  background: var(--bg-stone);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  padding: 16px 18px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px 20px;
   transition: var(--transition);
 }
 
 .spec-tile:hover {
   background: #FFFFFF;
-  border-color: var(--border-mid);
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 14px -3px rgba(15, 23, 42, 0.06);
 }
 
 .spec-tag {
@@ -740,7 +863,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: #64748B;
   margin-bottom: 4px;
 }
 
@@ -748,7 +871,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-charcoal);
+  color: #1E293B;
   line-height: 1.4;
 }
 
@@ -776,11 +899,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sleek Payment Plan Strip */
 .payment-terms-box {
-  background: var(--bg-stone);
-  border: 1px solid var(--border-subtle);
-  border-left: 3px solid var(--text-dark);
-  border-radius: var(--radius-sm);
-  padding: 14px 18px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid var(--text-dark);
+  border-radius: 10px;
+  padding: 16px 20px;
   margin-bottom: 28px;
 }
 
@@ -790,7 +913,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: #64748B;
   display: block;
   margin-bottom: 4px;
 }
@@ -800,7 +923,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.98rem;
   font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Solid Green WhatsApp CTA Button */
@@ -1137,12 +1260,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .project-showcase-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .project-visual-frame {
-    min-height: 280px;
-    max-height: 320px;
+    order: 1 !important;
+    min-height: 240px;
+    max-height: 280px;
+    height: 260px;
+  }
+
+  .project-detail-panel {
+    order: 2 !important;
   }
 }
 
@@ -1153,20 +1283,20 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .container {
-    padding: 0 18px;
+    padding: 0 16px;
   }
 
   .hap-hero {
-    padding: 60px 0 60px;
+    padding: 50px 0 50px;
     min-height: auto;
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.1rem;
   }
 
   .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .hero-trust-row {
@@ -1178,7 +1308,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .lead-card-floating {
-    padding: 26px 20px;
+    padding: 24px 18px;
   }
 
   .phone-split-container {
@@ -1192,23 +1322,56 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .portfolio-showcase-section {
-    padding: 50px 0 70px;
+    padding: 44px 0 60px;
   }
 
   .portfolio-header-block {
-    margin-bottom: 36px;
+    margin-bottom: 24px;
   }
 
   .portfolio-header-block h2 {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
+  }
+
+  /* Mobile Quick Jump Bar (Horizontal Swiping Chips) */
+  .portfolio-nav-bar {
+    margin: 0 -16px 26px;
+    padding: 0 16px;
+    justify-content: flex-start;
+  }
+
+  .portfolio-nav-scroll {
+    border-radius: 12px;
+    padding: 4px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .portfolio-nav-chip {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
   }
 
   .project-showcase-card {
-    margin-bottom: 32px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    scroll-margin-top: 20px;
+  }
+
+  .project-visual-frame {
+    order: 1 !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 240px !important;
+    border-radius: 16px 16px 0 0;
   }
 
   .project-detail-panel {
-    padding: 26px 20px;
+    order: 2 !important;
+    padding: 20px 16px !important;
   }
 
   .hero-brand-logo {
@@ -1217,24 +1380,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .project-logo-wrap {
-    margin: 6px 0 14px;
-    min-height: 44px;
+    margin: 6px 0 12px;
+    min-height: 40px;
   }
 
   .project-heading-logo {
-    max-width: 220px;
-    max-height: 48px;
+    max-width: 190px;
+    max-height: 42px;
   }
 
   .visual-logo-watermark {
-    top: 12px;
-    left: 12px;
-    padding: 6px 12px;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
   }
 
   .visual-logo-watermark img {
-    max-height: 22px;
-    max-width: 110px;
+    max-height: 20px;
+    max-width: 95px;
   }
 
   .project-heading {
@@ -1242,21 +1405,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .project-subtitle-lead {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     margin: 4px 0 10px;
   }
 
   .project-highlights-grid {
     gap: 6px;
+    margin-bottom: 4px;
   }
 
   .highlight-pill {
-    font-size: 0.69rem;
-    padding: 4px 9px;
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
+
+  .specs-overview-grid {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .spec-tile {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .spec-inventory {
+    font-size: 0.88rem;
   }
 
   .spec-price-range {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
+  }
+
+  .payment-terms-box {
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+  }
+
+  .terms-description {
+    font-size: 0.88rem;
   }
 
   /* CRITICAL: Full-width, solid Green WhatsApp buttons with min 48px tap height */
@@ -1271,15 +1459,16 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFFFFF !important;
     font-size: 0.95rem !important;
     font-weight: 700 !important;
-    padding: 14px 20px !important;
+    padding: 13px 18px !important;
+    border-radius: 10px !important;
     box-sizing: border-box !important;
   }
 
   .floating-whatsapp-widget {
-    bottom: 18px;
-    right: 18px;
-    width: 52px;
-    height: 52px;
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
     padding: 0;
     justify-content: center;
     border-radius: 50%;

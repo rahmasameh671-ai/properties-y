@@ -44,7 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Initialize Success Modal Dismiss Actions
   setupModalActions();
 
-  // 4. Outbound WhatsApp Conversion Tracking
+  // 4. Initialize Portfolio Nav Highlight & Scroll
+  setupPortfolioNav();
+
+  // 5. Outbound WhatsApp Conversion Tracking
   document.addEventListener("click", function (e) {
     const waLink = e.target.closest('a[href*="wa.me"]');
     if (waLink) {
@@ -394,4 +397,46 @@ function setupModalActions() {
       closeModal();
     }
   });
+}
+
+/**
+ * Portfolio Interactive Navigation Tracker
+ */
+function setupPortfolioNav() {
+  const chips = document.querySelectorAll(".portfolio-nav-chip");
+  const sections = document.querySelectorAll(".project-showcase-card");
+  if (!chips.length || !sections.length) return;
+
+  // Active link click handler
+  chips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      chips.forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+    });
+  });
+
+  // Intersection Observer for scroll spy
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          chips.forEach(chip => {
+            if (chip.getAttribute("href") === `#${id}`) {
+              chip.classList.add("active");
+              // Ensure chip is visible in horizontal scroll
+              chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+            } else {
+              chip.classList.remove("active");
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: "-25% 0px -55% 0px",
+      threshold: 0.1
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+  }
 }

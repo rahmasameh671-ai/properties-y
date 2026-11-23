@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import '../../hassan-allam.css';
 
 /**
@@ -356,17 +356,123 @@ export default function HassanAllamLandingPage() {
       {/* =========================================================================
            3. REFINED PROJECT DATA (ESSENTIALS ONLY — EXACTLY 4 PROJECTS)
            ========================================================================= */}
-      <main className="portfolio-showcase-section">
+            <main className="portfolio-showcase-section">
         <div className="container">
           <div className="portfolio-header-block">
             <h2>Featured Developments</h2>
             <p>Key unit types, starting prices, and official payment plans.</p>
           </div>
 
+          {/* Quick Portfolio Jump Navigation Bar */}
+          <nav className="portfolio-nav-bar" aria-label="Developments Quick Navigation">
+            <div className="portfolio-nav-scroll">
+              <a href="#grova-easthills" className="portfolio-nav-chip active">
+                <span className="chip-dot"></span> Grova Easthills
+                <span className="nav-chip-badge">New Launch</span>
+              </a>
+              <a href="#park-central" className="portfolio-nav-chip">
+                <span className="chip-dot"></span> Park Central
+              </a>
+              <a href="#swanlake-residence" className="portfolio-nav-chip">
+                <span className="chip-dot"></span> Swanlake Residence
+              </a>
+              <a href="#the-valleys" className="portfolio-nav-chip">
+                <span className="chip-dot"></span> The Valleys
+              </a>
+              <a href="#encore-elgouna" className="portfolio-nav-chip">
+                <span className="chip-dot"></span> Encore El Gouna
+              </a>
+            </div>
+          </nav>
+
           {/* =====================================================================
-               SECTION 1: PARK CENTRAL (Mostakbal City)
+               SECTION 1: GROVA EASTHILLS (VILLAS ONLY COMMUNITY - FLAGSHIP LAUNCH)
                ===================================================================== */}
-          <article className="project-showcase-card" id="park-central">
+          <article className="project-showcase-card project-card-featured" id="grova-easthills">
+            <div className="project-showcase-grid">
+              <div className="project-visual-frame">
+                <img
+                  src="/images/hassan-allam/grova-easthills-villas.jpg?v=20261116v1"
+                  alt="Grova Easthills by Hassan Allam"
+                  loading="lazy"
+                />
+                <div className="visual-logo-watermark">
+                  <img src="/images/hassan-allam/logo-grova-easthills.png" alt="Grova Easthills" />
+                </div>
+              </div>
+              <div className="project-detail-panel">
+                <div>
+                  <div className="panel-header">
+                    <div className="panel-header-badges">
+                      <span className="location-pill location-pill-launch">New Launch &bull; New Cairo</span>
+                      <span className="spec-badge">Villas Only</span>
+                      <span className="spec-badge">Fully Finished</span>
+                    </div>
+
+                    <div className="project-logo-wrap">
+                      <img
+                        src="/images/hassan-allam/logo-grova-easthills-dark.png"
+                        alt="Grova Easthills by Hassan Allam"
+                        className="project-heading-logo"
+                      />
+                      <h3 className="sr-only">Grova Easthills</h3>
+                    </div>
+
+                    <p className="project-subtitle-lead">An exclusive Villas-Only community by Hassan Allam Holding.</p>
+
+                    <div className="project-highlights-grid">
+                      <span className="highlight-pill">300 Feddans &bull; 15% Footprint &bull; 1,217 Keys</span>
+                      <span className="highlight-pill">Villas Only &bull; Fully Finished</span>
+                      <span className="highlight-pill highlight-pill-discount">Exclusive Offer: 25% Cash Discount</span>
+                    </div>
+                  </div>
+
+                  <div className="specs-overview-grid">
+                    <div className="spec-tile">
+                      <div className="spec-tag">Townhouses (Middle &amp; Corner)</div>
+                      <div className="spec-inventory">BUA: 263 SQM</div>
+                      <div className="spec-price-range">Starting from 35,800,000 EGP</div>
+                    </div>
+
+                    <div className="spec-tile">
+                      <div className="spec-tag">Twin Houses (Type A &amp; B)</div>
+                      <div className="spec-inventory">BUA: 276 &ndash; 287 SQM</div>
+                      <div className="spec-price-range">Starting from 43,600,000 EGP</div>
+                    </div>
+
+                    <div className="spec-tile">
+                      <div className="spec-tag">Signature Villas (V1 &amp; V2B)</div>
+                      <div className="spec-inventory">BUA: 332 &ndash; 397 SQM</div>
+                      <div className="spec-price-range">Starting from 49,800,000 EGP (Up to 77.9M)</div>
+                    </div>
+                  </div>
+
+                  <div className="payment-terms-box">
+                    <span className="terms-label">Payment Plan</span>
+                    <div className="terms-description">5% Down Payment + 5% After 3 Months | 8 Years Equal Installments &bull; 7% Maintenance</div>
+                  </div>
+                </div>
+
+                {/* CTA: Chat on WhatsApp */}
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20Grova%20Easthills%20by%20Hassan%20Allam`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp-chat"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
+                  </svg>
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* =====================================================================
+               SECTION 2: PARK CENTRAL (Mostakbal City) - REVERSE LAYOUT ON DESKTOP
+               ===================================================================== */}
+          <article className="project-showcase-card project-card-reverse" id="park-central">
             <div className="project-showcase-grid">
               <div className="project-visual-frame">
                 <img
@@ -417,66 +523,6 @@ export default function HassanAllamLandingPage() {
                 {/* CTA: Chat on WhatsApp */}
                 <a
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Park%20Central%20Mostakbal%20City.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp-chat"
-                >
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
-                  </svg>
-                  <span>Chat on WhatsApp</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          {/* =====================================================================
-               SECTION 2: THE VALLEYS (Mostakbal City)
-               ===================================================================== */}
-          <article className="project-showcase-card" id="the-valleys">
-            <div className="project-showcase-grid">
-              <div className="project-visual-frame">
-                <img
-                  src="/images/hassan-allam/the-valleys-villas.jpg"
-                  alt="The Valleys Mostakbal City"
-                  loading="lazy"
-                />
-                <div className="visual-logo-watermark">
-                  <img src="/images/hassan-allam/logo-the-valleys.png" alt="The Valleys" />
-                </div>
-              </div>
-              <div className="project-detail-panel">
-                <div>
-                  <div className="panel-header">
-                    <span className="location-pill">Mostakbal City</span>
-                    <div className="project-logo-wrap">
-                      <img
-                        src="/images/hassan-allam/logo-the-valleys-dark.png"
-                        alt="The Valleys"
-                        className="project-heading-logo"
-                      />
-                      <h3 className="sr-only">The Valleys</h3>
-                    </div>
-                  </div>
-
-                  <div className="specs-overview-grid">
-                    <div className="spec-tile">
-                      <div className="spec-tag">Exclusive Villas</div>
-                      <div className="spec-inventory">Townhouses, Twinhouses, and Standalones</div>
-                      <div className="spec-price-range">Starting from 29M to 55.6M EGP</div>
-                      <span className="spec-badge">Fully Finished</span>
-                    </div>
-                  </div>
-
-                  <div className="payment-terms-box">
-                    <span className="terms-label">Payment Plan</span>
-                    <div className="terms-description">5% Down Payment + 5% after 3 months over 9 Years</div>
-                  </div>
-                </div>
-
-                {/* CTA: Chat on WhatsApp */}
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20The%20Valleys%20Mostakbal%20City.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-whatsapp-chat"
@@ -556,7 +602,67 @@ export default function HassanAllamLandingPage() {
           </article>
 
           {/* =====================================================================
-               SECTION 4: ENCORE SWANLAKE (El Gouna)
+               SECTION 4: THE VALLEYS (Mostakbal City) - REVERSE LAYOUT ON DESKTOP
+               ===================================================================== */}
+          <article className="project-showcase-card project-card-reverse" id="the-valleys">
+            <div className="project-showcase-grid">
+              <div className="project-visual-frame">
+                <img
+                  src="/images/hassan-allam/the-valleys-villas.jpg"
+                  alt="The Valleys Mostakbal City"
+                  loading="lazy"
+                />
+                <div className="visual-logo-watermark">
+                  <img src="/images/hassan-allam/logo-the-valleys.png" alt="The Valleys" />
+                </div>
+              </div>
+              <div className="project-detail-panel">
+                <div>
+                  <div className="panel-header">
+                    <span className="location-pill">Mostakbal City</span>
+                    <div className="project-logo-wrap">
+                      <img
+                        src="/images/hassan-allam/logo-the-valleys-dark.png"
+                        alt="The Valleys"
+                        className="project-heading-logo"
+                      />
+                      <h3 className="sr-only">The Valleys</h3>
+                    </div>
+                  </div>
+
+                  <div className="specs-overview-grid">
+                    <div className="spec-tile">
+                      <div className="spec-tag">Exclusive Villas</div>
+                      <div className="spec-inventory">Townhouses, Twinhouses, and Standalones</div>
+                      <div className="spec-price-range">Starting from 29M to 55.6M EGP</div>
+                      <span className="spec-badge">Fully Finished</span>
+                    </div>
+                  </div>
+
+                  <div className="payment-terms-box">
+                    <span className="terms-label">Payment Plan</span>
+                    <div className="terms-description">5% Down Payment + 5% after 3 months over 9 Years</div>
+                  </div>
+                </div>
+
+                {/* CTA: Chat on WhatsApp */}
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20The%20Valleys%20Mostakbal%20City.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp-chat"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
+                  </svg>
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* =====================================================================
+               SECTION 5: ENCORE SWANLAKE (El Gouna)
                ===================================================================== */}
           <article className="project-showcase-card" id="encore-elgouna">
             <div className="project-showcase-grid">
@@ -573,7 +679,7 @@ export default function HassanAllamLandingPage() {
               <div className="project-detail-panel">
                 <div>
                   <div className="panel-header">
-                    <span className="location-pill">El Gouna</span>
+                    <span className="location-pill location-pill-gouna">El Gouna</span>
                     <div className="project-logo-wrap">
                       <img
                         src="/images/hassan-allam/logo-encore-swanlake-dark.png"
@@ -602,90 +708,6 @@ export default function HassanAllamLandingPage() {
                 {/* CTA: Chat on WhatsApp */}
                 <a
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20properties-y,%20I%20would%20like%20to%20inquire%20about%20Encore%20Swanlake%20El%20Gouna.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp-chat"
-                >
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.05-1.92-.472-1.488-.604-2.457-2.125-2.531-2.224-.075-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.136-.149.297-.187.396-.187.099 0 .198.001.284.006.091.004.213-.035.333.253.124.298.423 1.033.46 1.107.037.075.062.162.012.261-.049.099-.074.161-.148.248-.075.087-.157.195-.224.262-.075.074-.153.155-.066.304.087.149.387.639.83 1.034.57.508 1.05.665 1.199.739.149.075.236.062.324-.037.087-.099.373-.434.472-.583.099-.149.198-.124.334-.075.137.049.868.409 1.017.483.149.074.248.112.285.174.037.062.037.36-.107.765z" />
-                  </svg>
-                  <span>Chat on WhatsApp</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          {/* =====================================================================
-               SECTION 5: GROVA EASTHILLS (VILLAS ONLY COMMUNITY)
-               ===================================================================== */}
-          <article className="project-showcase-card" id="grova-easthills">
-            <div className="project-showcase-grid">
-              <div className="project-visual-frame">
-                <img
-                  src="/images/hassan-allam/grova-easthills-villas.jpg?v=20261116v1"
-                  alt="Grova Easthills by Hassan Allam"
-                  loading="lazy"
-                />
-                <div className="visual-logo-watermark">
-                  <img src="/images/hassan-allam/logo-grova-easthills.png" alt="Grova Easthills" />
-                </div>
-              </div>
-              <div className="project-detail-panel">
-                <div>
-                  <div className="panel-header">
-                    <div className="panel-header-badges">
-                      <span className="location-pill">New Launch &bull; New Cairo</span>
-                      <span className="spec-badge">Villas Only</span>
-                      <span className="spec-badge">Fully Finished</span>
-                    </div>
-
-                    <div className="project-logo-wrap">
-                      <img
-                        src="/images/hassan-allam/logo-grova-easthills-dark.png"
-                        alt="Grova Easthills by Hassan Allam"
-                        className="project-heading-logo"
-                      />
-                      <h3 className="sr-only">Grova Easthills</h3>
-                    </div>
-
-                    <p className="project-subtitle-lead">An exclusive Villas-Only community by Hassan Allam Holding.</p>
-
-                    <div className="project-highlights-grid">
-                      <span className="highlight-pill">300 Feddans &bull; 15% Footprint &bull; 1,217 Keys</span>
-                      <span className="highlight-pill">Villas Only &bull; Fully Finished</span>
-                      <span className="highlight-pill highlight-pill-discount">Exclusive Offer: 25% Cash Discount</span>
-                    </div>
-                  </div>
-
-                  <div className="specs-overview-grid">
-                    <div className="spec-tile">
-                      <div className="spec-tag">Townhouses (Middle &amp; Corner)</div>
-                      <div className="spec-inventory">BUA: 263 SQM</div>
-                      <div className="spec-price-range">Starting from 35,800,000 EGP</div>
-                    </div>
-
-                    <div className="spec-tile">
-                      <div className="spec-tag">Twin Houses (Type A &amp; B)</div>
-                      <div className="spec-inventory">BUA: 276 &ndash; 287 SQM</div>
-                      <div className="spec-price-range">Starting from 43,600,000 EGP</div>
-                    </div>
-
-                    <div className="spec-tile">
-                      <div className="spec-tag">Signature Villas (V1 &amp; V2B)</div>
-                      <div className="spec-inventory">BUA: 332 &ndash; 397 SQM</div>
-                      <div className="spec-price-range">Starting from 49,800,000 EGP (Up to 77.9M)</div>
-                    </div>
-                  </div>
-
-                  <div className="payment-terms-box">
-                    <span className="terms-label">Payment Plan</span>
-                    <div className="terms-description">5% Down Payment + 5% After 3 Months | 8 Years Equal Installments &bull; 7% Maintenance</div>
-                  </div>
-                </div>
-
-                {/* CTA: Chat on WhatsApp */}
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20inquiring%20about%20Grova%20Easthills%20by%20Hassan%20Allam`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-whatsapp-chat"
