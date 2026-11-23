@@ -35,6 +35,11 @@ export const LeadForm = () => {
       } else if (typeof window.gtag === "function") {
         try {
           window.gtag("event", "conversion", {
+            send_to: "AW-18564830215/A7t2CIvYnLYdEIeos5RF",
+            value: 1.0,
+            currency: "EGP",
+          });
+          window.gtag("event", "conversion", {
             send_to: "AW-18125180547/AZcICJes-qQcEIOd4cJD",
             value: 1.0,
             currency: "EGP",

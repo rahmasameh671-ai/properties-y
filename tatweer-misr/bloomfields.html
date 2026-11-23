@@ -1,6 +1,77 @@
 ﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+  <!-- Google Tag Manager & Google Ads Tracking -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MKL52MWH"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18564830215"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125180547"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18564830215');
+    gtag('config', 'AW-18125180547');
+
+    <!-- Event snippet for Submit lead form (1) conversion page -->
+    var _lastConversionTime = 0;
+    function gtag_report_conversion(url) {
+      var now = Date.now();
+      if (now - _lastConversionTime < 300) {
+        return true;
+      }
+      _lastConversionTime = now;
+
+      var callback = function () {
+        if (typeof(url) != 'undefined' && url && !url.startsWith('javascript:')) {
+          // Callback ready for programmatic navigation
+        }
+      };
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18564830215/A7t2CIvYnLYdEIeos5RF',
+            'value': 1.0,
+            'currency': 'EGP',
+            'event_callback': callback
+        });
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18125180547/AZcICJes-qQcEIOd4cJD',
+            'value': 1.0,
+            'currency': 'EGP'
+        });
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18125180547',
+            'value': 1.0,
+            'currency': 'EGP'
+        });
+        gtag('event', 'generate_lead', {
+            'send_to': 'AW-18125180547',
+            'value': 1.0,
+            'currency': 'EGP',
+            'event_category': 'form',
+            'event_label': 'Lead Form Submission'
+        });
+        gtag('event', 'lead_form_submission', {
+            'send_to': 'AW-18125180547'
+        });
+        gtag('event', 'contact', {
+            'send_to': 'AW-18125180547',
+            'method': 'WhatsApp',
+            'event_category': 'WhatsApp',
+            'event_label': 'WhatsApp Click'
+        });
+        gtag('event', 'whatsapp_click', {
+            'send_to': 'AW-18125180547'
+        });
+      }
+      return true;
+    }
+
+    function gtag_report_form_conversion() {
+      return gtag_report_conversion();
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bloomfields - Mostakbal City | Experience Premium Living by Tatweer Misr</title>
@@ -96,7 +167,7 @@
           Request Details
         </a>
         <a 
-          href="https://wa.me/201277752731?text=I%20would%20like%20more%20details%20about%20this%20project" 
+          href="https://wa.me/201277752731?text=I%20would%20like%20more%20details%20about%20this%20project" onclick="return gtag_report_conversion(this.href);" 
           target="_blank" 
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold text-xs transition shadow-sm"
@@ -402,7 +473,7 @@
             <!-- Accompanying WhatsApp CTA directly below form -->
             <div class="pt-3 border-t border-slate-100">
               <a 
-                href="https://wa.me/201277752731?text=I%20would%20like%20more%20details%20about%20this%20project" 
+                href="https://wa.me/201277752731?text=I%20would%20like%20more%20details%20about%20this%20project" onclick="return gtag_report_conversion(this.href);" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="w-full py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold text-xs uppercase tracking-wider text-center transition duration-200 flex items-center justify-center gap-2.5 shadow-md group"
@@ -462,7 +533,7 @@
   <!-- Floating WhatsApp CTA Button Accessible Throughout the Page -->
   <aside aria-label="WhatsApp Concierge" class="fixed bottom-6 left-6 z-50 flex items-center">
     <a 
-      href="https://wa.me/201277752731?text=I%20would%20like%20more%20details%20about%20this%20project" 
+      href="https://wa.me/201277752731?text=I%20would%20like%20more%20details%20about%20this%20project" onclick="return gtag_report_conversion(this.href);" 
       target="_blank" 
       rel="noopener noreferrer"
       class="group relative flex items-center gap-3 p-2 sm:pr-5 rounded-full bg-slate-900 border border-emerald-500 text-white shadow-xl hover:bg-black transition-all duration-300"
