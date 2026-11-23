@@ -417,6 +417,7 @@ function setupPortfolioNav() {
 
   // Intersection Observer for scroll spy
   if ("IntersectionObserver" in window) {
+    const navScroll = document.querySelector(".portfolio-nav-scroll");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -424,8 +425,14 @@ function setupPortfolioNav() {
           chips.forEach(chip => {
             if (chip.getAttribute("href") === `#${id}`) {
               chip.classList.add("active");
-              // Ensure chip is visible in horizontal scroll
-              chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+              // Safely scroll ONLY the horizontal sub-container on mobile, NEVER the window!
+              if (navScroll && navScroll.scrollWidth > navScroll.clientWidth) {
+                const targetLeft = chip.offsetLeft - (navScroll.clientWidth / 2) + (chip.offsetWidth / 2);
+                navScroll.scrollTo({
+                  left: Math.max(0, targetLeft),
+                  behavior: "smooth"
+                });
+              }
             } else {
               chip.classList.remove("active");
             }
@@ -433,7 +440,7 @@ function setupPortfolioNav() {
         }
       });
     }, {
-      rootMargin: "-25% 0px -55% 0px",
+      rootMargin: "-20% 0px -50% 0px",
       threshold: 0.1
     });
 
