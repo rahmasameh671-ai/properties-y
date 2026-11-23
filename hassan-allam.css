@@ -1,52 +1,54 @@
 /* ==========================================================================
-   HASSAN ALLAM PROPERTIES PORTFOLIO — MODERN ULTRA-LUXURY DESIGN
+   HASSAN ALLAM PROPERTIES PORTFOLIO — MIDNIGHT STEALTH LUXURY
    By properties-y.com | Independent Real Estate Consultancy
    Route: /hassan-allam/ strictly under properties-y.com
    Final Live URL: https://properties-y.com/hassan-allam/
 
    AESTHETIC SPECIFICATION:
-   - Modern Ultra-Luxury (Apple sleekness / Aman Resorts aesthetic)
-   - Typography: Premium Geometric & Modern Sans-Serif (Montserrat & Plus Jakarta Sans)
-   - Layout: Immersive, clean, structured, edge-to-edge imagery with sleek white floating cards.
-     Generous breathing room. Absolutely NO messy overlapping elements.
-   - Zero Gold Policy: Crisp pure whites (#FFFFFF), stone greys (#F8F9FA), deep charcoal (#1A202C).
-     NO gold, bronze, or yellow anywhere.
-   - Mobile: 100% thumb-friendly single column, 48px+ green WhatsApp CTAs.
+   - Midnight Stealth Ultra-Luxury Aesthetic (Apple Pro / Aman Resorts prestige)
+   - Deep Obsidian, Midnight Navy, Luminous Glass, and Architectural Slate
+   - High-contrast pure white typography & glowing emerald CTAs
+   - 100% thumb-friendly single column on mobile, zero horizontal scroll
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Ultra-Luxury Monochromatic Palette (Strictly ZERO Gold or Yellow) */
-  --bg-white: #FFFFFF;
-  --bg-stone: #F8F9FA;
-  --bg-subtle: #F1F5F9;
-  --bg-card: #FFFFFF;
+  /* Midnight Stealth Palette */
+  --bg-deep-obsidian: #05080E;
+  --bg-midnight: #0A0F1D;
+  --bg-card: #0D1424;
+  --bg-card-elevated: #121B30;
+  --bg-surface-glass: rgba(255, 255, 255, 0.04);
+  --bg-surface-glass-hover: rgba(255, 255, 255, 0.07);
 
   /* Typography Colors */
-  --text-dark: #1A202C;
-  --text-charcoal: #2D3748;
-  --text-slate: #4A5568;
-  --text-muted: #718096;
-  --text-light: #94A3B8;
+  --text-pure-white: #FFFFFF;
+  --text-platinum: #F1F5F9;
+  --text-silver: #CBD5E1;
+  --text-slate: #94A3B8;
+  --text-muted: #64748B;
+  --text-dark: #FFFFFF;
+  --text-charcoal: #E2E8F0;
 
-  /* Architectural Borders */
-  --border-subtle: #E2E8F0;
-  --border-mid: #CBD5E1;
-  --border-dark: #1A202C;
+  /* Architectural Glass Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-mid: rgba(255, 255, 255, 0.15);
+  --border-strong: rgba(255, 255, 255, 0.25);
+  --border-emerald: rgba(16, 185, 129, 0.35);
 
-  /* Solid Vibrant Green WhatsApp */
+  /* Vibrant WhatsApp Solid Green */
   --whatsapp-green: #25D366;
   --whatsapp-hover: #20BD5A;
-  --whatsapp-shadow: 0 10px 24px -4px rgba(37, 211, 102, 0.35);
+  --whatsapp-shadow: 0 12px 30px -4px rgba(37, 211, 102, 0.45);
 
-  /* Modern Ultra-Luxury Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 12px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
-  --shadow-floating: 0 24px 48px -12px rgba(0, 0, 0, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
-  --shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.25);
+  /* Atmospheric Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 20px 48px -10px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+  --shadow-floating: 0 30px 65px -12px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.12);
+  --shadow-modal: 0 32px 70px -16px rgba(0, 0, 0, 0.9);
 
-  /* Premium Sans-Serif Font Stacks */
+  /* Font Stacks */
   --font-brand: 'Montserrat', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
 
@@ -56,7 +58,7 @@
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-pill: 9999px;
-  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Reset & Base */
@@ -70,8 +72,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-white);
-  color: var(--text-dark);
+  background-color: var(--bg-deep-obsidian);
+  color: var(--text-pure-white);
   font-family: var(--font-body);
   overflow-x: hidden !important;
   width: 100%;
@@ -81,8 +83,8 @@ body {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-white);
-  color: var(--text-dark);
+  background-color: var(--bg-deep-obsidian);
+  color: var(--text-pure-white);
   font-family: var(--font-body);
   overflow-x: hidden !important;
   line-height: 1.6;
@@ -92,7 +94,7 @@ body {
   width: 100%;
   overflow-x: hidden !important;
   position: relative;
-  background-color: var(--bg-white);
+  background-color: var(--bg-deep-obsidian);
 }
 
 .container {
@@ -102,7 +104,7 @@ body {
   padding: 0 28px;
 }
 
-/* Screen Reader Only Utility for Semantic SEO */
+/* Screen Reader Only Utility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -115,16 +117,16 @@ body {
   border-width: 0;
 }
 
-/* Headings: Sleek Geometric Modern Sans */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-brand);
-  color: var(--text-dark);
+  color: var(--text-pure-white);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.15;
 }
 
-/* Hero Brand Logo (Replaces Hero Title) */
+/* Hero Brand Logo */
 .hero-brand-logo-wrap {
   margin: 12px 0 10px;
 }
@@ -139,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-/* Project Heading Logo (Replaces Project Titles) */
+/* Project Heading Logo */
 .project-logo-wrap {
   margin: 8px 0 16px;
   min-height: 52px;
@@ -148,27 +150,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-heading-logo {
-  max-width: 280px;
+  max-width: 260px;
   width: auto;
-  max-height: 60px;
+  max-height: 56px;
   height: auto;
   object-fit: contain;
   object-position: left center;
   display: block;
+  filter: brightness(0) invert(1); /* Pure White Sharp Vector */
 }
 
-/* Visual Image Frame Watermark Overlay */
+/* Visual Image Frame Watermark */
 .visual-logo-watermark {
   position: absolute;
   top: 18px;
   left: 18px;
   z-index: 3;
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(5, 8, 14, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 8px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   pointer-events: none;
@@ -184,26 +187,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   1. SLEEK BRAND BAR / NAVIGATION (DEPRECATED & REMOVED: HERO AT TOP: 0)
+   1. HERO SECTION (STARTS DIRECTLY AT TOP: 0)
    ========================================================================== */
 .hap-navbar {
   display: none !important;
 }
 
-/* ==========================================================================
-   2. IMMERSIVE HERO SECTION WITH SLEEK FLOATING FORM CARD (STARTS DIRECTLY AT TOP: 0)
-   ========================================================================== */
 .hap-hero {
   position: relative;
   min-height: 88vh;
   display: flex;
   align-items: center;
-  background: #0F172A;
+  background: #06090F;
   overflow: hidden;
   padding: 100px 0 95px;
 }
 
-/* Stunning Full-Width Background Image Layer */
 .hero-bg-layer {
   position: absolute;
   top: 0;
@@ -218,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.45;
+  opacity: 0.38;
   transform: scale(1.02);
   transition: transform 10s ease;
 }
@@ -229,12 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.92) 0%,
-    rgba(15, 23, 42, 0.78) 50%,
-    rgba(15, 23, 42, 0.88) 100%
-  );
+  background: radial-gradient(circle at 65% 50%, rgba(10, 15, 29, 0.75) 0%, rgba(5, 8, 14, 0.95) 75%);
   z-index: 2;
 }
 
@@ -247,41 +241,31 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-/* Left Hero Typography */
-.hero-narrative {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.hero-badge-pill {
-  font-family: var(--font-body);
+.hero-brand-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
-  padding: 6px 16px;
+  letter-spacing: 0.14em;
+  color: #34D399;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
+  margin-bottom: 8px;
 }
 
-.hero-badge-dot {
-  width: 7px;
-  height: 7px;
+.hero-pulse-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--whatsapp-green);
   box-shadow: 0 0 10px var(--whatsapp-green);
 }
 
-/* Hero Title: Sleek, Bold, Expensive-Looking */
 .hero-title {
   font-family: var(--font-brand);
   font-size: clamp(2.6rem, 5vw, 4.2rem);
@@ -291,12 +275,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.08;
 }
 
-/* Hero Subtitle */
 .hero-subtitle {
   font-family: var(--font-body);
   font-size: 1.35rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--text-slate);
   line-height: 1.45;
   letter-spacing: -0.01em;
 }
@@ -306,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 24px;
   margin-top: 12px;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .trust-item {
@@ -325,20 +308,24 @@ h1, h2, h3, h4, h5, h6 {
 .trust-lbl {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-slate);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-top: 2px;
 }
 
-/* Sleek Floating White Lead Capture Form Card */
+/* ==========================================================================
+   2. FROSTED MIDNIGHT GLASS LEAD CAPTURE CARD
+   ========================================================================== */
 .lead-card-floating {
-  background: #FFFFFF;
+  background: rgba(13, 20, 36, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
-  box-shadow: var(--shadow-floating);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.75), 0 0 1px 1px rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .card-heading {
@@ -349,14 +336,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-brand);
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #FFFFFF;
   letter-spacing: -0.02em;
 }
 
 .card-heading p {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: var(--text-slate);
   margin-top: 4px;
 }
 
@@ -371,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-charcoal);
+  color: var(--text-silver);
   margin-bottom: 6px;
 }
 
@@ -381,18 +368,22 @@ h1, h2, h3, h4, h5, h6 {
   height: 50px;
   padding: 0 16px;
   font-size: 0.95rem;
-  color: var(--text-dark);
-  background: var(--bg-stone);
-  border: 1px solid var(--border-subtle);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   transition: var(--transition);
   outline: none;
 }
 
 .field-input:focus {
-  background: #FFFFFF;
-  border-color: var(--border-dark);
-  box-shadow: 0 0 0 3px rgba(26, 32, 44, 0.08);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.field-input::placeholder {
+  color: var(--text-muted);
 }
 
 /* Split Phone Field Layout */
@@ -408,8 +399,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 12px;
   width: 116px;
   min-width: 116px;
-  background: var(--bg-stone);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -421,8 +412,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .country-selector-btn:hover,
 .country-selector-btn[aria-expanded="true"] {
-  border-color: var(--border-dark);
-  background: #FFFFFF;
+  border-color: #10B981;
+  background: rgba(255, 255, 255, 0.09);
 }
 
 .flag-icon {
@@ -434,7 +425,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #FFFFFF;
+}
+
+.country-arrow-icon {
+  width: 12px;
+  height: 12px;
+  fill: var(--text-slate);
+  transition: transform 0.2s ease;
+}
+
+.country-selector-btn[aria-expanded="true"] .country-arrow-icon {
+  transform: rotate(180deg);
 }
 
 .phone-main-input {
@@ -448,11 +450,11 @@ h1, h2, h3, h4, h5, h6 {
   top: calc(100% + 6px);
   left: 0;
   width: 280px;
-  background: #FFFFFF;
-  border: 1px solid var(--border-subtle);
+  background: #0E1626;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-modal);
-  z-index: 60;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  z-index: 100;
   overflow: hidden;
 }
 
@@ -460,114 +462,107 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-.country-filter-wrap {
+.country-search-wrap {
   padding: 10px;
-  background: var(--bg-stone);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.country-filter-input {
-  font-family: var(--font-body);
+.country-search-input {
   width: 100%;
-  height: 36px;
+  height: 38px;
   padding: 0 12px;
-  font-size: 0.84rem;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 0.85rem;
   outline: none;
-  background: #FFFFFF;
 }
 
-.country-filter-input:focus {
-  border-color: var(--border-dark);
+.country-search-input:focus {
+  border-color: #10B981;
 }
 
-.country-items-scroll {
+.country-options-list {
   max-height: 220px;
   overflow-y: auto;
+  list-style: none;
+  padding: 4px 0;
 }
 
-.country-item-btn {
+.country-option-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
+  padding: 8px 14px;
   cursor: pointer;
-  transition: var(--transition);
-  font-size: 0.85rem;
+  color: #E2E8F0;
+  font-size: 0.88rem;
+  transition: background 0.15s ease;
 }
 
-.country-item-btn:hover,
-.country-item-btn.is-active {
-  background-color: var(--bg-stone);
+.country-option-item:hover,
+.country-option-item.is-selected {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.c-name {
-  font-family: var(--font-body);
+.opt-flag {
+  font-size: 1.1rem;
+}
+
+.opt-name {
   flex: 1;
-  color: var(--text-dark);
-  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.c-dial {
-  font-family: var(--font-body);
-  color: var(--text-muted);
+.opt-dial {
+  font-size: 0.8rem;
+  color: #34D399;
   font-weight: 700;
-  font-size: 0.82rem;
 }
 
-/* Solid Green Submit Button */
 .btn-submit-action {
   font-family: var(--font-body);
   width: 100%;
-  min-height: 50px;
+  height: 52px;
   background-color: var(--whatsapp-green);
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-sm);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
   letter-spacing: 0.02em;
   cursor: pointer;
+  box-shadow: 0 10px 24px -4px rgba(37, 211, 102, 0.45);
   transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--whatsapp-shadow);
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 .btn-submit-action:hover {
   background-color: var(--whatsapp-hover);
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px -4px rgba(37, 211, 102, 0.45);
-}
-
-.btn-submit-action:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-  transform: none;
+  box-shadow: 0 14px 28px -4px rgba(37, 211, 102, 0.6);
 }
 
 .card-privacy-notice {
   font-family: var(--font-body);
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   text-align: center;
   margin-top: 14px;
-  letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
-   3. MODERN ULTRA-LUXURY PROJECT SHOWCASES (4 SECTIONS ONLY)
-   - Edge-to-edge high-quality imagery with sleek white floating cards
-   - Generous breathing room (padding/margins)
-   - Absolutely NO messy overlapping elements
-   - Essentials ONLY: Property type, price, payment plan
+   3. MODERN ULTRA-LUXURY PROJECT SHOWCASE SECTION (MIDNIGHT STEALTH)
    ========================================================================== */
 .portfolio-showcase-section {
-  padding: 70px 0 100px;
-  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 25%, #F8FAFC 100%);
+  padding: 80px 0 110px;
+  background: radial-gradient(circle at 50% 0%, #151D30 0%, #090D16 55%, #05070C 100%);
   position: relative;
 }
 
@@ -579,22 +574,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .portfolio-header-block h2 {
   font-family: var(--font-brand);
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #FFFFFF;
   letter-spacing: -0.03em;
 }
 
 .portfolio-header-block p {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: var(--text-muted);
+  color: var(--text-slate);
   margin-top: 8px;
 }
 
 /* Portfolio Quick Navigation Chips */
 .portfolio-nav-bar {
-  margin: 0 auto 48px;
+  margin: 0 auto 52px;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -604,11 +599,13 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #FFFFFF;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 6px 8px;
   border-radius: 100px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   max-width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
@@ -635,65 +632,65 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio-nav-chip:hover {
-  color: var(--text-dark);
-  background: #F1F5F9;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .portfolio-nav-chip.active {
-  background: var(--text-dark);
+  background: #10B981;
   color: #FFFFFF;
-  box-shadow: 0 4px 14px -2px rgba(26, 32, 44, 0.35);
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.45);
 }
 
 .chip-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #94A3B8;
+  background: #64748B;
   transition: background 0.2s ease;
 }
 
 .portfolio-nav-chip.active .chip-dot {
-  background: var(--whatsapp-green);
+  background: #FFFFFF;
 }
 
 .nav-chip-badge {
   font-size: 0.68rem;
   padding: 2px 7px;
   border-radius: 100px;
-  background: #ECFDF5;
-  color: #065F46;
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .portfolio-nav-chip.active .nav-chip-badge {
-  background: #065F46;
-  color: #ECFDF5;
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
 }
 
-/* Project Master Container */
+/* Project Master Monolith Container */
 .project-showcase-card {
-  background: #FFFFFF;
+  background: var(--bg-card);
   border-radius: 20px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
-  margin-bottom: 48px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 50px;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   scroll-margin-top: 30px;
 }
 
 .project-showcase-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
-  border-color: rgba(15, 23, 42, 0.14);
+  box-shadow: var(--shadow-floating);
+  border-color: rgba(16, 185, 129, 0.35);
 }
 
 .project-card-featured {
-  border: 1.5px solid rgba(15, 23, 42, 0.14);
-  box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.09), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(16, 185, 129, 0.15);
 }
 
 .project-showcase-grid {
@@ -721,7 +718,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-visual-frame {
   position: relative;
   min-height: 480px;
-  background-color: #0F172A;
+  background-color: #06090F;
   overflow: hidden;
 }
 
@@ -735,16 +732,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-showcase-card:hover .project-visual-frame img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-/* Sleek Floating White Content Card */
+/* Sleek Obsidian Content Card */
 .project-detail-panel {
   padding: 44px 44px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: var(--bg-card);
 }
 
 .panel-header {
@@ -759,32 +756,32 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-dark);
-  background: #F1F5F9;
-  border: 1px solid var(--border-subtle);
+  color: var(--text-platinum);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 100px;
   padding: 4px 12px;
   margin-bottom: 8px;
 }
 
 .location-pill.location-pill-launch {
-  background: #ECFDF5;
-  color: #065F46;
-  border-color: #A7F3D0;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border-color: rgba(16, 185, 129, 0.35);
   font-weight: 800;
 }
 
 .location-pill.location-pill-gouna {
-  background: #F0F9FF;
-  color: #0369A1;
-  border-color: #BAE6FD;
+  background: rgba(14, 165, 233, 0.15);
+  color: #38BDF8;
+  border-color: rgba(14, 165, 233, 0.35);
 }
 
 .project-heading {
   font-family: var(--font-brand);
   font-size: 1.85rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #FFFFFF;
   letter-spacing: -0.025em;
 }
 
@@ -801,7 +798,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text-slate);
   margin: 6px 0 14px;
   line-height: 1.5;
 }
@@ -820,9 +817,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--text-charcoal);
-  background: var(--bg-stone);
-  border: 1px solid var(--border-subtle);
+  color: var(--text-platinum);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 5px 12px;
   border-radius: var(--radius-pill);
   letter-spacing: 0.01em;
@@ -830,12 +827,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .highlight-pill.highlight-pill-discount {
   color: #FFFFFF;
-  background: #065F46;
-  border: 1px solid #065F46;
+  background: #059669;
+  border: 1px solid #10B981;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
   font-weight: 800;
 }
 
-/* Essential Specs Grid */
+/* Essential Specs Glass Grid */
 .specs-overview-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -844,17 +842,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spec-tile {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 16px 20px;
   transition: var(--transition);
 }
 
 .spec-tile:hover {
-  background: #FFFFFF;
-  border-color: #CBD5E1;
-  box-shadow: 0 4px 14px -3px rgba(15, 23, 42, 0.06);
+  background: var(--bg-surface-glass-hover);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
 .spec-tag {
@@ -863,7 +861,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #64748B;
+  color: #34D399;
   margin-bottom: 4px;
 }
 
@@ -871,15 +869,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
-  color: #1E293B;
+  color: var(--text-silver);
   line-height: 1.4;
 }
 
 .spec-price-range {
   font-family: var(--font-brand);
-  font-size: 1.25rem;
+  font-size: 1.32rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #FFFFFF;
   letter-spacing: -0.015em;
   margin-top: 6px;
 }
@@ -887,11 +885,11 @@ h1, h2, h3, h4, h5, h6 {
 .spec-badge {
   font-family: var(--font-body);
   display: inline-block;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--text-slate);
-  background: #FFFFFF;
-  border: 1px solid var(--border-subtle);
+  color: var(--text-platinum);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 3px 10px;
   border-radius: var(--radius-pill);
   margin-top: 8px;
@@ -899,9 +897,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sleek Payment Plan Strip */
 .payment-terms-box {
-  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
-  border: 1px solid #E2E8F0;
-  border-left: 4px solid var(--text-dark);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-left: 4px solid #10B981;
   border-radius: 10px;
   padding: 16px 20px;
   margin-bottom: 28px;
@@ -913,7 +911,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #64748B;
+  color: #34D399;
   display: block;
   margin-bottom: 4px;
 }
@@ -922,7 +920,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   font-size: 0.98rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #FFFFFF;
   line-height: 1.45;
 }
 
@@ -933,16 +931,16 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 50px;
+  min-height: 52px;
   background-color: var(--whatsapp-green);
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.98rem;
+  font-weight: 800;
   letter-spacing: 0.01em;
-  padding: 14px 28px;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--whatsapp-shadow);
+  padding: 14px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px -4px rgba(37, 211, 102, 0.45);
   transition: var(--transition);
   align-self: flex-start;
 }
@@ -951,7 +949,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--whatsapp-hover);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -4px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 16px 36px -4px rgba(37, 211, 102, 0.6);
 }
 
 .btn-whatsapp-chat svg {
@@ -964,8 +962,8 @@ h1, h2, h3, h4, h5, h6 {
    4. ULTRA-LUXURY EDITORIAL FOOTER & COMPLIANCE
    ========================================================================== */
 .hap-footer {
-  background-color: #F8F9FA;
-  border-top: 1px solid var(--border-subtle);
+  background-color: #05080E;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 64px 0 48px;
 }
 
@@ -984,7 +982,8 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 48px;
   object-fit: contain;
   margin-bottom: 20px;
-  opacity: 0.85;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 .footer-signature-bar {
@@ -993,7 +992,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--text-dark);
+  color: #FFFFFF;
   margin-bottom: 4px;
 }
 
@@ -1001,7 +1000,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-slate);
   letter-spacing: 0.04em;
   margin-bottom: 24px;
 }
@@ -1011,9 +1010,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #FFFFFF;
-  color: var(--text-dark);
-  border: 1px solid #E2E8F0;
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 12px 24px;
   border-radius: var(--radius-pill);
   font-family: var(--font-brand);
@@ -1021,7 +1020,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   margin-bottom: 28px;
 }
 
@@ -1030,7 +1029,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
   border-color: var(--whatsapp-green);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
 }
 
 .footer-btn-wa-icon {
@@ -1043,15 +1042,15 @@ h1, h2, h3, h4, h5, h6 {
 .footer-compliance-text {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: #718096;
+  color: var(--text-muted);
   line-height: 1.7;
   margin: 0 0 22px;
   padding: 22px 0 0;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-compliance-text strong {
-  color: var(--text-dark);
+  color: var(--text-platinum);
   font-weight: 600;
 }
 
@@ -1067,25 +1066,25 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-slate);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .footer-legal-links a:hover {
-  color: var(--text-dark);
+  color: #FFFFFF;
   text-decoration: underline;
 }
 
 .footer-legal-sep {
-  color: #CBD5E0;
+  color: var(--text-muted);
   font-size: 0.75rem;
 }
 
 .footer-copyright-line {
   font-family: var(--font-body);
   font-size: 0.74rem;
-  color: #A0AEC0;
+  color: #475569;
   letter-spacing: 0.02em;
 }
 
@@ -1106,7 +1105,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   padding: 13px 22px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
   font-size: 0.88rem;
   font-weight: 700;
   transition: var(--transition);
@@ -1134,9 +1133,9 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(3, 7, 18, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -1148,14 +1147,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal-dialog-card {
-  background: #FFFFFF;
+  background: #0E1626;
   border-radius: var(--radius-lg);
   max-width: 500px;
   width: 100%;
   padding: 40px 32px;
   box-shadow: var(--shadow-modal);
   text-align: center;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
 }
 
@@ -1163,12 +1162,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 60px;
   height: 60px;
   margin: 0 auto 18px;
-  background: #E8F8EE;
-  color: var(--whatsapp-green);
+  background: rgba(16, 185, 129, 0.18);
+  color: #34D399;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(16, 185, 129, 0.35);
 }
 
 .modal-success-icon svg {
@@ -1180,7 +1180,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-brand);
   font-size: 1.55rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #FFFFFF;
   letter-spacing: -0.02em;
   margin-bottom: 14px;
 }
@@ -1195,7 +1195,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-body-text strong {
   font-family: var(--font-brand);
-  color: var(--text-dark);
+  color: #FFFFFF;
   font-weight: 700;
 }
 
@@ -1206,15 +1206,15 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  min-height: 50px;
+  min-height: 52px;
   background-color: var(--whatsapp-green);
   color: #FFFFFF;
   text-decoration: none;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.02em;
   border-radius: var(--radius-sm);
-  box-shadow: var(--whatsapp-shadow);
+  box-shadow: 0 10px 25px -4px rgba(37, 211, 102, 0.45);
   transition: var(--transition);
   margin-bottom: 14px;
 }
@@ -1234,7 +1234,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   background: none;
   border: none;
-  color: var(--text-muted);
+  color: var(--text-slate);
   font-size: 0.88rem;
   text-decoration: underline;
   cursor: pointer;
@@ -1243,15 +1243,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-modal-dismiss:hover {
-  color: var(--text-dark);
+  color: #FFFFFF;
 }
 
 /* ==========================================================================
    7. STRICT MOBILE-VIEW OPTIMIZATION (< 768px)
-   - 100% thumb-friendly single-column layout
-   - Essentials ONLY: Property type, price, payment plan
-   - Global overflow-x: hidden
-   - Full-width, solid Green WhatsApp buttons (min 48px tap height)
    ========================================================================== */
 @media (max-width: 960px) {
   .hero-content-grid {
@@ -1280,6 +1276,7 @@ h1, h2, h3, h4, h5, h6 {
   html, body, .hap-page-wrapper {
     overflow-x: hidden !important;
     width: 100% !important;
+    background-color: #05080E !important;
   }
 
   .container {
@@ -1323,6 +1320,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .portfolio-showcase-section {
     padding: 44px 0 60px;
+    background: #05080E;
   }
 
   .portfolio-header-block {
@@ -1346,7 +1344,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    background: rgba(15, 23, 42, 0.95);
   }
 
   .portfolio-nav-chip {
@@ -1359,6 +1358,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 16px;
     margin-bottom: 24px;
     scroll-margin-top: 20px;
+    background: var(--bg-card);
   }
 
   .project-visual-frame {
@@ -1372,6 +1372,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-detail-panel {
     order: 2 !important;
     padding: 20px 16px !important;
+    background: var(--bg-card) !important;
   }
 
   .hero-brand-logo {
@@ -1434,7 +1435,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .spec-price-range {
-    font-size: 1.12rem;
+    font-size: 1.18rem;
   }
 
   .payment-terms-box {
@@ -1458,10 +1459,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--whatsapp-green) !important;
     color: #FFFFFF !important;
     font-size: 0.95rem !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
     padding: 13px 18px !important;
     border-radius: 10px !important;
     box-sizing: border-box !important;
+    box-shadow: 0 10px 25px -4px rgba(37, 211, 102, 0.45) !important;
   }
 
   .floating-whatsapp-widget {
